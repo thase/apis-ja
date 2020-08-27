@@ -1,0 +1,57 @@
+{
+    "version": 1587674800144,
+    "name": "test-multi-codec-cae",
+    "description": "Multi Codec CAE",
+    "account_id": 5273179769001,
+    "brightcove_standard": false,
+    "date_created": 1587674800140,
+    "date_last_modified": 1587674800140,
+    "renditions": [],
+    "packages": [],
+    "dynamic_origin": {
+      "renditions": [
+        "default/audio128",
+        "default/audio96"
+      ],
+      "images": [
+        {
+          "label": "thumbnail",
+          "height": 90,
+          "width": 160
+        },
+        {
+          "label": "poster",
+          "height": 360,
+          "width": 640
+        }
+      ],
+      "dynamic_profile_options": {
+        "min_renditions": 3,
+        "max_renditions": 7,
+        "video_codecs": [
+          "h264",
+          "hevc"
+        ],
+        "video_codec_options": {
+          "h264": {
+            "min_renditions": 3
+          },
+          "hevc": {
+            "min_renditions": 2,
+            "min_resolution": {
+              "width": 512,
+              "height": 288
+            }
+          }
+        },
+        "fixed_frame_rate": true,
+        "bitrate_cap_to_bitrate_ratio": 1.5,
+        "buffer_size_to_bitrate_ratio": 2.0,
+        "bitrate_cap_offset": 0.0,
+        "buffer_size_offset": 0.0,
+        "sample_aspect_ratio": "1:1"
+      },
+      "hevc": true
+    },
+    "id": "5ea1feb0e4b053079f6a36b4"
+  }

@@ -1,0 +1,62 @@
+{
+  "name": "multi-platform-extended-dynamic-hevc-mixed-codec",
+  "display_name": "Multiplatform Extended HEVC (CAE) mixed-codec",
+  "description": "Deliver high quality content for a wide range content types and screen sizes including mobile, desktop and large screens.",
+  "account_id": 1486906377,
+  "digital_master": {
+    "rendition": "passthrough",
+    "distribute": false
+  },
+  "renditions": [],
+  "packages": [],
+  "dynamic_origin": {
+    "renditions": [
+      "default/audio64",
+      "default/audio128",
+      "default/audio96",
+      "default/audio192"
+    ],
+    "images": [
+      {
+        "label": "thumbnail",
+        "height": 90,
+        "width": 160
+      },
+      {
+        "label": "poster",
+        "height": 720,
+        "width": 1280
+      }
+    ],
+    "dynamic_profile_options": {
+      "max_renditions": 6,
+      "min_renditions": 2,
+      "max_bitrate": 12000,
+      "max_first_rendition_bitrate": 1000,
+      "max_first_rendition_resolution": {
+        "width": 1280,
+        "height": 720
+      },
+      "video_codecs": [
+        "h264",
+        "hevc"
+      ],
+      "video_codec_options": {
+        "h264": {
+          "min_renditions": 2,
+          "max_resolution": {
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "hevc": {
+          "min_renditions": 2,
+          "max_resolution": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      }
+    }
+  }
+}

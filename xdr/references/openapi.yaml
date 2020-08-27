@@ -1,0 +1,179 @@
+openapi: 3.0.0
+# x-bc-implicit-head: true
+# x-bc-implicit-options: true
+# x-bc-upstream: 'http://backend_server'
+info:
+  title: Cross-Device Resume (XDR) API Reference
+  description: >-
+    Reference for the Brightcove Cross-Device Resume (XDR) API. This API allows you to read all of the playheads for a viewer or read the playhead for a specific viewer and video.
+
+     **Base URL**: https://data.brightcove.com/v1/xdr
+  version: 1.0.0
+  x-bc-access: public
+servers:
+  - url: 'https://data.brightcove.com/v1/xdr'
+    variables: {}
+tags:
+  - name: Cross-Device Resume (XDR)
+    description: Operations for reading viewer playhead positions.
+paths:
+  '/accounts/{account_id}/playheads/{viewer_id}':
+    get:
+      tags:
+        - Cross-Device Resume (XDR)
+      summary: Get viewer playheads
+      description: 'Get all playhead positions for a specific account and viewer'
+      operationId: GetViewerPlayheads
+      security:
+        - BC_OAuth2:
+          - video-cloud/xdr/read
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/ViewerId'
+        - in: query
+          name: limit
+          description: Number of results to return.  1000 is used if no value specified.
+          schema:
+            type: integer
+            maximum: 10000
+          required: false
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayheadsResponse'
+        '403':
+          description: Forbidden
+        '500':
+          description: Server error
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/playheads/{viewer_id}/{video_id}':
+    get:
+      tags:
+        - Cross-Device Resume (XDR)
+      summary: Get viewer video playhead(s)
+      description: 'Get the playhead(s) for all specified videos for a viewer'
+      operationId: GetViewerVideoPlayheads
+      security:
+        - BC_OAuth2:
+          - video-cloud/xdr/read
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/ViewerId'
+        - $ref: '#/components/parameters/VideoId'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayheadsResponse'
+        '403':
+          description: Forbidden
+        '500':
+          description: Server error
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+components:
+  parameters:
+    AccountId:
+      name: account_id
+      in: path
+      description: Video Cloud account id
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    ViewerId:
+      name: viewer_id
+      in: path
+      description: Id of the viewer whose playheads are being retrieved.
+      required: true
+      schema:
+        type: string
+    VideoId:
+      name: video_id
+      in: path
+      description: Id of the video(s) whose playheads are being retrieved.  Comma-delimited for multiple video ids.  Up to 100 video ids supported.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  schemas:
+    PlayheadsResponse:
+      type: object
+      properties:
+        account_id:
+          type: string
+        viewer_id:
+          type: string
+        size:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              video_id:
+                type: string
+              timestamp:
+                type: integer
+              playhead_seconds:
+                type: integer
+
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: >-
+        Brightcove OAuth API. To learn more, see the [OAuth Overview](https://apis.support.brightcove.com/oauth/) or the [Getting Access Tokens](https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html) document.
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/xdr/read: Read Playheads

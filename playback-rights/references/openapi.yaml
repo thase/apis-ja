@@ -1,0 +1,654 @@
+openapi: 3.0.0
+x-bc-implicit-head: true
+x-bc-implicit-options: true
+x-bc-upstream: 'http://backend_server' 
+info:
+  title: Playback Rights API Reference
+  description: >-
+    Reference for the Brightcove Playback Rights API. This API allows you to create, read, update and delete video Playback Rights.
+
+     **Base URL**: https://playback-rights.api.brightcove.com/v1
+  version: 1.0.0
+  x-bc-access: public
+servers:
+  - url: 'https://playback-rights.api.brightcove.com/v1'
+    variables: {}
+tags:
+  - name: Playback Rights
+    description: Operations for creating, reading, updating and deleting video Playback Rights.
+paths:
+  '/accounts/{account_id}/playback_rights':
+    get:
+      tags:
+        - Playback Rights
+      summary: Get all Playback Rights
+      description: 'Get all Playback Rights for an account'
+      operationId: GetAllPlaybackRights
+      security:
+        - BC_OAuth2:
+          - video-cloud/playback-auth/playback-rights/read
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'SUCCESS'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/playback_rights'
+        '400':
+          description: >-
+            BAD_REQUEST: Invalid request Body
+        '404':
+          description: Playback rights not found
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "NOT_FOUND",
+                    "error_subcode": "RESOURCE_NOT_FOUND",
+                    "message": "Playback rights not found",
+                  },
+                ]
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "PLAYBACK_RIGHT_RETRIEVE_FAILURE",
+                    "message": "Cannot retrieve playback rights for account {account_id}",
+                  },
+                ]
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      tags:
+        - Playback Rights
+      summary: Create a new Playback Right
+      description: 'Create a new Playback Right'
+      operationId: CreateRight
+      security:
+        - BC_OAuth2:
+          - video-cloud/playback-auth/playback-rights/write
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      requestBody:
+        description: Create Playback Right metadata
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playback_rights'
+      responses:
+        '201':
+          description: 'Playback right created'
+          headers:
+            Location:
+              description: Values include account id and playback rights id
+              schema:
+                type: string
+                example: "/v1/accounts/12345679001/playback_rights/111111b0-22a2-3b33-4ce4-555a55ef555d"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playback_right'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "BAD_REQUEST",
+                    "error_subcode": "INVALID_ACCOUNT_ID",
+                    "message": "Invalid characters in account_id",
+                  },
+                ]
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you requested
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "UNPROCESSABLE_ENTITY",
+                    "error_subcode": "INVALID_IP",
+                    "message": "Invalid ip: 0.0.0.0/40",
+                  },
+                ]
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "SERVER_ERROR",
+                  },
+                ]
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "PLAYBACK_RIGHT_STORE_FAILURE",
+                    "message": "Cannot store playback right",
+                  },
+                ]
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/playback_rights/{playback_rights_id}':
+    get:
+      tags:
+        - Playback Rights
+      summary: Get a specific Playback Right
+      description: 'Get a specific Playback Right for an account'
+      operationId: GetPlaybackRight
+      security:
+        - BC_OAuth2:
+          - video-cloud/playback-auth/playback-rights/read
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/PlaybackRightID'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'SUCCESS'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playback_right'
+        '400':
+          description: >-
+            BAD_REQUEST: Invalid request Body
+        '404':
+          description: >-
+            NOT_FOUND: Playback Right ID was not found
+            content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "NOT_FOUND",
+                    "error_subcode": "RESOURCE_NOT_FOUND",
+                    "message": "Playback right not found",
+                  },
+                ]
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "PLAYBACK_RIGHT_RETRIEVE_FAILURE",
+                    "message": "Cannot retrieve playback right {playback_rights_id}",
+                  },
+                ]
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      tags:
+        - Playback Rights
+      summary: Update a Playback Right
+      description: |-
+        Update a specific Playback Right for an account
+      operationId: UpdateRight
+      security:
+        - BC_OAuth2:
+          - video-cloud/playback-auth/playback-rights/write
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/PlaybackRightID'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      requestBody:
+        description: Create Playback Right metadata
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playback_rights'
+      responses:
+        '200':
+          description: 'SUCCESS: The specified playback right has been updated'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/playback_right"
+        '204':
+          description: >-
+            NO_CONTENT: No content for successful update
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "BAD_REQUEST",
+                    "error_subcode": "INVALID_ACCOUNT_ID",
+                    "message": "Invalid characters in account_id",
+                  },
+                ]
+        '404':
+          description: >-
+            NOT_FOUND: Playback rights ID was not found
+        '422':
+          description: Unprocessable entity
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "UNPROCESSABLE_ENTITY",
+                    "error_subcode": "INVALID_IP",
+                    "message": "Invalid ip: 0.0.0.0/40",
+                  },
+                ]
+
+        "409":
+          description: >-
+            STATUS_CONFLICT: Something went wrong while trying to update the file
+          content:
+            text/plain:
+              example: "Invalid country: MIX"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "SERVER_ERROR",
+                  },
+                ]
+        '502':
+          description: Bad Gateway
+          content:
+            application/json:
+              example:
+                [
+                  {
+                    "error_code": "SERVER_ERROR",
+                    "error_subcode": "PLAYBACK_RIGHT_STORE_FAILURE",
+                    "message": "Cannot store playback right",
+                  },
+                ]
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+        - Playback Rights
+      summary: Delete a Playback Right
+      description: 'Delete a specific Playback Right'
+      operationId: DeleteRight
+      security:
+        - BC_OAuth2:
+          - video-cloud/playback-auth/playback-rights/write
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/PlaybackRightID'
+        - name: Content-Type
+          in: header
+          description: 'Content-Type: application/json'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'SUCCESS: The specified playback right has been deleted'
+        '204':
+          description: >-
+            NO_CONTENT: No content for successful delete
+        '400':
+          description: >-
+            NOT_AVAILABLE: The resource you are requesting is temporarily unavailable
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you requested
+        '500':
+          description: |-
+            UNKNOWN: Issue in Brightcove system; try again later.
+            TIMEOUT: Server likely too busy; try again later.
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+components:
+  parameters:
+    AccountId:
+      name: account_id
+      in: path
+      description: Video Cloud account id
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    PlaybackRightID:
+      name: playback_rights_id
+      in: path
+      description: The playback right id
+      required: true
+      style: simple
+      schema:
+        type: string
+    UserID:
+      name: user_id
+      in: path
+      description: user unique id
+      required: true
+      style: simple
+      schema:
+        type: string
+    DeviceID:
+      name: device_id
+      in: path
+      description: end user device unique id
+      required: true
+      style: simple
+      schema:
+        type: string
+  schemas:
+    playback_right:
+      type: object
+      properties:
+        id:
+          description: "This is the ID and it only is for identify the playback right in GET ALL method. It should not be included in the body for POST, PATCH and PUT methods"
+          type: string
+        allowed_domains:
+          description: Array of domain names
+          type: array
+          items:
+            type: string
+            example: "someDomain.com"
+        blocked_domains:
+          description: Array of domain names
+          type: array
+          items:
+            type: string
+            example: "someDomain.com"
+        geo:
+          type: object
+          properties:
+            allowed_countries:
+              description: Array of two letter country codes, which follow the ISO 3166-1 alpha-2 standard. For a list of values, see the [Officially assigned code elements](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+              type: array
+              items:
+                type: string
+                example: ["US","MX"]
+            blocked_countries:
+              description: Array of two letter country codes, which follow the ISO 3166-1 alpha-2 standard. For a list of values, see the [Officially assigned code elements](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+              type: array
+              items:
+                type: string
+                example: ["JP","CN"]
+            allowed_zip_codes:
+              description: Array of zip codes, which are prefixed with the two letter country and hyphen. e.g. ["US-90045"].
+                The two letter country code must be upper case and follow the ISO 3166-1 alpha-2 standard, as shown in the [Officially assigned code elements](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+              type: array
+              items:
+                type: string
+                example: "us-22222"
+            blocked_zip_codes:
+              description: Array of zip codes, which are prefixed with the two letter country and hyphen. e.g. ["US-90045"].
+                The two letter country code must be upper case and follow the ISO 3166-1 alpha-2 standard, as shown in the [Officially assigned code elements](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+              type: array
+              items:
+                type: string
+                example: "us-22222"
+            allowed_dmas:
+              description: Array of Nielsen Designated Market Area (DMA) numbers. For a list of values, see the [DMA Codes document](https://help.ooyala.com/video-platform/reference/dma_codes.html#gsc.tab=0).
+              type: array
+              items:
+                type: integer
+                example: 500, 717
+            blocked_dmas:
+              description: Array of Nielsen Designated Market Area (DMA) numbers. For a list of values, see the [DMA Codes document](https://help.ooyala.com/video-platform/reference/dma_codes.html#gsc.tab=0).
+              type: array
+              items:
+                type: integer
+                example: 500, 717
+        blocked_proxies:
+          type: object
+          properties:
+            anonymous:
+              description: IP address of the client is not available. Includes services that change location to beat DRM, TOR points, temporary proxies, and other masking services.
+              type: boolean
+              example: true
+            public:
+              description: Multiple users proxied from a location allowing public internet access.
+              type: boolean
+              example: true
+            corporate:
+              description: Generally considered harmless, but location can be a concern. Identify if multiple users are proxied through a central location or locations, and can share a single network-apparent IP address.
+              type: boolean
+              example: true
+            transparent:
+              description: IP address of the client is available via HTTP headers, though the value is not necessarily reliable (e.g., it can be spoofed)
+              type: boolean
+              example: true
+        start_time:
+          description: Epoch time
+          type: integer
+          example: 1571242764
+        end_time:
+          description: Epoch time 
+          type: integer
+          example: 1571242764
+        allowed_ips:
+          description: Array of ipv4/ipv6 addresses or CIDR blocks
+          type: array
+          items:
+            type: string
+            example: "172.16.254.1"
+        blocked_ips:
+          description: Array of ipv4/ipv6 addresses or CIDR blocks
+          type: array
+          items:
+            type: string
+            example: "172.16.254.1"
+        allowed_days:
+          description: Array of 3-letter lowercase names for the days that the resource is allowed to be retrieved. (mon, tue, wed, thu, fri, sat, sun)
+          type: array
+          items:
+            type: string
+            example: "mon, tue"
+        allowed_hours:
+          description: Array of hours from the 24-hour clock (starting at 0 and up to 47) during which the resource is allowed to be retrieved. 0 to 23 for current day, and 24 to 47 for next day end-date. If an allowed hours block starts in previous day and ends at the following day then a 24+ notation is required.
+          type: array
+          items:
+            type: string
+            example: "3-4, 8-19"
+        allow_insecure:
+          description: Setting this to true makes the JWT token optional
+          type: boolean
+          default: false
+        disabled:
+          description: Setting this to true disables the Playback Right, allowing playback for everyone
+          type: boolean
+          default: false
+        name:
+          type: string
+          description: Optional playback right name
+          example: "Only EU"
+    playback_rights:
+      description: Optional playback right name
+      type: array
+      items:
+        $ref: "#/components/schemas/playback_right"
+
+  examples:
+    response_body_example:
+      value: {
+        "id": "dad11111-e2e2-3333-4ff4-5555555555ba",
+        "geo": {
+        "allowed_countries": [
+          "MX",
+          "US"
+        ],
+        "blocked_countries": [
+          "JP",
+          "CN"
+        ],
+        "allowed_zip_codes": [
+          "MX-90210"
+        ],
+        "blocked_zip_codes": [
+          "MX-72810"
+        ],
+        "allowed_dmas": [
+          501
+        ],
+        "blocked_dmas": [
+          803
+        ]
+      },
+      "blocked_proxies": {
+        "anonymous": true,
+        "public": true,
+        "corporate": true,
+        "transparent": true
+      },
+      "allowed_domains": [
+        "www.google.com",
+        "www.brightcove.com"
+      ],
+      "blocked_domains": [
+        "www.ooyala.com"
+      ],
+      "start_time": 1572905011,
+      "end_time": 1672905011,
+      "allowed_ips": [
+        "192.168.1.1"
+      ],
+      "blocked_ips": [
+        "192.168.1.1"
+      ],
+      "allowed_days": [
+        "mon",
+        "tue"
+      ],
+      "allowed_hours": [
+        "5-6"
+      ],
+      "allow_insecure": true,
+      "disabled": false,
+      "name": "Optional playback right name"
+      }
+
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: >-
+        Brightcove OAuth API. To learn more, see the [OAuth Overview](https://apis.support.brightcove.com/oauth/) or the [Getting Access Tokens](https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html) document.
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/playback-auth/playback-rights/read: Read Playback Rights
+            video-cloud/playback-auth/playback-rights/write: Write Playback Rights

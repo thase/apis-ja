@@ -1,0 +1,384 @@
+openapi: 3.0.0
+x-bc-implicit-head: true
+x-bc-implicit-options: true
+x-bc-upstream: 'http://backend_server'
+info:
+  title: Delivery System API Reference
+  description: |-
+    Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every <code>git push</code>, to players.brightcove.com. To test API requests, you can use our <a href="/getting-started/concepts-testing-tools-brightcove-apis.html" target="_blank">API Testing Tools</a>
+
+    For additional in-depth guides to features of the API, see the **[general documentation](/delivery-system/index.html)**.
+
+    **Base URL**: https://repos.api.brightcove.com/v1
+  version: '1.0.0'
+  x-bc-access: public
+servers:
+- url: https://repos.api.brightcove.com/v1
+  variables: {}
+tags:
+  - name: Files
+    description: 'Operations for managing files in a repository'
+  - name: Repositories
+    description: >-
+      Operations for managing respositories
+paths:
+  /accounts/{account_id}/repos/{repo_name}/files/{filename}:
+    put:
+      tags:
+      - Files
+      summary: Add or Update File in Repository
+      description: |-
+        This will add or update a file. The wanted file name is at the end of the endpoint. The form contents can be a file name, including relative path, or any string. If the file has a .json extension, it will be checked for valid JSON format.
+
+        A multi-part form with a `contents` key must be used to PUT a repo file. Note that you should add files using this endpoint and CURL rather than using git commands. Here is a CURL example:
+
+        <pre><code>curl \
+        --user $EMAIL \
+        --form contents=@first-plugin.js \
+        --request PUT \
+        https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/firstRepo/files/first-plugin.js</code></pre>
+      operationId: AccountsReposFilesFilenameByaccount_idAndrepo_namePut
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/repo_name'
+        - $ref: '#/components/parameters/filename'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddUpdateFileResponse'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+      - Files
+      summary: Delete File in Repository
+      description: 'Deletes a file in a repo. '
+      operationId: AccountsReposFilesFilenameByaccount_idAndrepo_nameDelete
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+      - $ref: '#/components/parameters/account_id'
+      - $ref: '#/components/parameters/repo_name'
+      - $ref: '#/components/parameters/filename'
+      - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /accounts/{account_id}/repos/{repo_name}/files:
+    get:
+      tags:
+      - Files
+      summary: List Repositories
+      description: 'Lists all the files in a repo. '
+      operationId: AccountsReposFilesByaccount_idAndrepo_nameGet
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/repo_name'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /accounts/{account_id}/repos/{repo_name}:
+    get:
+      tags:
+      - Repositories
+      summary: Get Repository Details
+      description: 'This will retrieve the details for a Repositories. '
+      operationId: AccountsReposByaccount_idAndrepo_nameGet
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/repo_name'
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+          content:
+            application/json:
+              schema:
+                description: '200'
+                $ref: '#/components/schemas/GetRepositoryResponse'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      tags:
+      - Repositories
+      summary: Create or Update Repository
+      description: This will create a Repository, if it does not exist. A response of 200 means the repository already existed. A response of 201 means repository was successfully created.
+      operationId: AccountsReposByaccount_idAndrepo_namePut
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/repo_name'
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200 - (repo already exists)'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRepositoryResponse'
+        201:
+          description: '201 (repo created)'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRepositoryResponse'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+      - Repositories
+      summary: Delete Repository
+      description: 'This will delete a Repositories. '
+      operationId: AccountsReposByaccount_idAndrepo_nameDelete
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/repo_name'
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteRepositoryResponse'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /accounts/{account_id}/repos:
+    get:
+      tags:
+      - Repositories
+      summary: List All Repositories in Account
+      description: 'This will list the details for all repositories in an account. '
+      operationId: AccountsReposByaccount_idGet
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        200:
+          description: '200'
+          content:
+            application/json:
+              schema:
+                description: '200'
+                $ref: '#/components/schemas/GetAllRepositoriesResponse'
+        401:
+          description: 'UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token'
+        404:
+          description: 'RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+components:
+  parameters:
+    account_id:
+      name: account_id
+      in: path
+      description: Video Cloud account ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    repo_name:
+      name: repo_name
+      in: path
+      description: The name of the repo.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    filename:
+      name: filename
+      in: path
+      description: The name of the file in the repo to add or update.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    Authorization:
+      name: Authorization
+      in: header
+      description: 'Authorization: Bearer access_token (see Getting Access Tokens)'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    Content-Type:
+      name: Content-Type
+      in: header
+      description: 'Content-Type: application/json'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  schemas:
+    AddUpdateFileResponse:
+      title: Add or Update File Response
+      required:
+      - name
+      - public_url
+      type: object
+      properties:
+        name:
+          type: string
+          description: Destination filename
+        public_url:
+          type: string
+          description: URL to use for referencing the file (contrasted to the repo URL)
+    CreateRepositoryResponse:
+      title: Create Repository Response
+      type: object
+      properties:
+        name:
+          type: string
+          description: repo name
+        public_url:
+          type: string
+          description: URL for the public player
+        repo_url:
+          type: string
+          description: URL for the repository
+    DeleteRepositoryResponse:
+      title: Delete Repository Response
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: repo name
+    GetRepositoryResponse:
+      title: Get Repository Response
+      required:
+      - name
+      - public_url
+      - repo_url
+      type: object
+      properties:
+        name:
+          type: string
+          description: repo name
+        public_url:
+          type: string
+          description: URL for the public player
+        repo_url:
+          type: string
+          description: URL for the repository
+    GetAllRepositoriesResponse:
+      title: Get All Repositories Response
+      required:
+      - items
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: string
+          description: array of items
+    Items:
+      title: items
+      required:
+      - name
+      - public_url
+      - repo_url
+      type: object
+      properties:
+        name:
+          type: string
+          description: repo name
+        public_url:
+          type: string
+          description: URL for the public player
+        repo_url:
+          type: string
+          description: URL for the repository
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: >-
+        Brightcove OAuth API. See the [support documentation](/oauth/index.html) or [Getting Access Tokens](/oauth/code-samples/oauth-api-sample-get-access-token.html) to learn more
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/player/read: Read player data
+            video-cloud/player/all: Read/write player data

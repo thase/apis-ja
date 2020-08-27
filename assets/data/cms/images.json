@@ -1,0 +1,50 @@
+"images" : {
+  "wide.fr" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/8852c396-d1e1-4861-a6f9-c584c7d83b36/2560x1600/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/8852c396-d1e1-4861-a6f9-c584c7d83b36/2560x1600/match/image.jpg",
+      "height" : 1600,
+      "width" : 2560
+    } ]
+  },
+  "poster.en" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/0f27aff8-7673-4dc3-9dcf-bca8ebb92a17/570x570/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/0f27aff8-7673-4dc3-9dcf-bca8ebb92a17/570x570/match/image.jpg",
+      "height" : 570,
+      "width" : 570
+    } ]
+  },
+  "portrait.es" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/9f6fd977-b010-4b6d-bcee-7c1f42c77557/791x1024/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/9f6fd977-b010-4b6d-bcee-7c1f42c77557/791x1024/match/image.jpg",
+      "height" : 1024,
+      "width" : 791
+    } ]
+  },
+  "ultra-wide.hi" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/c3154627-8956-4879-b58f-d5d0fcbb64ca/2560x1024/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/c3154627-8956-4879-b58f-d5d0fcbb64ca/2560x1024/match/image.jpg",
+      "height" : 1024,
+      "width" : 2560
+    } ]
+  },
+  "thumbnail.en" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/20c9aaed-2397-464d-86d6-3ab3f271325f/570x570/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/20c9aaed-2397-464d-86d6-3ab3f271325f/570x570/match/image.jpg",
+      "height" : 570,
+      "width" : 570
+    } ]
+  },
+  "square.de" : {
+    "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/dff20df3-fd6c-4039-b03b-4b3667d2e49c/570x570/match/image.jpg",
+    "sources" : [ {
+      "src" : "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5985631797001/154eae17-f28b-4d3d-a5e3-17433d3704e8/dff20df3-fd6c-4039-b03b-4b3667d2e49c/570x570/match/image.jpg",
+      "height" : 570,
+      "width" : 570
+    } ]
+  }
+},

@@ -1,0 +1,2341 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn how to get access tokens and show you strategies for implementing this logic in your apps.">
+  
+  <title>Getting Access Tokens</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://learning-services-media.brightcove.com/doc-assets/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://learning-services-media.brightcove.com/doc-assets/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://learning-services-media.brightcove.com/doc-assets/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://learning-services-media.brightcove.com/doc-assets/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/product-logos/logo-bc-video-cloud.svg" alt="product logo" style="max-height: 100px;max-width: 232px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en">English</option><option value="en|zh-TW">繁體中文</option><option value="en|fr">Français</option><option value="en|de">Deutsch</option><option value="en|ja">日本語</option><option value="en|ko">한국어</option><option value="en|es">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integration / CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/oauth/guides/">Guides</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Getting Access Tokens</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav">
+          
+            
+            <h5><a href="/index.html">Home</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/getting-started-brightcove-apis.html">Overview: Platform APIs</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/authentication-brightcove-api-requests.html">Authentication for API Requests</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/concepts-testing-tools-brightcove-apis.html">Testing Tools for Brightcove APIs</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Learning Guide: Using the REST APIs</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">General Information <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/all-api-references.html">All API References</a></li>
+                  
+                
+                  
+                    <li><a href="/general/overview-context-aware-encoding.html">Overview of Context Aware Encoding</a></li>
+                  
+                
+                  
+                    <li><a href="/general/managing-api-authentication-credentials.html">Managing API Authentication Credentials</a></li>
+                  
+                
+                  
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">Integrating Your CMS with Video Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/general/platform-api-code-samples.html">Platform API Code Samples</a></li>
+                  
+                
+                  
+                    <li><a href="/general/video-cloud-api-training-videos.html">Platform API Training Videos</a></li>
+                  
+                
+                  
+                    <li><a href="/general/concepts-api-tester.html">Online API Tester</a></li>
+                  
+                
+                  
+                    <li><a href="/general/use-insomnia-api-requests.html">Use Insomnia for API Requests</a></li>
+                  
+                
+                  
+                    <li><a href="/general/use-postman-api-requests.html">Use Postman for API Requests</a></li>
+                  
+                
+                  
+                    <li><a href="/general/audio-content.html">Audio Content</a></li>
+                  
+                
+                  
+                    <li><a href="/general/known-issues.html">Platform APIs Known Issues</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/analytics/index.html">Analytics API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/analytics/getting-started/overview-analytics-api-v1.html">Overview: Analytics API</a></li>
+                        
+                        <li><a href="/analytics/getting-started/analytics-api-explorer.html">Analytics API Explorer</a></li>
+                        
+                        <li><a href="/analytics/getting-started/overview-video-data-endpoint.html">Overview: Video Data Endpoint</a></li>
+                        
+                        <li><a href="/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html">Overview: Dimensions, Fields, and Parameters</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/general/index.html">General Information <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/analytics/general/faq-analytics-api.html">FAQ: Analytics API</a></li>
+                        
+                        <li><a href="/analytics/general/analytics-api-glossary.html">Analytics API Glossary</a></li>
+                        
+                        <li><a href="/analytics/general/analytics-api-unique-users.html">Unique Users</a></li>
+                        
+                        <li><a href="/analytics/general/live-metrics.html">Live Metrics</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/analytics/references/reference.html">Analytics API Reference</a></li>
+                        
+                        <li><a href="/analytics/references/analytics-api-release-notes.html">Release Notes</a></li>
+                        
+                        <li><a href="/analytics/references/known-issues.html">Known Issues</a></li>
+                        
+                        <li><a href="/analytics/references/analytics-api-error-reference.html">Error Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/dimension-guides/index.html">Dimension Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-account.html">Dimension: <code>account</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-browsertype.html">Dimension: <code>browser_type</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-date.html">Dimension: <code>date</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-datehour.html">Dimension: <code>date_hour</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-destinationdomain.html">Dimension: <code>destination_domain</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-destinationpath.html">Dimension: <code>destination_path</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-devicemanufacturer.html">Dimension: <code>device_manufacturer</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-devicetype.html">Dimension: <code>device_type</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-deviceos.html">Dimension: <code>device_os</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-city.html">Dimension: <code>city</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-country.html">Dimension: <code>country</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-region.html">Dimension: <code>region</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-livestream.html">Dimension: <code>live_stream</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-referrerdomain.html">Dimension: <code>referrer_domain</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-sourcetype.html">Dimension: <code>source_type</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-searchterms.html">Dimension: <code>search_terms</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-socialplatform.html">Dimension: <code>social_platform</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-player.html">Dimension: <code>player</code></a></li>
+                        
+                        <li><a href="/analytics/dimension-guides/dimension-video.html">Dimension: <code>video</code></a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/analytics/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-concurrent-viewers-live-events.html">Concurrent Viewers for Live Events</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-daily-analytics-report-generator.html">Daily Analytics Report Generator</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-destinations-report.html">Destinations Report</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-geographical-analytics-report.html">Geographical Analytics Report</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-unique-users-day.html">Unique Users by Day</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-video-engagement-graph.html">Video Engagement Graph</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-video-report-player-and-day.html">Video Report by Player and Day</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-video-report-reference-id.html">Video Report by Reference ID</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analytics-api-sample-video-report-tags.html">Video Report by Tags</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analyticscms-apis-sample-analytics-playlists.html">Analytics by Playlists</a></li>
+                        
+                        <li><a href="/analytics/code-samples/analyticscms-apis-sample-recently-added-videos.html">Recently Added Videos</a></li>
+                        
+                        <li><a href="/analytics/code-samples/code-sample-video-analytics-report-country-and-day.html">Video Analytics Report by Country and Day</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/cms/index.html">CMS API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/cms/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/getting-started/overview-cms-api.html">Overview: CMS API</a></li>
+                        
+                        <li><a href="/cms/getting-started/practice-area-cms-api.html">Practice Area: CMS API</a></li>
+                        
+                        <li><a href="/cms/getting-started/best-practices-cms-and-playback-apis.html">Best Practices: CMS and Playback APIs</a></li>
+                        
+                        <li><a href="/cms/getting-started/cms-api-notifications.html">CMS API Notifications</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/cms/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/references/reference.html">CMS API Reference</a></li>
+                        
+                        <li><a href="/cms/references/catalog-apis-cms-api-and-playback-api-release-notes.html">CMS/Playback APIs Release Notes</a></li>
+                        
+                        <li><a href="/cms/references/known-issues.html">Known Issues</a></li>
+                        
+                        <li><a href="/cms/references/cms-api-video-fields-reference.html">CMS API Video Fields Reference</a></li>
+                        
+                        <li><a href="/cms/references/cms-api-playlist-fields-reference.html">CMS API Playlist Fields Reference</a></li>
+                        
+                        <li><a href="/cms/references/cms-api-custom-fields-reference.html">CMS API Custom Fields Reference</a></li>
+                        
+                        <li><a href="/cms/references/cms-api-folder-fields-reference.html">CMS API Folder Fields Reference</a></li>
+                        
+                        <li><a href="/cms/references/cms-api-error-message-reference.html">CMS API Error Message Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/cms/searching/index.html">Searching <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS API: Video Search v2</a></li>
+                        
+                        <li><a href="/cms/searching/cms-api-playlists-search.html">CMS API: Playlists Search</a></li>
+                        
+                        <li><a href="/cms/searching/using-cms-api-page-search-results.html">Page Search Results</a></li>
+                        
+                        <li><a href="/cms/searching/cmsplayback-api-videos-search.html">CMS and Playback APIs: Video Search v1</a></li>
+                        
+                        <li><a href="/playback/guides/catalog-search-architecture.html">Catalog Search Architecture</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/cms/managing-videos/index.html">Managing Videos/Assets <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/managing-videos/using-cms-api-add-geo-filtering.html">Add Geo-Filtering</a></li>
+                        
+                        <li><a href="/cms/managing-videos/digital-master-delete-api.html">Digital Master Delete API</a></li>
+                        
+                        <li><a href="/cms/managing-videos/deleting-videos.html">Deleting Videos</a></li>
+                        
+                        <li><a href="/cms/managing-videos/getting-counts-videos-and-playlists.html">Getting Counts of Videos and Playlists</a></li>
+                        
+                        <li><a href="/cms/managing-videos/managing-playlists-using-cms-api.html">Managing Playlists Using the CMS API</a></li>
+                        
+                        <li><a href="/cms/managing-videos/using-cms-api-managing-clips.html">Managing Clips</a></li>
+                        
+                        <li><a href="/cms/managing-videos/media-sharing-cms-api.html">Media Sharing</a></li>
+                        
+                        <li><a href="/cms/managing-videos/multilingual-metadata.html">Multilingual Metadata</a></li>
+                        
+                        <li><a href="/cms/managing-videos/using-cms-api-retrieve-video-data.html">Retrieve Video Data</a></li>
+                        
+                        <li><a href="/cms/managing-videos/setting-360-degree-video-properties-cms-api.html">Set 360-Degree Video Properties</a></li>
+                        
+                        <li><a href="/cms/managing-videos/using-cms-api-remote-assets.html">Remote Assets</a></li>
+                        
+                        <li><a href="/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html">Add WebVTT Captions (Text Tracks)</a></li>
+                        
+                        <li><a href="/cms/managing-videos/generate-video-sitemaps.html">Generate Video Sitemaps</a></li>
+                        
+                        <li><a href="/cms/managing-videos/identifying-low-performing-content.html">Identifying Low Performing Content</a></li>
+                        
+                        <li><a href="/cms/managing-videos/cms-api-working-folders.html">Working with Folders</a></li>
+                        
+                        <li><a href="/cms/managing-videos/working-with-labels.html">Working with Labels</a></li>
+                        
+                        <li><a href="/cms/managing-videos/linking-zencoder-and-video-cloud-video-demand.html">Linking Zencoder and Video Cloud</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/cms/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-add-multiple-affiliate-accounts-media-sharing.html">Add Multiple Affiliate Accounts</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-share-multiple-videos.html">Share Multiple Videos</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-media-sharing-report.html">Media Sharing Report</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-shared-media-report.html">Shared Media Report</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-update-videos.html">Update Videos</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-add-custom-field-multiple-videos.html">Add Custom Field to Multiple Videos</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-update-geo-properties.html">Update Geo Properties</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-add-cue-points.html">Add Cue Points</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-video-report-generator.html">Video Report Generator</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-videos-delivery-type.html">Videos by Delivery Type</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-download-links.html">Download Links</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-video-sitemap-generator.html">Video Sitemap Generator</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-mrss-generator.html">MRSS Generator</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-mrss-feed-playlist.html">MRSS Feed from Playlist</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-generate-rss-podcast-feed-itunes.html">RSS Podcast Feed for iTunes</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-video-renditions-inspector.html">Video Renditions Inspector</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-report-audio-only-content.html">Report on Audio-Only Content</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-video-schema-builder.html">Video Schema Builder</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-python-code-get-request.html">Python Code for a GET Request</a></li>
+                        
+                        <li><a href="/cms/code-samples/cms-api-sample-video-search-app.html">Video Search App</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/xdr/index.html">Cross-Device Resume (XDR) API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/xdr/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/xdr/getting-started/xdr-overview.html">Overview: Cross-Device Resume</a></li>
+                        
+                        <li><a href="/xdr/getting-started/get-playback-position.html">Getting Playback Position from XDR API</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/xdr/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://player.support.brightcove.com/playback/xdr-with-bcplayer.html">Cross-Device Resume with Brightcove Player</a></li>
+                        
+                        <li><a href="https://sdks.support.brightcove.com/features/cross-device-resume-sdks.html">Cross-Device Resume with the Native SDKs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/xdr/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/xdr/getting-started/xdr-overview.html">Cross Device Resume API Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/data-collection/index.html">Data Collection API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/data-collection/overview-data-collection-api-v2.html">Overview: Data Collection API</a></li>
+                  
+                
+                  
+                    <li><a href="/data-collection/data-collection-api-sample.html">Data Collection API Sample</a></li>
+                  
+                
+                  
+                    <li><a href="/data-collection/references/reference.html">Data Collection API Reference</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/delivery-system/index.html">Delivery System API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/delivery-system/overview-delivery-system-api.html">Overview: Delivery System API</a></li>
+                  
+                
+                  
+                    <li><a href="/delivery-system/step-step-delivery-system-api.html">Step-by-Step: Delivery System API</a></li>
+                  
+                
+                  
+                    <li><a href="/delivery-system/delivery-system-api-git-overview.html">Git Overview</a></li>
+                  
+                
+                  
+                    <li><a href="/delivery-system/references/reference.html">Delivery System API Reference</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/dynamic-ingest/index.html">Dynamic Ingest API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html">Overview: Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest/getting-started/quick-start-dynamic-ingest-api.html">Quick Start: Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html">Source File Upload API for Dynamic Ingest</a></li>
+                        
+                        <li><a href="/dynamic-ingest/getting-started/overview-dynamic-delivery.html">Overview of Dynamic Delivery</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest/general/index.html">General Information <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/general/dynamic-ingest-api-best-practices.html">Dynamic Ingest API: Best Practices</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/notifications-dynamic-delivery-video-cloud.html">Notifications for Dynamic Ingest</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/get-status-dynamic-ingest-requests-dynamic-delivery.html">Get Status of Dynamic Ingest Requests</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/fallback-retry-strategy.html">Fallback/Retry Strategy</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/using-dynamic-ingest-s3.html">Using Dynamic Ingest with S3</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/ugc-strategies.html">UGC Strategies</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/references/reference.html">Dynamic Ingest API Reference</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-api-release-notes.html">Dynamic Ingest API Release Notes</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/known-issues.html">Known Issues</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-ingest-fields.html">Ingest Fields Reference</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-error-message-reference.html">Dynamic Ingest Error Message Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest/ingest-guides/index.html">Ingest Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/context-aware-encoding.html">Using Context Aware Encoding</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/dynamic-delivery-ingest-priority-queueing.html">Dynamic Delivery Ingest Priority Queueing</a></li>
+                        
+                        <li><a href="/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/implementing-multiple-audio-tracks-using-apis.html">Implementing Multiple Audio Tracks</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html">Images and the Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/dynamic-ingest-media-sharing.html">Dynamic Ingest with Media Sharing</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/ingesting-content-drm.html">Ingesting content with DRM</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-tester-dynamic-delivery.html">Dynamic Ingest API Tester</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-videos-dynamic-delivery.html">Ingesting Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery.html">Re-transcoding Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-replacing-videos-dynamic-delivery.html">Replacing Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-dynamic-delivery.html">Add Scheduled Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-adding-text-tracks.html">Adding Text Tracks</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-low-priority-videos-dynamic-delivery.html">Ingesting Low Priority Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-python-code.html">Python Code</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ingest-profiles/index.html">Ingest Profiles API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/getting-started/overview-ingest-profiles-api-dynamic-delivery-context-aware-encoding.html">Overview: Ingest Profiles API</a></li>
+                        
+                        <li><a href="/ingest-profiles/getting-started/practice-area-ingest-profiles-api-dynamic-delivery.html">Practice Area: Ingest Profiles API</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles/guides/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a></li>
+                        
+                        <li><a href="/ingest-profiles/guides/hevc-video.html">HEVC Video</a></li>
+                        
+                        <li><a href="/ingest-profiles/guides/cae-fast-publish.html">CAE Fast Publish</a></li>
+                        
+                        <li><a href="/general/audio-content.html">Audio Content</a></li>
+                        
+                        <li><a href="/ingest-profiles/guides/mp4s-dynamic-delivery.html">MP4s in Dynamic Delivery</a></li>
+                        
+                        <li><a href="https://studio.support.brightcove.com/admin/ingest-profiles-best-practices.html">Best Practices</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/references/reference.html">Ingest Profiles API Reference</a></li>
+                        
+                        <li><a href="/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding.html">Ingest Profiles Fields Reference</a></li>
+                        
+                        <li><a href="/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard Ingest Profiles</a></li>
+                        
+                        <li><a href="/ingest-profiles/references/standard-live-ingest-profiles.html">Standard Live Ingest Profiles</a></li>
+                        
+                        <li><a href="/ingest-profiles/references/fields-custom-live-ingest-profiles.html">Fields for Custom Live Ingest Profiles</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-dynamic-delivery-profile.html">Create Custom Dynamic Delivery Profile</a></li>
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-context-aware-encoding-profile.html">Create Custom CAE Profile</a></li>
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-add-profile-multiple-accounts.html">Add Profile to Multiple Accounts</a></li>
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-get-all-profiles-account.html">Get All Profiles for an Account</a></li>
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-set-default-profile-dynamic-delivery.html">Set Default Profile</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/oauth/index.html">OAuth API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/oauth/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/oauth/getting-started/overview-oauth-api-v4.html">Overview: OAuth API</a></li>
+                        
+                        <li><a href="/oauth/getting-started/quick-start-oauth.html">Quick Start: OAuth API</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/oauth/guides/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/oauth/guides/oauth-create-client-credentials-using-curl.html">Create Client Credentials: cURL</a></li>
+                        
+                        <li><a href="/oauth/guides/oauth-create-client-credentials-using-postman.html">Create Client Credentials: Postman</a></li>
+                        
+                        <li><a href="/oauth/guides/getting-access-tokens.html">Getting Access Tokens</a></li>
+                        
+                        <li><a href="/oauth/guides/api-operations-client-credentials-requests.html">API Operations for Client Credentials Requests</a></li>
+                        
+                        <li><a href="/oauth/guides/get-your-bc-token.html">Getting your BC_TOKEN</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/oauth/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/oauth/references/reference.html">OAuth API Reference</a></li>
+                        
+                        <li><a href="/oauth/references/oauth-api-error-message-reference.html">OAuth API Error Message Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/oauth/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/oauth/code-samples/oauth-api-sample-create-client-credentials.html">Create Client Credentials</a></li>
+                        
+                        <li><a href="/oauth/code-samples/oauth-api-sample-get-access-token.html">Get an Access Token</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/playback/index.html">Playback API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/playback/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/playback/getting-started/overview-playback-api.html">Overview: Playback API</a></li>
+                        
+                        <li><a href="/playback/getting-started/quick-start-playback-api.html">Quick Start: Playback API</a></li>
+                        
+                        <li><a href="/cms/getting-started/best-practices-cms-and-playback-apis.html">Best Practices: CMS and Playback APIs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/playback/guides/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/cms/searching/cmsplayback-api-videos-search.html">CMS and Playback APIs: Video Search</a></li>
+                        
+                        <li><a href="/cms/getting-started/best-practices-cms-and-playback-apis.html">Catalog Search Architecture</a></li>
+                        
+                        <li><a href="/playback/guides/static-url-delivery.html">Static URL Delivery</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/playback/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/playback/references/reference_v1.html">Playback API Reference</a></li>
+                        
+                        <li><a href="/playback/references/playback-api-video-fields-reference.html">Video Fields Reference</a></li>
+                        
+                        <li><a href="/playback/references/playback-api-playlist-fields-reference.html">Playlist Fields Reference</a></li>
+                        
+                        <li><a href="/playback/references/playback-api-error-reference.html">Error Reference</a></li>
+                        
+                        <li><a href="/cms/references/catalog-apis-cms-api-and-playback-api-release-notes.html">CMS/Playback APIs Release Notes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/playback/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/playback/code-samples/thumbnail-grid.html">Video Thumbnail Grid</a></li>
+                        
+                        <li><a href="/playback/code-samples/playback-api-sample-mrss-generator.html">MRSS Generator</a></li>
+                        
+                        <li><a href="/playback/code-samples/playback-api-sample-jsonmrss-feed-playlist.html">JSON/MRSS Feed from a Playlist</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/player-management/index.html">Player Management API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/player-management/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/player-management/getting-started/overview-player-management-api.html">Overview: Player Management API</a></li>
+                        
+                        <li><a href="/player-management/getting-started/step-step-player-management.html">Step-by-Step: Player Management</a></li>
+                        
+                        <li><a href="/player-management/getting-started/training-demand-quick-start-player-management.html">Training on Demand: Quick Start to Player Management</a></li>
+                        
+                        <li><a href="/player-management/getting-started/oauth-guide.html">OAuth Guide</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/player-management/guides/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/player-management/guides/player-configuration-guide.html">Player Configuration Guide</a></li>
+                        
+                        <li><a href="/player-management/guides/plugin-registry.html">Plugin Registry</a></li>
+                        
+                        <li><a href="/player-management/guides/pre-release-player.html">Pre-release Player</a></li>
+                        
+                        <li><a href="/player-management/guides/player-repositories.html">Player Repositories</a></li>
+                        
+                        <li><a href="/player-management/guides/guide-embed-apis.html">Embed APIs</a></li>
+                        
+                        <li><a href="/player-management/guides/opting-out-automatic-player-updates.html">Opt Out of Automatic Player Updates</a></li>
+                        
+                        <li><a href="/player-management/guides/embedding-brightcove-players-cms.html">Embedding Brightcove Players in a CMS</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/player-management/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/player-management/references/reference.html">Player Management API Reference</a></li>
+                        
+                        <li><a href="/player-management/references/player-management-api-release-notes.html">Release Notes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/player-management/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/player-management/code-samples/setup-player-management-samples.html">Setup for Player Management Samples</a></li>
+                        
+                        <li><a href="/player-management/code-samples/bulk-updating-brightcove-default-player.html">Bulk Updating Default Player</a></li>
+                        
+                        <li><a href="/player-management/code-samples/player-management-api-sample-create-player.html">Create a Player</a></li>
+                        
+                        <li><a href="/player-management/code-samples/player-management-api-sample-display-players.html">Display Players</a></li>
+                        
+                        <li><a href="/player-management/code-samples/player-management-api-sample-delete-players.html">Delete Players</a></li>
+                        
+                        <li><a href="/player-management/code-samples/player-management-api-sample-using-lastviewed-data.html">Using last_viewed Data</a></li>
+                        
+                        <li><a href="/player-management/code-samples/player-management-api-sample-programmatically-update-players.html">Programmatically Update Players</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/policy/index.html">Policy API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/policy/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/policy/getting-started/overview-policy-api.html">Overview: Policy API</a></li>
+                        
+                        <li><a href="/policy/getting-started/quick-start-policy-api.html">Code Sample: Generate a Policy Key</a></li>
+                        
+                        <li><a href="/policy/getting-started/policy-keys.html">Policy Key from Player</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/policy/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/policy/references/reference.html">Policy API Reference</a></li>
+                        
+                        <li><a href="/policy/references/policy-api-release-notes.html">Release Notes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/social-syndication/index.html">Social Syndication API <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/social-syndication/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/social-syndication/getting-started/public-syndication-api-overview.html">Overview: Syndication Configuration API</a></li>
+                        
+                        <li><a href="/social-syndication/getting-started/feed-syndication-api-overview.html">Overview: Syndication Feed API</a></li>
+                        
+                        <li><a href="/social-syndication/getting-started/sample-templates-universal-syndication.html">Templates for Universal Syndication</a></li>
+                        
+                        <li><a href="/cms/searching/cms-and-playback-apis-video-search-v2.html">CMS and Playback APIs: Video Search v2</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/social-syndication/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/social-syndication/references/configuration-reference.html">Syndication Configuration API Reference</a></li>
+                        
+                        <li><a href="/social-syndication/references/feed-reference.html">Syndication Feed API Reference</a></li>
+                        
+                        <li><a href="/policy/references/policy-api-release-notes.html">Release Notes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/dynamic-ingest-legacy/index.html">Dynamic Ingest API Legacy <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest-legacy/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest-legacy/getting-started/overview-dynamic-ingest-api-legacy-ingest.html">Overview: Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/getting-started/quick-start-dynamic-ingest-api-legacy-ingest.html">Quick Start: Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/getting-started/migrating-legacy-ingest-system-dynamic-delivery.html">Migrating to Dynamic Delivery</a></li>
+                        
+                        <li><a href="/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html">Source File Upload API for Dynamic Ingest</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest-legacy/general/index.html">General Information <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/general/dynamic-ingest-api-best-practices.html">Dynamic Ingest API: Best Practices</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/general/dynamic-ingest-notifications-legacy-ingest.html">Dynamic Ingest Notifications</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/general/get-status-dynamic-ingest-requests-legacy-ingest.html">Get Status of Requests</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/fallback-retry-strategy.html">Fallback/Retry Strategy</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/using-dynamic-ingest-s3.html">Using Dynamic Ingest with S3</a></li>
+                        
+                        <li><a href="/dynamic-ingest/general/ugc-strategies.html">UGC Strategies</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest-legacy/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/references/reference.html">Dynamic Ingest API Reference</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-api-release-notes.html">Dynamic Ingest API Release Notes</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-ingest-fields.html">Ingest Fields Reference</a></li>
+                        
+                        <li><a href="/dynamic-ingest/references/dynamic-ingest-error-message-reference.html">Dynamic Ingest Error Message Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest-legacy/ingest-guides/index.html">Ingest Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html">Images and the Dynamic Ingest API</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/dynamic-ingest-media-sharing.html">Dynamic Ingest with Media Sharing</a></li>
+                        
+                        <li><a href="/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html">Ingesting WebVTT Files</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/dynamic-ingest-legacy/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-ingesting-videos-legacy-ingest.html">Ingesting Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-legacy-ingest.html">Re-transcoding Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-replacing-videos-legacy-ingest.html">Replacing Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-legacy-ingest.html">Add Scheduled Videos</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-adding-text-tracks.html">Adding Text Tracks</a></li>
+                        
+                        <li><a href="/dynamic-ingest/code-samples/dynamic-ingest-api-sample-python-code.html">Python Code</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ingest-profiles-legacy/index.html">Ingest Profiles API Legacy <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles-legacy/getting-started/index.html">Getting Started <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles-legacy/getting-started/overview-ingest-profiles-api-legacy-ingest.html">Overview: Ingest Profiles API</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/getting-started/quick-start-ingest-profiles-api.html">Quick Start: Ingest Profiles API</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles-legacy/guides/index.html">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/guides/rendition-settings-and-video-quality.html">Rendition Settings and Video Quality</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/guides/conditional-output.html">Conditional Output</a></li>
+                        
+                        <li><a href="/general/audio-content.html">Audio Content</a></li>
+                        
+                        <li><a href="https://studio.support.brightcove.com/admin/ingest-profiles-best-practices.html">Best Practices</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles-legacy/references/index.html">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/references/reference.html">Ingest Profiles API Reference</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/references/ingest-profiles-api-fields-reference-legacy-ingest.html">Ingest Profiles Fields Reference</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/references/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles: Legacy System</a></li>
+                        
+                        <li><a href="/ingest-profiles/references/standard-live-ingest-profiles.html">Standard Live Ingest Profiles</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ingest-profiles-legacy/code-samples/index.html">Code Samples <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-add-profile-multiple-accounts.html">Add Profile to Multiple Accounts</a></li>
+                        
+                        <li><a href="/ingest-profiles/code-samples/ingest-profiles-api-sample-get-all-profiles-account.html">Get All Profiles for an Account</a></li>
+                        
+                        <li><a href="/ingest-profiles-legacy/code-samples/ingest-profiles-api-sample-set-default-profile-multiple-accounts-legacy-ingest.html">Set Default Profile Multiple Accounts</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/training/index.html">Training <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/online-training-courses.html">Online Training Courses</a></li>
+                  
+                
+                  
+                    <li><a href="/training/register-training.html">Register for Instructor-led Training</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Brightcove University Training Courses</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+    <nav id="centered_toc"></nav>
+    <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+  
+    
+
+
+<h1>Getting Access Tokens</h1>
+<article class="bcls-article">
+  <summary>In this topic, you will learn how to get access tokens and show you strategies for implementing this logic in your apps.</summary>
+  <section class="bcls-section">
+  <h2 id="gettingToken">Getting a token</h2>
+  
+  <p>If you just want to generate an access token for testing an API request, you can use this <a href="/oauth/code-samples/oauth-api-sample-get-access-token.html">sample app</a>.</p>
+  
+  <p>Tokens are obtained from the Brightcove OAuth API. Before you can get access tokens, you first need to obtain client credentials (a client id and a client secret) that are specific to the API and operations that you want access to. To get your client credentials, see <a href="/general/managing-api-authentication-credentials.html">Managing API Credentials</a>.</p>
+  
+  <p>Once you have your credentials, you obtain an access token by making a <code class="notranslate">POST</code> request to:</p>
+  
+  <pre class="line-numbers">
+  <code class="language-http notranslate">https://oauth.brightcove.com/v4/access_token</code></pre>
+  
+  <p>You must pass the following headers with this call:</p>
+  
+  <ul>
+    <li><code class="language-http notranslate">Content-Type: application/x-www-form-urlencoded</code></li>
+    <li><code class="language-http notranslate">Authorization: Basic {client_id}:{client_secret}</code></li>
+  </ul>
+  
+  <p>The entire <code class="language-http notranslate">{client_id}:{client_secret}</code> string must be Base64-encoded (curl will automatically Base64-encode the string if you pass it as <code class="notranslate">--user</code> credentials; in other languages, you'll need to handle the Base64-encoding yourself).</p>
+  
+  <p>You must also send the following key/value pair as the request body or as URL parameter:</p>
+  
+  <pre class="line-numbers">
+  <code class="language-http notranslate">grant_type=client_credentials</code></pre>
+  
+  <aside class="bcls-aside bcls-aside--information">Note that since the <code class="notranslate">Content-Type</code> must be <code class="notranslate">application/x-www-form-urlencoded</code>, the key/value pair will be sent to the API as a URL param even if you put it in the request body.</aside>
+  
+  <p>The response will look like this (pretty-printed here for readability):</p>
+  
+  <pre class="line-numbers">
+  <code class="language-json notranslate">{
+      "access_token": "ANB7xKhiUZmwltVd3f1odcHHM9VAwg02kwmLwtZwHv3SxGCOWLUf5W4G7X22PRjmR9StvFUqzpVZ1suOfyfOigdi-rnohxyEaSSuZceeLw_9OBW7fXldOG05HEgkeK3N-DBZZZyilodmjA1JWZHbgI3IU7Rmz5IPGyi-sDxHN3KlOr1BDZlLZpXPdFPwEyb6idq-z8AL-blKTSMtNI3_fz3oNBisfrHGUv5tXHoQT4B7FYcvdrap16gTOO7_wNt1zmgLJiUHvyxZgsgBchm_AhohVL-AYgcfCbCR0v7d2hgI4ag35pnZNeujDiBLfnCFcVMlqQGq8UEVZrmU9a8y4pVAGih_EImmghqmSrkxLPYZ800-vIWX-lw",
+      "token_type": "Bearer",
+      "expires_in": 300
+  }</code></pre>
+  
+  <p>The <code class="notranslate">access_token</code> value is what you must pass in an <code class="notranslate">Authorization</code> header with your API call in this form:</p>
+  
+  <pre class="line-numbers">
+  <code class="language-http notranslate">Authorization: Bearer {access_token}</code></pre>
+  
+  <p>The <code class="notranslate">expires_in</code> value is the number of seconds that the access token is valid for.</p>
+  </section>
+  
+  <section class="bcls-section">
+  <h2 id="implementation">Implementation Strategies</h2>
+  
+  <p>If your app will only be making sporadic calls to the Brightcove APIs, you might as well ignore the <code class="notranslate">expires_in</code> parameter and just fetch a new access token for every call. In that case, the processing sequence will look like this:</p>
+  
+  <figure class="bcls-figure"><img class="bcls-image" alt="Get New Token" src="//learning-services-media.brightcove.com/doc-assets/video-cloud-apis/oauth-api/guides/get-token/get-token-new-token.png" />
+  <figcaption class="bcls-caption--image">Get New Token</figcaption>
+  </figure>
+  
+  <p>On the other hand, if you know that your app will frequently make many API calls in quick succession (for, say, generating long reports), then it will be more efficient to fetch access tokens only when you need them. There are two basic ways of doing this:</p>
+  
+  <ol>
+    <li>Go ahead and try the API call and if you get an <code class="notranslate">UNAUTHORIZED</code> error in response, go fetch a new token and make the API call again. In this case, the processing sequence will look like this:
+  
+    <figure class="bcls-figure"><img class="bcls-image" alt="Get Token with Check for Call Fail" src="//learning-services-media.brightcove.com/doc-assets/video-cloud-apis/oauth-api/guides/get-token/get-token-check-call-fail.png" />
+    <figcaption class="bcls-caption--image">Get Token with Check for Call Fail</figcaption>
+    </figure>
+    </li>
+    <li>Another approach would be to add the <code class="notranslate">expires_in</code> value to the current time in Epoch seconds each time you fetch a token, and then on later API calls, check the expires time against the current time to see if you need to fetch a new token. In this case, your processing sequence will look like this:
+    <figure class="bcls-figure"><img class="bcls-image" alt="Get Token with Check for Expiration" src="//learning-services-media.brightcove.com/doc-assets/video-cloud-apis/oauth-api/guides/get-token/get-token-check-expiration.png" />
+    <figcaption class="bcls-caption--image">Get Token with Check for Expiration</figcaption>
+    </figure>
+    </li>
+  </ol>
+  </section>
+  
+  <section class="bcls-section">
+  <h2 id="Postman_and_Insomnia">Postman and Insomnia</h2>
+  
+  <p>Several useful testing tools for REST APIs can be set up to work with the Brightcove OAuth system to get access tokens. We have guides that include steps for doing this for two of most popular cross-platform tools:</p>
+  
+  <ul>
+    <li><a href="/general/use-postman-api-requests.html">Use Postman for API Requests</a></li>
+    <li><a href="/general/use-insomnia-api-requests.html">Use Insomnia for API Requests</a></li>
+  </ul>
+  </section>
+  
+  <section class="bcls-section">
+  <h2 id="codeSamples">Code Samples</h2>
+  
+  <p>Here are some code samples to help you get started.</p>
+  
+  <h3>Shell script example</h3>
+  
+  <p>The first example is a shell script that implements the first implementation logic above: it takes inputs from the user, always gets a new token, and then makes the API call. The script will work on any of the Brightcove APIs, and you may find it useful for testing API calls as you build your app.</p>
+  
+  <aside class="bcls-aside bcls-aside--information">
+  <p>Note: this script uses cURL, and also the jq command line app. See <a href="https://general.support.brightcove.com/developer/concepts-set-curl.html">Set up cURL and jq</a> for setup instructions. The Python json.tool is also used to pretty-print the response, but that should already be installed on your system.</p>
+  
+  <p>To run the script, save the code as <strong>api-tester.sh</strong> on your system, open a command line in the same folder, and enter <code class="notranslate">bash api-tester.sh</code> - you will be prompted for the following inputs:</p>
+  
+  <ul>
+    <li>client id (required)</li>
+    <li>client secret (required)</li>
+    <li>the full API call (required)</li>
+    <li>the HTTP verb for the call: GET | POST | PATCH | PUT | DELETE (required)</li>
+    <li>data for the request body (optional)</li>
+  </ul>
+  </aside>
+  
+  <h4 id="shell">Shell script code</h4>
+  
+  <pre class="line-numbers">
+  <code class="language-bash notranslate">bold=`tput bold`
+  normal=`tput sgr0`
+  echo 'Enter your client id:'
+  read CLIENT_ID
+  echo Your client id: $CLIENT_ID
+  echo --------------------------
+  echo 'Enter your client secret:'
+  read CLIENT_SECRET
+  echo Your client secret: $CLIENT_SECRET
+  echo --------------------------
+  echo 'Enter the full API call:'
+  read API_CALL
+  echo Your API call: $API_CALL
+  echo --------------------------
+  echo "Enter the HTTP method: [ ${bold}g${normal} (GET - default) | ${bold}po${normal} (POST) | ${bold}pa${normal} (PATCH) | ${bold}pu${normal} (PUT) | ${bold}d${normal} (DELETE) ]:"
+  read VERB
+  if [ "$VERB" = "" ]
+      then
+      export VERB="GET"
+  elif [ "$VERB" = "g" ] || [ "$VERB" = "GET" ] || [ "$VERB" = "get" ]
+      then
+      export VERB="GET"
+  elif [ "$VERB" = "po" ] || [ "$VERB" = "p" ] || [ "$VERB" = "POST" ] || [ "$VERB" = "post" ]
+      then
+      export VERB="POST"
+  elif [ "$VERB" = "pa" ] || [ "$VERB" = "PATCH" ] || [ "$VERB" = "patch" ]
+      then
+      export VERB="PATCH"
+  elif [ "$VERB" = "pu" ] || [ "$VERB" = "PUT" ] || [ "$VERB" = "put" ]
+      then
+      export VERB="PUT"
+  elif [ "$VERB" = "d" ] || [ "$VERB" = "DELETE" ] || [ "$VERB" = "delete" ]
+      then
+      export VERB="DELETE"
+  fi
+  echo "Your request type: $VERB"
+  echo --------------------------
+  echo 'Enter data to be submitted in the request body:'
+  read DATA
+  echo Your call verb: $DATA
+  echo --------------------------
+  # get access token and use regex to extract it from the response
+  TOKEN=$(curl -s --data "grant_type=client_credentials" https://oauth.brightcove.com/v4/access_token --header "Content-Type: application/x-www-form-urlencoded" --user "$CLIENT_ID:$CLIENT_SECRET" | sed -E 's/.*access_token\"\:\"([^\"]+)\".*/\1/');
+  echo Your token: $TOKEN
+  echo --------------------------
+  RESPONSE=$(curl -s -v -X $VERB "$API_CALL" -d "$DATA" -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json")
+  echo Raw response:
+  echo $RESPONSE
+  echo --------------------------
+  echo Pretty-printed response:
+  echo $RESPONSE | python -m json.tool
+  echo
+  </code></pre>
+  
+  <h3 id="ruby">Ruby example</h3>
+  
+  <p>The next example is a Ruby script that also employs the first implementation logic: always get a token and then make the API call. This example makes a call to the Analytics API, but can be adapted to work with any of the APIs.</p>
+  
+  <h4>Ruby code</h4>
+  
+  <pre class="line-numbers">
+  <code class="language-ruby notranslate">#!/usr/bin/env ruby
+  # view id --&gt; content,
+  #!/usr/bin/env ruby
+  require 'rest-client'
+  require 'json'
+  client_id = '5eb0f20e-29a8-4f19-8cb5-80336e2789ab'
+  client_secret = 'Zqpb_2YrvnGUEjqQUndx6GsjQ3JyAgXoA2gNbhoj-yUV4scij0jwCN0OBz9FILEwHupjeqwdbOUSFMi7zkhpVg'
+  response = RestClient.post 'https://oauth.brightcove.com/v4/access_token', :client_id=&gt;client_id,:client_secret=&gt;client_secret,:grant_type=&gt;'client_credentials'
+  token = JSON.parse(response)["access_token"]
+  puts "The extracted token is:" + token + "\n\n\n"
+  data = RestClient.get 'https://data.brightcove.com/analytics-api/videocloud/account/1234567890001/report?dimensions=video&amp;from=2014-01-01&amp;to=2014-03-30', { 'Authorization' =&gt; "Bearer #{token}", 'Accept' =&gt; 'application/json' }
+  puts "This is the result from the query: \n" + data
+  </code></pre>
+  
+  <h3 id="python">Python example</h3>
+  
+  <p>This sample is a Python script that implements the 3rd implementation logic above. It attempts to make an Analytics API call, but if the call fails on an UNAUTHORIZED error, it fetches a new access token and retries the call.</p>
+  
+  <p>This script also reads the client credentials from an external file - the credentials data file is shown below the Python code.</p>
+  
+  <h4>Python code</h4>
+  
+  <pre class="line-numbers">
+  <code class="language-python notranslate">import httplib, urllib, base64, json, sys
+  # This is a python script to test the CMS API.
+  # To use this script, edit the configuration file brightcove_oauth.txt
+  # with your brightcove account ID, and a client ID and client secret for
+  # an Oauth credential that has CMS API - Videos Read permission.
+  # You can find instructions on how to generate Oauth credentials
+  # http://docs.brightcove.com/en/video-cloud/cms-api/getting-started/quick-start-cms.html
+  # This script demonstrates how to refresh the access token
+  # in handling 401 - Unauthorized errors from the CMS API
+  # Because the Oauth tokens have a 300 second time to live,
+  # The refresh logic to handle 401 errors will be a normal part of runtime behavior.
+  # Note that the client_id and client_secret secure the access to the CMS API
+  # Therefore, it is not advisable to expose them to browsers. These are meant for
+  # server to server communication to obtain an access token.
+  # The access token can be exposed to the browser. Its limited permissions and expiry
+  # time make limit the duration and scope of its usage should it be observed in network
+  # traffic or obtained from a browser.
+  class AuthError(Exception):
+  def __init__(self):
+  self.msg = "auth error"
+  # read the oauth secrets and account ID from a configuration file
+  def loadSecret():
+  # read the s3 creds from json file
+  try:
+          credsFile=open('brightcove_oauth.txt')
+          creds = json.load(credsFile)
+  return creds
+  except Exception, e:
+  print "Error loading oauth secret from local file called 'brightcove_oauth.txt'"
+  print "\tThere should be a local file in this directory called brightcove_oauth.txt "
+  print "\tWhich has contents like this:"
+  print """
+  
+      {
+          "account_id": "1234567890001",
+      "client_id": "30ff0909-0909-33d3-ae88-c9887777a7b7",
+      "client_secret": "mzKKjZZyeW5YgsdfBD37c5730g397agU35-Dsgeox6-73giehbeihgleh659dhgjhdegessDge0s0ynegg987t0996nQ"
+      }
+  
+      """
+      sys.exit("System error: " + str(e) );
+  # get the oauth 2.0 token
+  def getAuthToken(creds):
+      conn = httplib.HTTPSConnection("oauth.brightcove.com")
+      url =  "/v4/access_token"
+      params = {
+  "grant_type": "client_credentials"
+      }
+      client = creds["client_id"];
+      client_secret = creds["client_secret"];
+      authString = base64.encodestring('%s:%s' % (client, client_secret)).replace('\n', '')
+      requestUrl = url + "?" + urllib.urlencode(params)
+      headersMap = {
+  "Content-Type": "application/x-www-form-urlencoded",
+  "Authorization": "Basic " + authString
+      };
+      conn.request("POST", requestUrl, headers=headersMap)
+      response = conn.getresponse()
+  if response.status == 200:
+          data = response.read()
+          result = json.loads( data )
+  return result["access_token"]
+  # call analytics api for video views in the last 30 days
+  def getVideoViews( token , account ):
+      conn = httplib.HTTPSConnection("data.brightcove.com")
+      url =  "/analytics-api/videocloud/account/" + account + "/report/"
+      params = {
+  "dimensions": "video",
+  "limit": "10",
+  "sort": "video_view",
+  "fields": "video,video_name,video_view",
+  "format": "json"
+      }
+      requestUrl = url + "?" + urllib.urlencode(params)
+      headersMap = {
+  "Authorization": "Bearer " + token
+      };
+      conn.request("POST", requestUrl, headers=headersMap)
+      response = conn.getresponse()
+  if response.status == 200:
+          data = response.read()
+          result = json.loads( data )
+  return result
+  elif response.status == 401:
+  # if we get a 401 it is most likely because the token is expired.
+  raise AuthError
+  else:
+  raise Exception('API_CALL_ERROR' + " error " + str(response.status) )
+  # call CMS API to return the number of videos in the catalog
+  def getVideos( token , account ):
+      conn = httplib.HTTPSConnection("cms.api.brightcove.com")
+      url =  "/v1/accounts/" + account + "/counts/videos/"
+      requestUrl = url
+  print "GET " + requestUrl
+      headersMap = {
+  "Authorization": "Bearer " + token
+      };
+      conn.request("GET", requestUrl, headers=headersMap)
+      response = conn.getresponse()
+  if response.status == 200:
+          data = response.read()
+          result = json.loads( data )
+  return result
+  elif response.status == 401:
+  # if we get a 401 it is most likely because the token is expired.
+  raise AuthError
+  else:
+  raise Exception('API_CALL_ERROR' + " error " + str(response.status) )
+  def demo():
+      creds = loadSecret()
+      token = getAuthToken(creds)
+      account = creds["account"];
+  try:
+          results = getVideos( token , account )
+  except AuthError, e:
+  # handle an auth error by re-fetching a auth token again
+          token = getAuthToken(creds)
+          results = getVideoViews( token , account )
+  # print the videos
+  print results
+  if __name__ == "__main__":
+    demo();
+  </code></pre>
+  
+  <h5>Credentials file for Python sample</h5>
+  
+  <pre class="line-numbers">
+  <code class="language-json notranslate">{
+      "account" : "1234567890001",
+      "client_id": "30ff0909-0909-33d3-ae88-c9887777a7b7",
+      "client_secret": "XXXXXXXX_XXXXXXXX_XXXXXXXX_XXXXXXX_XXXXXXX_XXXXXXXXXXXXXXXXX_XXXXXXXXXXX"
+  }</code></pre>
+  
+  <h3 id="php">PHP example</h3>
+  
+  <p>This is a simple proxy that takes client credentials and an API call, gets an access token, makes the API request, and returns the results to the client.</p>
+  
+  <h4>PHP code</h4>
+  
+  <pre class="line-numbers">
+  <code class="language-php notranslate">&lt;?php
+  /**
+   * proxy for Brightcove RESTful APIs
+   * gets an access token, makes the request, and returns the response
+   *
+   * Method: POST
+   * include header: "Content-Type", "application/x-www-form-urlencoded"
+   *
+   * @post {string} url - the URL for the API request
+   * @post {string} [requestType=GET] - HTTP method for the request
+   * @post {string} [requestBody=null] - JSON data to be sent with write requests
+   *
+   * @returns {string} $response - JSON response received from the API
+   */
+  // CORS enablement
+  header("Access-Control-Allow-Origin: *");
+  // set up request for access token
+  $data = array();
+  $client_id     = ‘YOUR_CLIENT_ID’;
+  $client_secret = ‘YOUR_CLIENT_SECRET’;
+  $auth_string   = "{$client_id}:{$client_secret}";
+  $request       = "https://oauth.brightcove.com/v4/access_token?grant_type=client_credentials";
+  $ch            = curl_init($request);
+  curl_setopt_array($ch, array(
+    CURLOPT_POST           =&gt; TRUE,
+    CURLOPT_RETURNTRANSFER =&gt; TRUE,
+    CURLOPT_SSL_VERIFYPEER =&gt; FALSE,
+    CURLOPT_USERPWD        =&gt; $auth_string,
+    CURLOPT_HTTPHEADER     =&gt; array(
+      'Content-type: application/x-www-form-urlencoded',
+    ),
+    CURLOPT_POSTFIELDS =&gt; $data
+  ));
+  $response = curl_exec($ch);
+  curl_close($ch);
+  // Check for errors
+  if ($response === FALSE) {
+    die(curl_error($ch));
+  }
+  // Decode the response
+  $responseData = json_decode($response, TRUE);
+  $access_token = $responseData["access_token"];
+  // set up the API call
+  // get data
+  if ($_POST["requestBody"]) {
+    $data = json_decode($_POST["requestBody"]);
+  } else {
+    $data = array();
+  }
+  // get request type or default to GET
+  if ($_POST["requestType"]) {
+    $method = $_POST["requestType"];
+  } else {
+    $method = "GET";
+  }
+  // get the URL and authorization info from the form data
+  $request = $_POST["url"];
+  //send the http request
+  $ch = curl_init($request);
+  curl_setopt_array($ch, array(
+      CURLOPT_CUSTOMREQUEST  =&gt; $method,
+      CURLOPT_RETURNTRANSFER =&gt; TRUE,
+      CURLOPT_SSL_VERIFYPEER =&gt; FALSE,
+      CURLOPT_HTTPHEADER     =&gt; array(
+        'Content-type: application/json',
+        "Authorization: Bearer {$access_token}",
+      ),
+      CURLOPT_POSTFIELDS =&gt; json_encode($data)
+    ));
+  $response = curl_exec($ch);
+  curl_close($ch);
+  // Check for errors
+  if ($response === FALSE) {
+    $logEntry = "\nError:\n".
+    "\n".date("Y-m-d H:i:s")." UTC \n"
+    .$response;
+    $logFileLocation = "log.txt";
+    $fileHandle      = fopen($logFileLocation, 'a') or die("-1");
+    fwrite($fileHandle, $logEntry);
+    fclose($fileHandle);
+    echo "Error: there was a problem with your API call"+
+    die(curl_error($ch));
+  }
+  // Decode the response
+  // $responseData = json_decode($response, TRUE);
+  // return the response to the AJAX caller
+  echo $response;
+  ?&gt;
+  </code></pre>
+  
+  <h3 id="powershell">Powershell Sample</h3>
+  
+  <pre class="line-numbers">
+  <code class="language-bash notranslate">$ParentPath = "C:\Temp"
+  $ParentCsv = "$ParentPath\Videos.csv"
+  
+  
+  
+  Clear-Host
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Retrieves the TokenType and AccessToken from Brightcove.
+  
+      .DESCRIPTION
+          Uses the Brightcove API to retrieve TokenType and AccessToken for use in later
+          API requests. The AccessToken expires after 300 seconds (5 minutes) and a new
+          AccessToken will need to be requested.
+  #&gt;
+  function Get-BrightcoveAuthorization
+  {
+      # /oauth/getting-started/overview-oauth-api-v4.html
+  
+      $Uri = "https://oauth.brightcove.com/v4/access_token"
+  
+      $ClientId = "" # &lt;--------------------------------------------------------------------Retrieve from Brightcove and paste here
+      $ClientSecret = "" # &lt;----------------------------------------------------------------Retrieve from Brightcove and paste here
+      $Authorization = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($ClientId + ":" + $ClientSecret))
+  
+      $Headers = @{
+        "Authorization" = "Basic " + $Authorization;
+        "Content-Type" = "application/x-www-form-urlencoded";
+      }
+  
+      Invoke-RestMethod -Method "Post" -Uri $Uri -Body "grant_type=client_credentials" -Headers $Headers
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Retrieves a count of videos available for a Brightcove Video Cloud account.
+  
+      .DESCRIPTION
+          Uses the Brightcove API to retrieve the count of videos.
+  
+      .PARAMETER TokenType
+          Required. The token type as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER AccessToken
+          Required. The access toke as retrieved from Brightcove's authorization API.
+  #&gt;
+  function Get-BrightcoveVideoCount
+  {
+      # https://support.brightcove.com/getting-counts-videos-and-playlists
+  
+      param(
+          [parameter(Mandatory=$true)]
+          [string]
+          $TokenType,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $AccessToken
+      )
+  
+      $Uri = "https://cms.api.brightcove.com/v1/accounts/1044238710001/counts/videos"
+  
+      $Headers = @{
+        "Authorization" = "$TokenType $AccessToken";
+      }
+  
+      (Invoke-RestMethod -Method "Get" -Uri $Uri -Headers $Headers).count
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Retrieves a list of videos available for a Brightcove Video Cloud account.
+  
+      .DESCRIPTION
+          Uses the Brightcove API to retrieve the information for a list of videos, paged
+          up to a specified Limit and starting ad a specified Offset.
+  
+      .PARAMETER TokenType
+          Required. The token type as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER AccessToken
+          Required. The access toke as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER Limit
+          Optional. Number of videos to return - must be an integer between 1 and 100.
+          Default: 20
+  
+      .PARAMETER Offset
+          Optional. Number of videos to skip (for paging results). Must be a positive integer.
+          Default: 0
+  #&gt;
+  function Get-BrightcoveVideos
+  {
+      # https://support.brightcove.com/overview-cms-api
+      # https://support.brightcove.com/using-cms-api-retrieve-video-data#bc-ipnav-1
+      # https://support.brightcove.com/cmsplayback-api-videos-search
+  
+      param(
+          [parameter(Mandatory=$true)]
+          [string]
+          $TokenType,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $AccessToken,
+  
+          [ValidateRange(1, 100)]
+          [int]
+          $Limit = 20,
+  
+          [ValidateRange(0, [int]::MaxValue)]
+          [int]
+          $Offset = 0
+      )
+  
+      $Uri = "https://cms.api.brightcove.com/v1/accounts/1044238710001/videos"
+  
+      if ($Limit)
+      {
+          $Uri += "?limit=$Limit"
+      }
+  
+      if ($Offset -and $Offset -ne 0)
+      {
+          if ($Limit)
+          {
+              $Uri += "&amp;offset=$Offset"
+          }
+          else
+          {
+              $Uri += "?offset=$Offset"
+          }
+      }
+  
+      $Headers = @{
+        "Authorization" = "$TokenType $AccessToken";
+      }
+  
+      Invoke-RestMethod -Method "Get" -Uri $Uri -Headers $Headers
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Retrieves a list of sources available for a Brightcove video.
+  
+      .DESCRIPTION
+          Uses the Brightcove API to retrieve the list of video file sources for a
+          specific video.
+  
+      .PARAMETER TokenType
+          Required. The token type as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER AccessToken
+          Required. The access toke as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER VideoId
+          Required. ID of the video to get information for. This can be obtained using
+          the Get-BrightcoveVideos function or Brightcove's website.
+  #&gt;
+  function Get-BrightcoveVideoSources
+  {
+      # https://support.brightcove.com/using-cms-api-retrieve-video-data#bc-ipnav-3
+  
+      param(
+          [parameter(Mandatory=$true)]
+          [string]
+          $TokenType,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $AccessToken,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $VideoId
+      )
+  
+      $Uri = "https://cms.api.brightcove.com/v1/accounts/1044238710001/videos/$VideoId/sources"
+  
+      $Headers = @{
+        "Authorization" = "$TokenType $AccessToken";
+      }
+  
+      Invoke-RestMethod -Method "Get" -Uri $Uri -Headers $Headers
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Retrieves a list of images associated with a Brightcove video.
+  
+      .DESCRIPTION
+          Uses the Brightcove API to retrieve the information of the thumbnail and poster
+          for a specific video.
+  
+      .PARAMETER TokenType
+          Required. The token type as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER AccessToken
+          Required. The access toke as retrieved from Brightcove's authorization API.
+  
+      .PARAMETER VideoId
+          Required. ID of the video to get information for. This can be obtained using
+          the Get-BrightcoveVideos function or Brightcove's website.
+  #&gt;
+  function Get-BrightcoveVideoImages
+  {
+      # https://support.brightcove.com/using-cms-api-retrieve-video-data#bc-ipnav-4
+  
+      param(
+          [parameter(Mandatory=$true)]
+          [string]
+          $TokenType,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $AccessToken,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $VideoId
+      )
+  
+      $Uri = "https://cms.api.brightcove.com/v1/accounts/1044238710001/videos/$VideoId/images"
+  
+      $Headers = @{
+        "Authorization" = "$TokenType $AccessToken";
+      }
+  
+      Invoke-RestMethod -Method "Get" -Uri $Uri -Headers $Headers
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Downloads a file from the web.
+  
+      .DESCRIPTION
+          Uses the BITS to retrieve a file from a given URI.
+  
+      .PARAMETER Path
+          Required. The folder path to save the file to. The filename will be determined
+          by the URI.
+  
+      .PARAMETER Uri
+          Required. The URI for the location of the file on the web. This will be used to
+          determine the filename of the file.
+  
+      .PARAMETER DisplayName
+          Optional. This is what will be displayed at the top of the progress bar.
+  #&gt;
+  function Start-BrightcoveDownload
+  {
+      param(
+          [parameter(Mandatory=$true)]
+          [string]
+          $Path,
+  
+          [parameter(Mandatory=$true)]
+          [string]
+          $Uri,
+  
+          [string]
+          $DisplayName
+      )
+  
+      $FileName = (($Uri -split "/")[-1] -split "\?")[0]
+  
+      if ([string]::IsNullOrWhiteSpace($DisplayName))
+      {
+          $DisplayName = "Downloading file..."
+      }
+  
+      Start-BitsTransfer -Source $Uri -Destination "$Path\$FileName" -DisplayName $DisplayName -Description $FileName
+  }
+  
+  
+  
+  &lt;#
+      .SYNOPSIS
+          Replaces invalid characters from a filename.
+  
+      .DESCRIPTION
+          Replaces the invalid characters in a filename with an underscore (_).
+  
+      .PARAMETER Name
+          Required. Filename to have the invalid characters removed from.
+  #&gt;
+  function Replace-InvalidFileNameChars {
+      param(
+          [Parameter(Mandatory=$true)]
+          [String]$Name
+      )
+  
+      $InvalidFileNameChars = [IO.Path]::GetInvalidFileNameChars() -join ''
+      $Replace = "[{0}]" -f [RegEx]::Escape($InvalidFileNameChars)
+  
+      return ($Name -replace $Replace, "_")
+  }
+  
+  
+  
+  
+  
+  
+  
+  # Get AccessToken for API
+  "Getting AccessToken for API..."
+  $BrightcoveAuthorization = Get-BrightcoveAuthorization
+  
+  $AccessToken = $BrightcoveAuthorization.access_token
+  $AccessTokenExpiresIn = $BrightcoveAuthorization.expires_in #seconds (300)
+  $TokenType = $BrightcoveAuthorization.token_type
+  
+  $AccessTokenExpiry = (Get-Date) + (New-TimeSpan -Seconds $AccessTokenExpiresIn)
+  
+  
+  
+  # Get count of available videos
+  "Getting count of available videos..."
+  $BrightcoveVideoCount = Get-BrightcoveVideoCount -AccessToken $AccessToken -TokenType $TokenType
+  
+  
+  
+  # Get list of all videos 20 at a time
+  "Getting list of all videos..."
+  $BrightcoveVideos = @()
+  for ($i = 0; $i -lt $BrightcoveVideoCount; $i += 20) {
+      $BrightcoveVideos += Get-BrightcoveVideos -AccessToken $AccessToken -TokenType $TokenType -Offset $i
+  }
+  
+  
+  
+  # Parse videos and download information, video, and thumbnail files
+  "Parsing videos and downloading information, video, and thumbnail files..."
+  foreach ($BrightcoveVideo in $BrightcoveVideos)
+  {
+      $Thumbnail = ""
+      $Poster = ""
+  
+      $Video = [pscustomobject][ordered]@{
+          Id = $BrightcoveVideo.id
+          Complete = $BrightcoveVideo.complete
+          CreatedAt = $BrightcoveVideo.created_at
+          Duration = $BrightcoveVideo.duration
+          Name = $BrightcoveVideo.name
+          OriginalFileName = $BrightcoveVideo.original_filename
+          PublishedAt = $BrightcoveVideo.published_at
+          State = $BrightcoveVideo.state
+          Tags = $BrightcoveVideo.tags -join ","
+          UpdatedAt = $BrightcoveVideo.updated_at
+      }
+  
+      $VideoName = $Video.Name
+      $PathFriendlyVideoName = Replace-InvalidFileNameChars -Name $VideoName
+  
+      $Path = "$ParentPath\$PathFriendlyVideoName"
+  
+      # Get new AccessToken if expired
+      if ((Get-Date) -gt $AccessTokenExpiry)
+      {
+          $BrightcoveAuthorization = Get-BrightcoveAuthorization
+  
+          $AccessToken = $BrightcoveAuthorization.access_token
+          $AccessTokenExpiresIn = $BrightcoveAuthorization.expires_in #seconds (300)
+          $TokenType = $BrightcoveAuthorization.token_type
+  
+          $AccessTokenExpiry = (Get-Date) + (New-TimeSpan -Seconds $AccessTokenExpiresIn)
+      }
+  
+      # Get list of rendition sources for video and select last MP4, sorted by width
+      $BrightcoveVideoSources = Get-BrightcoveVideoSources -AccessToken $AccessToken -TokenType $TokenType -VideoId $Video.Id
+      $Source = $BrightcoveVideoSources | where -Property "container" -EQ -Value "MP4" | sort -Property width | select -Last 1
+      $SourceUri = $Source.src
+  
+      # Get list of images for video
+      $BrightcoveVideoImages = Get-BrightcoveVideoImages -AccessToken $AccessToken -TokenType $TokenType -VideoId $Video.Id
+      $Thumbnail = $BrightcoveVideoImages.thumbnail
+      $ThumbnailUri = $Thumbnail.src
+      $Poster = $BrightcoveVideoImages.poster
+      $PosterUri = $Poster.src
+  
+      # Create video download folder
+      if (-not (Test-Path $Path))
+      {
+          New-Item -Path $Path -ItemType Directory |
+              Out-Null
+      }
+  
+      # Append video information to parent CSV
+      $Video |
+          Export-Csv -Path $ParentCsv -NoTypeInformation -Append
+  
+      # Write video inforamtion to video CSV
+      $Video |
+          Export-Csv -Path "$Path\$PathFriendlyVideoName.csv" -NoTypeInformation
+  
+      # Download video thumbnail
+      if (-not [string]::IsNullOrWhiteSpace($ThumbnailUri))
+      {
+          Start-BrightcoveDownload -Path $Path -Uri $ThumbnailUri -DisplayName "Downloading thumbnail for $VideoName"
+      }
+  
+      # Download video poster
+      if (-not [string]::IsNullOrWhiteSpace($PosterUri))
+      {
+          Start-BrightcoveDownload -Path $Path -Uri $PosterUri -DisplayName "Downloading poster for $VideoName"
+      }
+  
+      # Download video file
+      if (-not [string]::IsNullOrWhiteSpace($PosterUri))
+      {
+          Start-BrightcoveDownload -Path $Path -Uri $SourceUri -DisplayName "Downloading video for $VideoName"
+      }
+  }
+  
+  
+  
+  "\n"
+  "Finished downloading files. Look for the list of videos in a CSV file at the root of "
+  "the parent path. Each video is downloaded to its own separate folder along with its "
+  "own CSV and image files."
+  Explorer.exe $ParentPath
+  </code></pre>
+  </section>
+  </article>
+  
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Page last updated on 12 Jun 2020
+</div>
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(239, 108, 42);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">Have a question? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/https-fix.js"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/site.js"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/tabs.js"></script>
+  
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/toc.js"></script>
+  
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

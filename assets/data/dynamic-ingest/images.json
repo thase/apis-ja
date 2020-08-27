@@ -1,0 +1,43 @@
+{
+  "images":[
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/great-blue-heron-poster.png",
+        "variant": "poster",
+        "height": 1080,
+        "width": 1920
+    },
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/great-blue-heron-thumbnail.png",
+        "variant": "thumbnail",
+        "height": 108,
+        "width": 292
+    },
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/great-blue-heron-thumbnail.png",
+        "language": "de",
+        "variant": "square",
+        "height": 570,
+        "width": 570I'm'
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/Tiger.jpg",
+        "language": "fr",
+        "variant": "wide",
+        "height": 1440,
+        "width": 2560
+    },
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/Water.jpg",
+        "language": "es",
+        "variant": "portrait",
+        "height": 1200,
+        "width": 800
+    },
+    {
+        "url":"https://solutions.brightcove.com/bcls/assets/images/Sea%20Marvels.jpg",
+        "language": "hi",
+        "variant": "ultra-wide",
+        "height": 1646,
+        "width": 3840
+    }
+  ]
+}

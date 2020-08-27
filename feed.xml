@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-08-24T16:34:28-04:00</updated><id>/feed.xml</id><title type="html">Video Cloud Platform APIs Documentation</title><subtitle>With Video Cloud you can deliver fast, innovative, TV-like experiences out-of-the-box, dynamically insert server-side ads to maximize revenue, and reach your audiences wherever they are.
+
+&lt;p&gt;
+  The platform APIs are RESTful APIs that allow you access almost every aspect of the Video Cloud platform programmatically. Typically the APIs are used to create integration between your CMS or other system, or to build custom apps to serve the specific needs of your users.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Note that this site contains documentation for the core Video Cloud APIs. Video Cloud add-ons such as Gallery, Audience, Social, and SSAI also have associated platform APIs, and these are documented in the documentation sites for the products:
+&lt;/p&gt;
+  
+&lt;ul style=&quot;padding:.5rem;border: 1px #ccc solid;list-style-type:none;max-width:200px;margin-left:50px;&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://audience.support.brightcove.com&quot;&gt;Audience&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gallery.support.brightcove.com&quot;&gt;Gallery (In-Page Experience API)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://live.support.brightcove.com&quot;&gt;Live&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ssai.support.brightcove.com&quot;&gt;SSAI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://social.support.brightcove.com&quot;&gt;Social&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</subtitle></feed>

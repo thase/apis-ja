@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="762px" height="54px" viewBox="0 0 762 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="remote-assets-workflow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#979797" fill="#FFFFFF" x="-32.5" y="-29.5" width="828" height="111"></rect>
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="128" height="52"></rect>
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="159.5" y="1.5" width="128" height="52"></rect>
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="317.5" y="0.5" width="128" height="52"></rect>
+        <text id="Create-Video" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="30" y="31">Create Video</tspan>
+        </text>
+        <text id="Add-Renditions" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="183" y="32">Add Renditions</tspan>
+        </text>
+        <text id="Add-Manifests-for-Se" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="343.481445" y="17">Add Manifests</tspan>
+            <tspan x="342.142578" y="31">for Segmented</tspan>
+            <tspan x="362.161133" y="45">Stream</tspan>
+        </text>
+        <path id="Line" d="M150,23 L159,27.5 L150,32 L150,28 L129,28 L129,27 L150,27 L150,23 Z" fill="#979797" fill-rule="nonzero"></path>
+        <path id="Line" d="M308.5,23.5 L317.5,28 L308.5,32.5 L308.5,28.5 L287.5,28.5 L287.5,27.5 L308.5,27.5 L308.5,23.5 Z" fill="#979797" fill-rule="nonzero"></path>
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="475.5" y="0.5" width="128" height="52"></rect>
+        <text id="Add-Poster-and-Thumb" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="509.816406" y="16">Add Poster</tspan>
+            <tspan x="529.489258" y="30">and</tspan>
+            <tspan x="511.486328" y="44">Thumbnail</tspan>
+        </text>
+        <path id="Line" d="M467,22.5 L476,27 L467,31.5 L467,27.5 L446,27.5 L446,26.5 L467,26.5 L467,22.5 Z" fill="#979797" fill-rule="nonzero"></path>
+        <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="633.5" y="0.5" width="128" height="52"></rect>
+        <text id="Update-Video-to-Add" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="661.245117" y="16">Update Video</tspan>
+            <tspan x="680.481445" y="30">to Add</tspan>
+            <tspan x="667.154297" y="44">Text Tracks</tspan>
+        </text>
+        <path id="Line" d="M625,22.5 L634,27 L625,31.5 L625,27.5 L604,27.5 L604,26.5 L625,26.5 L625,22.5 Z" fill="#979797" fill-rule="nonzero"></path>
+    </g>
+</svg>

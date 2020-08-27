@@ -1,0 +1,50 @@
+<fieldset><legend>Create Policy Key</legend>
+
+  <p>If you do not enter account information, a Brightcove sample account will be used.</p>
+
+  <p>For more information on the options for policy keys, see the <a href="https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html">Policy Key API Overview</a>.</p>
+  
+  <p>Account id: <input id="account_id" type="text" value="" placeholder="1752604059001" /></p>
+  
+  <p>Client id: <input id="client_id" type="text" size="60" value="" placeholder="c5d0a622-5479-46d8-8d8a-5f034b943fab" /></p>
+  
+  <p>Client secret: <input id="client_secret" type="text" size="60" value="" placeholder="w7NQYu0vUloM4GYYy2SXAxrvyFpt8fwI35qAFZcS13-VIgs0itwKNsAwHOS80sOWKJ1BUwHIvSFG2I" /></p>
+    
+    <p><input type="checkbox" id="search_enabled" checked> <label for="search_enabled">Search-enabled policy key?</label></p>
+    <p><input type="checkbox" id="restrict_domains"> <label for="restrict_domains">Add domain restrictions?</label></p>
+    <div>
+      Enter a comma-separated list of domains that are <strong>allowed</strong> (<code>https://mysite.com,https://somesite.com</code>)
+      <p>
+        <input type="text" id="domain_list" size="60">
+      </p>
+    </div>
+    <p><input type="checkbox" id="restrict_geo"> <label for="restrict_geo">Add geo restrictions?</label></p>
+    <div>
+      Enter a comma-separated list of country abbreviations (<code>us,usmil,pr,gu,vi,as,mp</code>)
+      <p>
+        <input type="text" id="country_list" size="60">
+      </p>
+      <p><input type="checkbox" id="disallowed"> <label for="disallowed">Viewing <strong>not</strong> allowed from these countries</label> (if unchecked, viewing is allowed <strong>only</strong> in these countries)</p>
+    </div>
+    <p><input type="checkbox" id="require_ssai"> <label for="require_ssai">Require SSAI</label> (if unchecked, viewing is allowed <strong>only</strong> in these countries)</p>
+  
+  <p><button class="bcls-button" id="generateKey" style="color:#eeeeee;font-weight:normal">Create the Policy Key</button></p>
+  
+  <h4>API request</h4>
+  
+  <pre class="line-numbers">
+  <code id="apiRequest" class="language-http">This will be filled in dynamically</code></pre>
+  
+  <h4>Request body</h4>
+  
+  <pre class="line-numbers">
+  <code id="requestBody" class="language-json">This will be filled in dynamically</code></pre>
+
+  <h4>Policy Key</h4>
+    <textarea name="policy_key" id="policy_key" cols="100" rows="3"></textarea>
+
+  <h4>Full Response</h4>
+  
+  <pre class="line-numbers">
+  <code id="apiResponse" class="language-json">This will be filled in dynamically</code></pre>
+  </fieldset>

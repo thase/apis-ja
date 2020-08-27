@@ -1,0 +1,1797 @@
+[
+  {
+      "newURL": "https://apis.support.brightcove.com/404.html",
+      "oldURL": "/404"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/additional-apis-for-pas.html",
+      "oldURL": "/additional-apis-for-pas"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/all-api-references.html",
+      "oldURL": "/all-api-references"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/analytics-api-error-reference.html",
+      "oldURL": "/analytics-api-error-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/analytics-api-explorer.html",
+      "oldURL": "/analytics-api-explorer"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/analytics-api-glossary.html",
+      "oldURL": "/analytics-api-glossary"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html",
+      "oldURL": "/analytics-api-overview-dimensions-fields-and-parameters"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/analytics-api-release-notes.html",
+      "oldURL": "/analytics-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-concurrent-viewers-live-events.html",
+      "oldURL": "/analytics-api-sample-concurrent-viewers-live-events"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-daily-analytics-report-generator.html",
+      "oldURL": "/analytics-api-sample-daily-analytics-report-generator"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-destinations-report.html",
+      "oldURL": "/analytics-api-sample-destinations-report"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-geographical-analytics-report.html",
+      "oldURL": "/analytics-api-sample-geographical-analytics-report"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-unique-users-day.html",
+      "oldURL": "/analytics-api-sample-unique-users-day"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-engagement-graph.html",
+      "oldURL": "/analytics-api-sample-video-engagement-graph"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-player-and-day.html",
+      "oldURL": "/analytics-api-sample-video-report-player-and-day"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-reference-id.html",
+      "oldURL": "/analytics-api-sample-video-report-reference-id"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-tags.html",
+      "oldURL": "/analytics-api-sample-video-report-tags"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/analytics-api-unique-users.html",
+      "oldURL": "/analytics-api-unique-users"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analyticscms-apis-sample-analytics-playlists.html",
+      "oldURL": "/analyticscms-apis-sample-analytics-playlists"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/analyticscms-apis-sample-recently-added-videos.html",
+      "oldURL": "/analyticscms-apis-sample-recently-added-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/api-operations-client-credentials-requests.html",
+      "oldURL": "/api-operations-client-credentials-requests"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html",
+      "oldURL": "/archiving-masters"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/audio-content.html",
+      "oldURL": "/audio-content"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/getting-started/authentication-brightcove-api-requests.html",
+      "oldURL": "/authentication-brightcove-api-requests"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/getting-started/best-practices-cms-and-playback-apis.html",
+      "oldURL": "/best-practices-cms-and-playback-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/support/brightcove-answer.html",
+      "oldURL": "/brightcove-answer"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/training/brightcove-university.html",
+      "oldURL": "/brightcove-university"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/bulk-updating-brightcove-default-player.html",
+      "oldURL": "/bulk-updating-brightcove-default-player"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/cae-fast-publish.html",
+      "oldURL": "/cae-fast-publish"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/catalog-apis-cms-api-and-playback-api-release-notes.html",
+      "oldURL": "/catalog-apis-cms-api-and-playback-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/guides/catalog-search-architecture.html",
+      "oldURL": "/catalog-search-architecture"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html",
+      "oldURL": "/cms-and-playback-apis-video-search-v2"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-custom-fields-reference.html",
+      "oldURL": "/cms-api-custom-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-error-message-reference.html",
+      "oldURL": "/cms-api-error-message-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-folder-fields-reference.html",
+      "oldURL": "/cms-api-folder-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/getting-started/cms-api-notifications.html",
+      "oldURL": "/cms-api-notifications"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-playlist-fields-reference.html",
+      "oldURL": "/cms-api-playlist-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/searching/cms-api-playlists-search.html",
+      "oldURL": "/cms-api-playlists-search"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-cue-points.html",
+      "oldURL": "/cms-api-sample-add-cue-points"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-custom-field-multiple-videos.html",
+      "oldURL": "/cms-api-sample-add-custom-field-multiple-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-multiple-affiliate-accounts-media-sharing.html",
+      "oldURL": "/cms-api-sample-add-multiple-affiliate-accounts-media-sharing"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-download-links.html",
+      "oldURL": "/cms-api-sample-download-links"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-generate-rss-podcast-feed-itunes.html",
+      "oldURL": "/cms-api-sample-generate-rss-podcast-feed-itunes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-media-sharing-report.html",
+      "oldURL": "/cms-api-sample-media-sharing-report"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-mrss-feed-playlist.html",
+      "oldURL": "/cms-api-sample-mrss-feed-playlist"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-mrss-generator.html",
+      "oldURL": "/cms-api-sample-mrss-generator"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-python-code-get-request.html",
+      "oldURL": "/cms-api-sample-python-code-get-request"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-report-audio-only-content.html",
+      "oldURL": "/cms-api-sample-report-audio-only-content"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-share-multiple-videos.html",
+      "oldURL": "/cms-api-sample-share-multiple-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-shared-media-report.html",
+      "oldURL": "/cms-api-sample-shared-media-report"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-update-geo-properties.html",
+      "oldURL": "/cms-api-sample-update-geo-properties"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-update-videos.html",
+      "oldURL": "/cms-api-sample-update-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-renditions-inspector.html",
+      "oldURL": "/cms-api-sample-video-renditions-inspector"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-report-generator.html",
+      "oldURL": "/cms-api-sample-video-report-generator"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-schema-builder.html",
+      "oldURL": "/cms-api-sample-video-schema-builder"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-search-app.html",
+      "oldURL": "/cms-api-sample-video-search-app"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-sitemap-generator.html",
+      "oldURL": "/cms-api-sample-video-sitemap-generator"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-videos-delivery-type.html",
+      "oldURL": "/cms-api-sample-videos-delivery-type"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference-stage.html",
+      "oldURL": "/cms-api-video-fields-reference-stage"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html",
+      "oldURL": "/cms-api-video-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/cms-api-working-folders.html",
+      "oldURL": "/cms-api-working-folders"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/searching/cmsplayback-api-videos-search.html",
+      "oldURL": "/cmsplayback-api-videos-search"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/code-sample-video-analytics-report-country-and-day.html",
+      "oldURL": "/code-sample-video-analytics-report-country-and-day"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/concepts-api-tester.html",
+      "oldURL": "/concepts-api-tester"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/getting-started/concepts-testing-tools-brightcove-apis.html",
+      "oldURL": "/concepts-testing-tools-brightcove-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/guides/conditional-output.html",
+      "oldURL": "/conditional-output"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/references/configuration-reference.html",
+      "oldURL": "/configuration-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/support/contact-sales.html",
+      "oldURL": "/contact-sales"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/context-aware-encoding.html",
+      "oldURL": "/context-aware-encoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/create-jwt-staging.html",
+      "oldURL": "/create-jwt-staging"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/data-collection/data-collection-api-sample.html",
+      "oldURL": "/data-collection-api-sample"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/deleting-videos.html",
+      "oldURL": "/deleting-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/delivery-system-api-git-overview.html",
+      "oldURL": "/delivery-system-api-git-overview"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/guides/device-limits.html",
+      "oldURL": "/device-limits"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/digital-master-delete-api.html",
+      "oldURL": "/digital-master-delete-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-account.html",
+      "oldURL": "/dimension-account"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-browsertype.html",
+      "oldURL": "/dimension-browsertype"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-city.html",
+      "oldURL": "/dimension-city"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-country.html",
+      "oldURL": "/dimension-country"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-date.html",
+      "oldURL": "/dimension-date"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-datehour.html",
+      "oldURL": "/dimension-datehour"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-destinationdomain.html",
+      "oldURL": "/dimension-destinationdomain"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-destinationpath.html",
+      "oldURL": "/dimension-destinationpath"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-devicemanufacturer.html",
+      "oldURL": "/dimension-devicemanufacturer"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-deviceos.html",
+      "oldURL": "/dimension-deviceos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-devicetype.html",
+      "oldURL": "/dimension-devicetype"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-livestream.html",
+      "oldURL": "/dimension-livestream"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-player.html",
+      "oldURL": "/dimension-player"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-referrerdomain.html",
+      "oldURL": "/dimension-referrerdomain"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-region.html",
+      "oldURL": "/dimension-region"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-searchterms.html",
+      "oldURL": "/dimension-searchterms"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-socialplatform.html",
+      "oldURL": "/dimension-socialplatform"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-sourcetype.html",
+      "oldURL": "/dimension-sourcetype"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/dimension-video.html",
+      "oldURL": "/dimension-video"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-delivery-change-sources-returned.html",
+      "oldURL": "/dynamic-delivery-change-sources-returned"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/dynamic-delivery-ingest-priority-queueing.html",
+      "oldURL": "/dynamic-delivery-ingest-priority-queueing"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html",
+      "oldURL": "/dynamic-ingest-api-best-practices"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-api-release-notes.html",
+      "oldURL": "/dynamic-ingest-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-sample-add-scheduled-videos-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-legacy-ingest.html",
+      "oldURL": "/dynamic-ingest-api-sample-add-scheduled-videos-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-adding-text-tracks.html",
+      "oldURL": "/dynamic-ingest-api-sample-adding-text-tracks"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-low-priority-videos-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-sample-ingesting-low-priority-videos-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-videos-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-sample-ingesting-videos-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-ingesting-videos-legacy-ingest.html",
+      "oldURL": "/dynamic-ingest-api-sample-ingesting-videos-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-python-code.html",
+      "oldURL": "/dynamic-ingest-api-sample-python-code"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-legacy-ingest.html",
+      "oldURL": "/dynamic-ingest-api-sample-re-transcoding-videos-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-replacing-videos-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-sample-replacing-videos-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-replacing-videos-legacy-ingest.html",
+      "oldURL": "/dynamic-ingest-api-sample-replacing-videos-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-tester-dynamic-delivery.html",
+      "oldURL": "/dynamic-ingest-api-tester-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-error-message-reference.html",
+      "oldURL": "/dynamic-ingest-error-message-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html",
+      "oldURL": "/dynamic-ingest-ingest-fields"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/dynamic-ingest-media-sharing.html",
+      "oldURL": "/dynamic-ingest-media-sharing"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/ingest-guides/dynamic-ingest-media-sharing.html",
+      "oldURL": "/dynamic-ingest-media-sharing"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/general/dynamic-ingest-notifications-legacy-ingest.html",
+      "oldURL": "/dynamic-ingest-notifications-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/embedding-brightcove-players-cms.html",
+      "oldURL": "/embedding-brightcove-players-cms"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/epa-errors.html",
+      "oldURL": "/epa-errors"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/fallback-retry-strategy.html",
+      "oldURL": "/fallback-retry-strategy"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/faq-analytics-api.html",
+      "oldURL": "/faq-analytics-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/references/feed-reference.html",
+      "oldURL": "/feed-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/getting-started/feed-syndication-api-overview.html",
+      "oldURL": "/feed-syndication-api-overview"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/fields-custom-live-ingest-profiles.html",
+      "oldURL": "/fields-custom-live-ingest-profiles"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/generate-video-sitemaps.html",
+      "oldURL": "/generate-video-sitemaps"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html",
+      "oldURL": "/get-playback-position"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/get-status-dynamic-ingest-requests-dynamic-delivery.html",
+      "oldURL": "/get-status-dynamic-ingest-requests-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/general/get-status-dynamic-ingest-requests-legacy-ingest.html",
+      "oldURL": "/get-status-dynamic-ingest-requests-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/get-your-bc-token.html",
+      "oldURL": "/get-your-bc-token"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html",
+      "oldURL": "/getting-access-tokens"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/getting-counts-videos-and-playlists.html",
+      "oldURL": "/getting-counts-videos-and-playlists"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/getting-started/getting-started-brightcove-apis.html",
+      "oldURL": "/getting-started-brightcove-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/guide-embed-apis.html",
+      "oldURL": "/guide-embed-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video-stage.html",
+      "oldURL": "/hevc-video-stage"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html",
+      "oldURL": "/hevc-video"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/icons.html",
+      "oldURL": "/icons"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/identifying-low-performing-content.html",
+      "oldURL": "/identifying-low-performing-content"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html",
+      "oldURL": "/images-and-dynamic-ingest-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/implementing-delivery-rules.html",
+      "oldURL": "/implementing-delivery-rules"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/getting-started/implementing-epa.html",
+      "oldURL": "/implementing-epa"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/implementing-multiple-audio-tracks-using-apis.html",
+      "oldURL": "/implementing-multiple-audio-tracks-using-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/index-all.html",
+      "oldURL": "/index-all"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/data-collection/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/data-collection/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/training/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/searching/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/support/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/ingest-guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding-stage.html",
+      "oldURL": "/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding-stage"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding.html",
+      "oldURL": "/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/references/ingest-profiles-api-fields-reference-legacy-ingest.html",
+      "oldURL": "/ingest-profiles-api-fields-reference-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-add-profile-multiple-accounts.html",
+      "oldURL": "/ingest-profiles-api-sample-add-profile-multiple-accounts"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-context-aware-encoding-profile.html",
+      "oldURL": "/ingest-profiles-api-sample-create-custom-context-aware-encoding-profile"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-dynamic-delivery-profile.html",
+      "oldURL": "/ingest-profiles-api-sample-create-custom-dynamic-delivery-profile"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-get-all-profiles-account.html",
+      "oldURL": "/ingest-profiles-api-sample-get-all-profiles-account"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-set-default-profile-dynamic-delivery.html",
+      "oldURL": "/ingest-profiles-api-sample-set-default-profile-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/code-samples/ingest-profiles-api-sample-set-default-profile-multiple-accounts-legacy-ingest.html",
+      "oldURL": "/ingest-profiles-api-sample-set-default-profile-multiple-accounts-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html",
+      "oldURL": "/ingesting-content-drm"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html",
+      "oldURL": "/ingesting-webvtt-files-text-trackscaptions"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/integrating-your-cms-video-cloud.html",
+      "oldURL": "/integrating-your-cms-video-cloud"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/known-issues.html",
+      "oldURL": "/known-issues"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/known-issues.html",
+      "oldURL": "/known-issues"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/known-issues.html",
+      "oldURL": "/known-issues"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/known-issues.html",
+      "oldURL": "/known-issues"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/getting-started/learning-guide-using-rest-apis.html",
+      "oldURL": "/learning-guide-using-rest-apis"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/linking-zencoder-and-video-cloud-video-demand.html",
+      "oldURL": "/linking-zencoder-and-video-cloud-video-demand"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/live-metrics.html",
+      "oldURL": "/live-metrics"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/managing-api-authentication-credentials.html",
+      "oldURL": "/managing-api-authentication-credentials"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/managing-playlists-using-cms-api.html",
+      "oldURL": "/managing-playlists-using-cms-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html",
+      "oldURL": "/media-sharing-cms-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/migrating-legacy-ingest-system-dynamic-delivery.html",
+      "oldURL": "/migrating-legacy-ingest-system-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/guides/mp4s-dynamic-delivery.html",
+      "oldURL": "/mp4s-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html",
+      "oldURL": "/multilingual-metadata"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/notifications-dynamic-delivery-video-cloud.html",
+      "oldURL": "/notifications-dynamic-delivery-video-cloud"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/references/oauth-api-error-message-reference.html",
+      "oldURL": "/oauth-api-error-message-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-create-client-credentials.html",
+      "oldURL": "/oauth-api-sample-create-client-credentials"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html",
+      "oldURL": "/oauth-api-sample-get-access-token"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/oauth-create-client-credentials-using-curl.html",
+      "oldURL": "/oauth-create-client-credentials-using-curl"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/guides/oauth-create-client-credentials-using-postman.html",
+      "oldURL": "/oauth-create-client-credentials-using-postman"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/getting-started/oauth-guide.html",
+      "oldURL": "/oauth-guide"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/training/online-training-courses.html",
+      "oldURL": "/online-training-courses"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/support/opening-case-with-brightcove-support.html",
+      "oldURL": "/opening-case-with-brightcove-support"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/opting-out-automatic-player-updates.html",
+      "oldURL": "/opting-out-automatic-player-updates"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/overview-analytics-api-v1.html",
+      "oldURL": "/overview-analytics-api-v1"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html",
+      "oldURL": "/overview-cms-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/overview-context-aware-encoding.html",
+      "oldURL": "/overview-context-aware-encoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html",
+      "oldURL": "/overview-data-collection-api-v2"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/overview-delivery-rules.html",
+      "oldURL": "/overview-delivery-rules"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/overview-delivery-system-api.html",
+      "oldURL": "/overview-delivery-system-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-delivery.html",
+      "oldURL": "/overview-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html",
+      "oldURL": "/overview-dynamic-ingest-api-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/overview-dynamic-ingest-api-legacy-ingest.html",
+      "oldURL": "/overview-dynamic-ingest-api-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/getting-started/overview-epa.html",
+      "oldURL": "/overview-epa"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html",
+      "oldURL": "/overview-epg-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/getting-started/overview-ingest-profiles-api-dynamic-delivery-context-aware-encoding.html",
+      "oldURL": "/overview-ingest-profiles-api-dynamic-delivery-context-aware-encoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/overview-ingest-profiles-api-legacy-ingest.html",
+      "oldURL": "/overview-ingest-profiles-api-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html",
+      "oldURL": "/overview-oauth-api-v4"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html",
+      "oldURL": "/overview-playback-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/getting-started/overview-playback-authorization-service.html",
+      "oldURL": "/overview-playback-authorization-service"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/getting-started/overview-player-management-api.html",
+      "oldURL": "/overview-player-management-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html",
+      "oldURL": "/overview-policy-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/overview-video-data-endpoint.html",
+      "oldURL": "/overview-video-data-endpoint"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/platform-api-code-samples.html",
+      "oldURL": "/platform-api-code-samples"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/playback-api-error-reference.html",
+      "oldURL": "/playback-api-error-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/playback-api-playlist-fields-reference.html",
+      "oldURL": "/playback-api-playlist-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/code-samples/playback-api-sample-jsonmrss-feed-playlist.html",
+      "oldURL": "/playback-api-sample-jsonmrss-feed-playlist"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/code-samples/playback-api-sample-mrss-generator.html",
+      "oldURL": "/playback-api-sample-mrss-generator"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/playback-api-video-fields-reference.html",
+      "oldURL": "/playback-api-video-fields-reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html",
+      "oldURL": "/player-configuration-guide"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/references/player-management-api-release-notes.html",
+      "oldURL": "/player-management-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-create-player.html",
+      "oldURL": "/player-management-api-sample-create-player"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-delete-players.html",
+      "oldURL": "/player-management-api-sample-delete-players"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-display-players.html",
+      "oldURL": "/player-management-api-sample-display-players"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-programmatically-update-players.html",
+      "oldURL": "/player-management-api-sample-programmatically-update-players"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-using-lastviewed-data.html",
+      "oldURL": "/player-management-api-sample-using-lastviewed-data"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/player-repositories.html",
+      "oldURL": "/player-repositories"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/plugin-registry.html",
+      "oldURL": "/plugin-registry"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/references/policy-api-release-notes.html",
+      "oldURL": "/policy-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/getting-started/policy-keys.html",
+      "oldURL": "/policy-keys"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/getting-started/practice-area-cms-api.html",
+      "oldURL": "/practice-area-cms-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/getting-started/practice-area-ingest-profiles-api-dynamic-delivery.html",
+      "oldURL": "/practice-area-ingest-profiles-api-dynamic-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/pre-release-player.html",
+      "oldURL": "/pre-release-player"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/getting-started/public-syndication-api-overview.html",
+      "oldURL": "/public-syndication-api-overview"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/quick-start-dynamic-ingest-api-legacy-ingest.html",
+      "oldURL": "/quick-start-dynamic-ingest-api-legacy-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/getting-started/quick-start-dynamic-ingest-api.html",
+      "oldURL": "/quick-start-dynamic-ingest-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/quick-start-ingest-profiles-api.html",
+      "oldURL": "/quick-start-ingest-profiles-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/getting-started/quick-start-oauth.html",
+      "oldURL": "/quick-start-oauth"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/getting-started/quick-start-playback-api.html",
+      "oldURL": "/quick-start-playback-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/getting-started/quick-start-policy-api.html",
+      "oldURL": "/quick-start-policy-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/reference-stage.html",
+      "oldURL": "/reference-stage"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/reference-staged.html",
+      "oldURL": "/reference-staged"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/data-collection/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/blacklist-api/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/audit-api/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/devices-api/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/key-api/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/reference_v1.html",
+      "oldURL": "/reference_v1"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/references/reference_v2.html",
+      "oldURL": "/reference_v2"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/training/register-training.html",
+      "oldURL": "/register-training"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/guides/rendition-settings-and-video-quality.html",
+      "oldURL": "/rendition-settings-and-video-quality"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/getting-started/sample-templates-universal-syndication.html",
+      "oldURL": "/sample-templates-universal-syndication"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/search-test.html",
+      "oldURL": "/search-test"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/search.html",
+      "oldURL": "/search"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/setting-360-degree-video-properties-cms-api.html",
+      "oldURL": "/setting-360-degree-video-properties-cms-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/code-samples/setup-player-management-samples.html",
+      "oldURL": "/setup-player-management-samples"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html",
+      "oldURL": "/source-file-upload-api-dynamic-ingest"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html",
+      "oldURL": "/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles-legacy/references/standard-ingest-profiles-legacy-transcoding.html",
+      "oldURL": "/standard-ingest-profiles-legacy-transcoding"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/standard-live-ingest-profiles.html",
+      "oldURL": "/standard-live-ingest-profiles"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/guides/static-url-delivery-stage.html",
+      "oldURL": "/static-url-delivery-stage"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/guides/static-url-delivery.html",
+      "oldURL": "/static-url-delivery"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-system/step-step-delivery-system-api.html",
+      "oldURL": "/step-step-delivery-system-api"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html",
+      "oldURL": "/step-step-player-management"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/stream-concurrency.html",
+      "oldURL": "/stream-concurrency"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/social-syndication/references/syndication-api-release-notes.html",
+      "oldURL": "/syndication-api-release-notes"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/getting-started/technical-workflow-pas.html",
+      "oldURL": "/technical-workflow-pas"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback/code-samples/thumbnail-grid.html",
+      "oldURL": "/thumbnail-grid"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/ugc-strategies.html",
+      "oldURL": "/ugc-strategies"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/use-insomnia-api-requests.html",
+      "oldURL": "/use-insomnia-api-requests"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/use-postman-api-requests.html",
+      "oldURL": "/use-postman-api-requests"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-geo-filtering.html",
+      "oldURL": "/using-cms-api-add-geo-filtering"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html",
+      "oldURL": "/using-cms-api-add-webvtt-captions-text-tracks"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-managing-clips.html",
+      "oldURL": "/using-cms-api-managing-clips"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/searching/using-cms-api-page-search-results.html",
+      "oldURL": "/using-cms-api-page-search-results"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-remote-assets.html",
+      "oldURL": "/using-cms-api-remote-assets"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-retrieve-video-data.html",
+      "oldURL": "/using-cms-api-retrieve-video-data"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/general/using-dynamic-ingest-s3.html",
+      "oldURL": "/using-dynamic-ingest-s3"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/guides/using-epa-with-bcp.html",
+      "oldURL": "/using-epa-with-bcp"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/guides/using-epa-with-sdks.html",
+      "oldURL": "/using-epa-with-sdks"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/using-pas-with-bcp.html",
+      "oldURL": "/using-pas-with-bcp"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-authorization/guides/using-pas-with-sdks.html",
+      "oldURL": "/using-pas-with-sdks"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/general/video-cloud-api-training-videos.html",
+      "oldURL": "/video-cloud-api-training-videos"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/support/viewing-brightcove-system-status-page.html",
+      "oldURL": "/viewing-brightcove-system-status-page"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/managing-videos/working-with-labels.html",
+      "oldURL": "/working-with-labels"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html",
+      "oldURL": "/xdr-overview"
+  },
+]
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="560" height="350" viewBox="0, 0, 560, 350">
+  <g id="Layer_1">
+    <g>
+      <path d="M36.5,24.5 L84.5,24.5 C91.127,24.5 96.5,29.873 96.5,36.5 L96.5,60.5 C96.5,67.127 91.127,72.5 84.5,72.5 L36.5,72.5 C29.873,72.5 24.5,67.127 24.5,60.5 L24.5,36.5 C24.5,29.873 29.873,24.5 36.5,24.5 z" fill="#FFFFFF"/>
+      <path d="M36.5,24.5 L84.5,24.5 C91.127,24.5 96.5,29.873 96.5,36.5 L96.5,60.5 C96.5,67.127 91.127,72.5 84.5,72.5 L36.5,72.5 C29.873,72.5 24.5,67.127 24.5,60.5 L24.5,36.5 C24.5,29.873 29.873,24.5 36.5,24.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 60, 48.5)">
+      <tspan x="-13.316" y="-13.5" font-family="Gotham-Bold" font-size="11" fill="#000000">Your </tspan>
+      <tspan x="-31.152" y="-0.5" font-family="Gotham-Bold" font-size="11" fill="#000000">server-side </tspan>
+      <tspan x="-10.681" y="12.5" font-family="Gotham-Bold" font-size="11" fill="#000000">app</tspan>
+    </text>
+    <g>
+      <path d="M36.5,288.5 L84.5,288.5 C91.127,288.5 96.5,293.873 96.5,300.5 L96.5,324.5 C96.5,331.127 91.127,336.5 84.5,336.5 L36.5,336.5 C29.873,336.5 24.5,331.127 24.5,324.5 L24.5,300.5 C24.5,293.873 29.873,288.5 36.5,288.5 z" fill="#FFFFFF"/>
+      <path d="M36.5,288.5 L84.5,288.5 C91.127,288.5 96.5,293.873 96.5,300.5 L96.5,324.5 C96.5,331.127 91.127,336.5 84.5,336.5 L36.5,336.5 C29.873,336.5 24.5,331.127 24.5,324.5 L24.5,300.5 C24.5,293.873 29.873,288.5 36.5,288.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 60, 311)">
+      <tspan x="-13.316" y="-12" font-family="Gotham-Bold" font-size="11" fill="#000000">Your </tspan>
+      <tspan x="-31.152" y="1" font-family="Gotham-Bold" font-size="11" fill="#000000">server-side </tspan>
+      <tspan x="-10.681" y="14" font-family="Gotham-Bold" font-size="11" fill="#000000">app</tspan>
+    </text>
+    <path d="M60.5,72.5 L60.5,288.5" fill-opacity="0" stroke="#877C7C" stroke-width="2" stroke-dasharray="20,14"/>
+    <g>
+      <path d="M324.5,24.5 L372.5,24.5 C379.127,24.5 384.5,29.873 384.5,36.5 L384.5,60.5 C384.5,67.127 379.127,72.5 372.5,72.5 L324.5,72.5 C317.873,72.5 312.5,67.127 312.5,60.5 L312.5,36.5 C312.5,29.873 317.873,24.5 324.5,24.5 z" fill="#FFFFFF"/>
+      <path d="M324.5,24.5 L372.5,24.5 C379.127,24.5 384.5,29.873 384.5,36.5 L384.5,60.5 C384.5,67.127 379.127,72.5 372.5,72.5 L324.5,72.5 C317.873,72.5 312.5,67.127 312.5,60.5 L312.5,36.5 C312.5,29.873 317.873,24.5 324.5,24.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 348, 48)">
+      <tspan x="-18.156" y="0" font-family="Gotham-Bold" font-size="11" fill="#000000">OAuth </tspan>
+      <tspan x="-9.867" y="13" font-family="Gotham-Bold" font-size="11" fill="#000000">API</tspan>
+    </text>
+    <g>
+      <path d="M324.5,288.5 L372.5,288.5 C379.127,288.5 384.5,293.873 384.5,300.5 L384.5,324.5 C384.5,331.127 379.127,336.5 372.5,336.5 L324.5,336.5 C317.873,336.5 312.5,331.127 312.5,324.5 L312.5,300.5 C312.5,293.873 317.873,288.5 324.5,288.5 z" fill="#FFFFFF"/>
+      <path d="M324.5,288.5 L372.5,288.5 C379.127,288.5 384.5,293.873 384.5,300.5 L384.5,324.5 C384.5,331.127 379.127,336.5 372.5,336.5 L324.5,336.5 C317.873,336.5 312.5,331.127 312.5,324.5 L312.5,300.5 C312.5,293.873 317.873,288.5 324.5,288.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 348, 311)">
+      <tspan x="-18.156" y="1" font-family="Gotham-Bold" font-size="11" fill="#000000">OAuth </tspan>
+      <tspan x="-9.867" y="14" font-family="Gotham-Bold" font-size="11" fill="#000000">API</tspan>
+    </text>
+    <path d="M348.5,72.5 L348.5,288.5" fill-opacity="0" stroke="#877C7C" stroke-width="2" stroke-dasharray="20,14"/>
+    <g>
+      <path d="M480.5,24.5 L528.5,24.5 C535.127,24.5 540.5,29.873 540.5,36.5 L540.5,60.5 C540.5,67.127 535.127,72.5 528.5,72.5 L480.5,72.5 C473.873,72.5 468.5,67.127 468.5,60.5 L468.5,36.5 C468.5,29.873 473.873,24.5 480.5,24.5 z" fill="#FFFFFF"/>
+      <path d="M480.5,24.5 L528.5,24.5 C535.127,24.5 540.5,29.873 540.5,36.5 L540.5,60.5 C540.5,67.127 535.127,72.5 528.5,72.5 L480.5,72.5 C473.873,72.5 468.5,67.127 468.5,60.5 L468.5,36.5 C468.5,29.873 473.873,24.5 480.5,24.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 504, 48)">
+      <tspan x="-30.816" y="0" font-family="Gotham-Bold" font-size="11" fill="#000000">Brightcove</tspan>
+      <tspan x="-9.867" y="13" font-family="Gotham-Bold" font-size="11" fill="#000000">API</tspan>
+    </text>
+    <g>
+      <path d="M480.5,288.5 L528.5,288.5 C535.127,288.5 540.5,293.873 540.5,300.5 L540.5,324.5 C540.5,331.127 535.127,336.5 528.5,336.5 L480.5,336.5 C473.873,336.5 468.5,331.127 468.5,324.5 L468.5,300.5 C468.5,293.873 473.873,288.5 480.5,288.5 z" fill="#FFFFFF"/>
+      <path d="M480.5,288.5 L528.5,288.5 C535.127,288.5 540.5,293.873 540.5,300.5 L540.5,324.5 C540.5,331.127 535.127,336.5 528.5,336.5 L480.5,336.5 C473.873,336.5 468.5,331.127 468.5,324.5 L468.5,300.5 C468.5,293.873 473.873,288.5 480.5,288.5 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 504, 311)">
+      <tspan x="-30.816" y="1" font-family="Gotham-Bold" font-size="11" fill="#000000">Brightcove</tspan>
+      <tspan x="-9.867" y="14" font-family="Gotham-Bold" font-size="11" fill="#000000">API</tspan>
+    </text>
+    <path d="M504.5,72.5 L504.5,288.5" fill-opacity="0" stroke="#877C7C" stroke-width="2" stroke-dasharray="20,14"/>
+    <g>
+      <path d="M60.5,96.5 L336.7,96.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M336.7,100.1 L346.3,96.5 L336.7,92.9 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 204, 79)">
+      <tspan x="-22.902" y="4" font-family="Gotham-Bold" font-size="11" fill="#000000">Request </tspan>
+    </text>
+    <g>
+      <path d="M72.3,132.5 L348.5,132.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M72.3,128.9 L62.7,132.5 L72.3,136.1 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 204, 115)">
+      <tspan x="-33.215" y="4" font-family="Gotham-Bold" font-size="11" fill="#000000">Grant token</tspan>
+    </text>
+    <g>
+      <path d="M60.5,168.5 L492.7,168.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M492.7,172.1 L502.3,168.5 L492.7,164.9 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 268.901, 156)">
+      <tspan x="-78.386" y="-1" font-family="Gotham-Bold" font-size="11" fill="#000000">Sent API request with token</tspan>
+    </text>
+    <g>
+      <path d="M360.3,204.5 L504.5,204.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M360.3,200.9 L350.7,204.5 L360.3,208.1 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 422.198, 187)">
+      <tspan x="-34.496" y="4" font-family="Gotham-Bold" font-size="11" fill="#000000">Verify token</tspan>
+    </text>
+    <g>
+      <path d="M348.5,240.5 L492.7,240.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M492.7,244.1 L502.3,240.5 L492.7,236.9 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 422.198, 223)">
+      <tspan x="-34.909" y="4" font-family="Gotham-Bold" font-size="11" fill="#000000">Token token</tspan>
+    </text>
+    <g>
+      <path d="M72.3,276.5 L504.5,276.5" fill-opacity="0" stroke="#000000" stroke-width="2"/>
+      <path d="M72.3,272.9 L62.7,276.5 L72.3,280.1 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="2" stroke-opacity="1"/>
+    </g>
+    <text transform="matrix(1, 0, 0, 1, 268.901, 264)">
+      <tspan x="-52.553" y="-1" font-family="Gotham-Bold" font-size="11" fill="#000000">Send API response</tspan>
+    </text>
+  </g>
+</svg>

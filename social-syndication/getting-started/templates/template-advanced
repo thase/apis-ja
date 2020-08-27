@@ -1,0 +1,81 @@
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ext="http://ooyala.com/syndication/ext/" version="2.0">
+  &lt;channel>
+    {%- if title %}
+    &lt;title>{{title | escape}}&lt;/title>
+    {%- else %}
+    &lt;title>{{name | escape}}&lt;/title>
+    {%- endif %}
+
+    {%- if description %}
+    &lt;description>{{description | escape}}&lt;/description>
+    {%- else %}
+    &lt;description>{{name | escape}}&lt;/description>
+    {%- endif %}
+
+
+    {%- if destination_url %}
+    &lt;link>{{destination_url | escape}}&lt;/link>
+    {%- elsif syndication_url %}
+    &lt;link>{{syndication_url | escape}}&lt;/link>
+    {%- endif %}
+
+    {%- for asset in assets %}
+    &lt;item>
+
+      {%- if asset.name %}
+      &lt;title>{{asset.name | escape}}&lt;/title>
+      {%- endif %}
+
+      {%- if asset.id %}
+      &lt;guid isPermaLink="false">{{account_id}}:{{asset.id}}&lt;/guid>
+      &lt;link>{{player_url}}/{{account_id}}/default_default/index.html?videoId={{asset.id}}&lt;/link>
+      {%- endif %}
+
+      {%- if asset.publication_date %}
+      &lt;pubDate>{{asset.publication_date | date: "%a, %d %b %Y %H:%M:%S +0000"}}&lt;/pubDate>
+      {%- else %}
+      &lt;pubDate>{{asset.created_at | date: "%a, %d %b %Y %H:%M:%S +0000"}}&lt;/pubDate>
+      {%- endif %}
+
+      {%- if category %}
+      &lt;media:category scheme="http://www.tubemogul.com">{{category | escape}}&lt;/media:category>
+      {%- endif %}
+
+      {%- if asset.name %}
+      &lt;media:title>{{asset.name | escape}}&lt;/media:title>
+      {%- endif %}
+
+      {%- if asset.description %}
+      &lt;media:description>{{asset.description | escape}}&lt;/media:description>
+      {%- endif %}
+
+      {%- if asset.schedule.starts_at or asset.created_at %}
+      &lt;dcterms:valid>
+          {%- if asset.schedule.starts_at %}start={{asset.schedule.starts_at | date: "%Y-%m-%dT%H:%M+00:00"}};
+          {%- else %}start={{asset.created_at | date: "%Y-%m-%dT%H:%M+00:00"}};{%- endif -%}
+          {%- if asset.schedule.ends_at %}end={{asset.schedule.ends_at | date: "%Y-%m-%dT%H:%M+00:00"}};{%- endif -%}
+          scheme=W3C-DTF&lt;/dcterms:valid>
+      {%- endif %}
+
+      {%- if asset.images.thumbnail.sources.size > 0 %}
+      {%- assign thumb = asset.images.thumbnail.sources[0] %}
+      &lt;media:thumbnail url="{{thumb.src | escape}}" width="{{thumb.width}}" height="{{thumb.height}}"/>
+      {%- endif %}
+      {%- if asset.best_mp4_source %}
+      {%- assign source = asset.best_mp4_source %}
+      &lt;media:content url="{{source.src | escape}}" type="video/mp4" medium="video" expression="full"
+        {%- if source.encoding_rate %} bitrate="{{source.encoding_rate}}" {%- endif %}
+        {%- if source.duration %} duration="{{source.duration | divided_by: 1000}}" {%- endif %}
+        {%- if source.width %} width="{{source.width}}" {%- endif %}
+        {%- if source.height %} height="{{source.height}}"{%- endif %}/>
+      {%- endif %}
+      {%- if asset.original_filename %}
+      &lt;ext:originalFilename>
+        &lt;![CDATA[ {{asset.original_filename}} ]]>
+      &lt;/ext:originalFilename>
+      {%- endif %}
+    &lt;/item>
+    {%- endfor %}
+  &lt;/channel>
+&lt;/rss>

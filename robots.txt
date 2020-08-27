@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /*.html$
+Sitemap: https://apis.support.brightcove.com/sitemap.xml
+Sitemap: https://es.apis.support.brightcove.com/sitemap.xml
+Sitemap: https://fr.apis.support.brightcove.com/sitemap.xml
+Sitemap: https://de.apis.support.brightcove.com/sitemap.xml
+Sitemap: https://ja.apis.support.brightcove.com/sitemap.xml
+Sitemap: https://ko.apis.support.brightcove.com/sitemap.xml
+Sitemap: https://zh-tw.apis.support.brightcove.com/sitemap.xml

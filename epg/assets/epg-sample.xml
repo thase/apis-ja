@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tv source-info-name="Cloudplayout Schedules" source-info-url="http://www.cloudplayout.qa.brightcove.com">
+    <channel id="8732bb664063401691ef95d1a813b954">
+        <display-name>onetwo</display-name>
+        <icon src="https://bc-cloudplayout-prod.s3.amazonaws.com/default_channel_image.png"/>
+    </channel>
+    <programme channel="8732bb664063401691ef95d1a813b954" start="20200730024628" stop="20200730024638">
+        <title>ccsample10s_d10</title>
+        <length unit="seconds">10.077</length>
+        <icon src="https://cf-images.us-east-1.prod.boltdns.net/v1/jit/6063799219001/5739d822-eb06-43e3-add8-3c5af6b27821/main/1280x720/5s38ms/match/image.jpg"/>
+        <category>video</category>
+        <keyword>6176109299001:1</keyword>
+    </programme>
+    <programme channel="8732bb664063401691ef95d1a813b954" start="20200730024723" stop="20200730024733">
+        <title>frozen2</title>
+        <length unit="seconds">10.069</length>
+        <icon src="https://cf-images.us-east-1.prod.boltdns.net/v1/jit/6063799219001/84bb134d-1aba-4d73-a0e9-7ed3d5bb962f/main/1280x720/5s34ms/match/image.jpg"/>
+        <category>video</category>
+        <keyword>6162613467001:2</keyword>
+    </programme>
+</tv>

@@ -1,0 +1,2185 @@
+openapi: 3.0.0
+x-bc-implicit-head: true
+x-bc-implicit-options: true
+x-bc-upstream: 'http://backend_server'
+info:
+  title: Brightcove Player Management API Reference
+  description: |-
+    Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](/getting-started/concepts-testing-tools-brightcove-apis.html). Popular testing tools include:
+
+      - [cURL](https://general.support.brightcove.com/developer/concepts-set-curl.html)
+      - [Postman](/general/use-postman-api-requests.html) - note that the tutorial here uses the Player Management API as an example
+      - [Insomnia](/general/use-insomnia-api-requests.html) - note that the tutorial here uses the Player Management API as an example
+
+    If you haven't gone through [Step-by-Step: Player Management](/player-management/getting-started/step-step-player-management.html), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API.
+
+    If you are working with this API for the first time, read the [Player Management API Overview](/player-management/getting-started/overview-player-management-api.html).
+
+    Remember that after making any configuration changes you **MUST** re-publish your player. **Note:** Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](/oauth/getting-started/overview-oauth-api-v4.html).
+
+    For additional in-depth guides to features of the API, see the **[general documentation](/player-management/references/index.html)**.
+
+    Base URL: https://players.api.brightcove.com/v2
+  version: 2.0.0
+  x-bc-access: public
+servers:
+  - url: 'https://players.api.brightcove.com/v2'
+    variables: {}
+tags:
+  - name: Players
+    description: Operations for managing players.
+  - name: Player Configurations
+    description: Operations for managing player configurations.
+  - name: Plugin Registry
+    description: Operations for working with the player plugin registry.
+  - name: Player Embeds
+    description: Operations for managing player embeds (child players).
+  - name: Embed Configurations
+    description: Operations for managing player embed (child player) configurations.
+paths:
+  '/accounts/{account_id}/players':
+    get:
+      tags:
+        - Players
+      summary: Get a list of players
+      description: Get a list of players
+      operationId: GetPlayers
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: 'Success response'
+                type: object
+                properties:
+                  item_count:
+                    type: integer
+                    description: The number of items in the `items` array
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/player_response'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      tags:
+        - Players
+      description: >-
+        Create a player. The POST method creates a player by submitting a player
+        configuration. The properties of Brightcove Player you can manipulate
+        with player management are detailed in the **Request Body Fields**
+        section below. To create a player, a publisher must decide what
+        properties the final player will have. If no properties are given at
+        creation, a blank player will be created with only the base player skin
+        applied to the player. A user may then use an HTTP PATCH method to
+        update properties after the player has been created.
+      summary: Create a player
+      operationId: CreatePlayer
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Create a player
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/player_request_body'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The player id
+                    readOnly: true
+                  url:
+                    type: string
+                    description: The player URL
+                    readOnly: true
+                  embed_code:
+                    type: string
+                    description: The published player iframe tag
+                    readOnly: true
+                  embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      published player
+                    readOnly: true
+                  preview_url:
+                    type: string
+                    description: URL to preview player
+                    readOnly: true
+                  preview_embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      preview player
+                    readOnly: true
+                  preview_embed_code:
+                    type: string
+                    description: Preview player iframe tag
+                    readOnly: true
+                example: {
+                    "id": "69EmV4W8r",
+                    "url": "http://players.brightcove.net/57838016001/69EmV4W8r_default/index.html",
+                    "embed_code": "<iframe src='//players.brightcove.net/57838016001/69EmV4W8r_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+                    "embed_in_page": "http://players.brightcove.net/57838016001/69EmV4W8r_default/in_page.embed",
+                    "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/index.html",
+                    "preview_embed_in_page": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/in_page.embed",
+                    "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+                  }
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}':
+    get:
+      tags:
+        - Players
+      summary: Get a single player
+      description: Get a player by ID
+      operationId: GetPlayer
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/player_response'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    patch:
+      tags:
+        - Players
+      description: >-
+        Update a single player. The PATCH method can be used on a single player
+        to do a VERY limited update. The only fields you can update in this
+        manner are the `name` and `description` properties. All other player
+        configuration must be done via the **PLAYER CONFIGURATIONS** APIs,
+        detailed below.
+      summary: Update a player by ID
+      operationId: UpdatePlayer
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Update the player
+        content:
+          application/json:
+            schema:
+              description: Update the player
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The player name
+                description:
+                  type: string
+                  description: The player description
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The player id
+                    readOnly: true
+                  preview_url:
+                    type: string
+                    description: URL to preview player
+                    readOnly: true
+                  preview_embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      preview player
+                    readOnly: true
+                example: {
+                    "id": "69EmV4W8r",
+                    "url": "http://players.brightcove.net/57838016001/69EmV4W8r_default/index.html",
+                    "embed_code": "<iframe src='//players.brightcove.net/57838016001/69EmV4W8r_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+                    "embed_in_page": "http://players.brightcove.net/57838016001/69EmV4W8r_default/in_page.embed",
+                    "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/index.html",
+                    "preview_embed_in_page": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/in_page.embed",
+                    "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v2/accounts/57838016001/players/69EmV4W8r/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+                  }
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+        - Players
+      description: Delete a player and all embeds associated with it.
+      summary: Delete a player by ID
+      operationId: DeletePlayer
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: 'SUCCESS'
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message indicating player was deleted
+                    readOnly: true
+                    example: 'Successfully deleted player with the id: 69EmV4W8r'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/publish':
+    post:
+      tags:
+        - Players
+      summary: Publish a player
+      description: Publish a player for optimization and production use.
+      operationId: PublishPlayer
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The player id
+                    readOnly: true
+                  url:
+                    type: string
+                    description: The player URL
+                    readOnly: true
+                  embed_code:
+                    type: string
+                    description: The published player iframe tag
+                    readOnly: true
+                  embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      published player
+                    readOnly: true
+                example: {
+                    "id": "SC5GzFPFkL",
+                    "url": "http://players.brightcove.net/57838016001/SC5GzFPFkL_default/index.html",
+                    "embed_code": "<iframe src='//players.brightcove.net/57838016001/SC5GzFPFkL_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+                    "embed_in_page": "http://players.brightcove.net/57838016001/SC5GzFPFkL_default/in_page.embed"
+                  }
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/configuration/{branch}':
+    get:
+      tags:
+        - Player Configurations
+      summary: Get player configuration
+      description: Get a preview or published player configuration
+      operationId: GetPlayerConfiguration
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/branch'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/configuration'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/configuration':
+    patch:
+      tags:
+        - Player Configurations
+      summary: Update player configuration
+      description: Update a player configuration
+      operationId: UpdatePlayerConfiguration
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Update a player configuration
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/configuration'
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  account_id:
+                    type: string
+                    description: The account id
+                  created_at:
+                    type: string
+                    description: The player creation date-time
+                  embeds_count:
+                    type: integer
+                    description: >-
+                      The number of embeds (instances of this player), will
+                      always be at least 1
+                  id:
+                    type: string
+                    description: The player id
+                  name:
+                    type: string
+                    description: The player name
+                  description:
+                    type: string
+                    description: The player description
+                  url:
+                    type: string
+                    description: URL to player
+                  branches:
+                    type: object
+                    description: >-
+                      The branches of the player - contains objects for the
+                      preview and master (published) player
+                    properties:
+                      preview:
+                        type: object
+                        description: The preview player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+                      master:
+                        type: object
+                        description: The master (published) player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/plugins':
+    get:
+      tags:
+        - Plugin Registry
+      summary: Get all plugins
+      description: Get all plugins
+      operationId: GetAllPlugin
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - name: template_version
+          in: query
+          description: >-
+            Limit results to plugins compatible with a specific player template
+            version.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Simple plugin object
+                properties:
+                  documentation:
+                    type: string
+                    description: URL for the plugin documentation
+                  description:
+                    type: string
+                    description: Description of the plugin
+                  id:
+                    type: string
+                    description: The plugin id
+                  name:
+                    type: string
+                    description: The plugin name
+                  current_version:
+                    type: string
+                    description: The current version of the plugin
+                example: {
+                    "versions": [
+                      {
+                        "scripts": [
+                          "//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"
+                        ],
+                        "stylesheets": [
+                          "//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css"
+                        ],
+                        "version_number": "3.x",
+                        "minimum_template_version": "6.0.0"
+                      },
+                      {
+                        "minimum_template_version": "5.0.0",
+                        "version_number": "2.x",
+                        "stylesheets": [
+                          "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css"
+                        ],
+                        "scripts": [
+                          "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"
+                        ]
+                        },
+                      {
+                        "minimum_template_version": "1.14.0",
+                        "version_number": "1.x",
+                        "stylesheets": [
+                          "//players.brightcove.net/videojs-ima3/1/videojs.ima3.min.css"
+                        ],
+                        "scripts": [
+                          "//players.brightcove.net/videojs-ima3/1/videojs.ima3.min.js"
+                        ]
+                      }
+                    ],
+                    "documentation": "https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html",
+                    "description": "Google Interactive Media Ads (IMA) v3 support for video.js",
+                    "id": "@brightcove/videojs-ima3",
+                    "name": "ima3",
+                    "current_version": "3.x"
+                  }
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/plugins/{plugin_id}':
+    get:
+      tags:
+        - Plugin Registry
+      summary: Get a single plugin
+      description: Get a single plugin
+      operationId: GetPlugin
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/plugin_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plugin'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/embeds':
+    get:
+      tags:
+        - Player Embeds
+      summary: Get all the embeds for a player.
+      description: Get all the embeds (child players) for a player.
+      operationId: GetEmbeds
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        account_id:
+                          type: string
+                          description: The account id
+                        created_at:
+                          type: string
+                          description: The player creation date-time
+                        embeds_count:
+                          type: integer
+                          description: >-
+                            The number of embeds (instances of this player),
+                            will always be at least 1
+                        id:
+                          type: string
+                          description: The player id
+                        name:
+                          type: string
+                          description: The player name
+                        description:
+                          type: string
+                          description: The player description
+                        url:
+                          type: string
+                          description: URL to player
+                        branches:
+                          type: object
+                          description: >-
+                            The branches of the player - contains objects for
+                            the preview and master (published) player
+                          properties:
+                            preview:
+                              type: object
+                              description: The preview player branch
+                              properties:
+                                configuration:
+                                  $ref: '#/components/schemas/configuration'
+                                updated_at:
+                                  type: string
+                                  description: date-time of last update to preview player
+                                template_updated_at:
+                                  type: string
+                                  description: >-
+                                    date-time of last update to preview player
+                                    template
+                                preview_url:
+                                  type: string
+                                  description: URL for the player
+                            master:
+                              type: object
+                              description: The master (published) player branch
+                              properties:
+                                configuration:
+                                  $ref: '#/components/schemas/configuration'
+                                updated_at:
+                                  type: string
+                                  description: date-time of last update to preview player
+                                template_updated_at:
+                                  type: string
+                                  description: >-
+                                    date-time of last update to preview player
+                                    template
+                                preview_url:
+                                  type: string
+                                  description: URL for the player
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      tags:
+        - Player Embeds
+      description: >-
+        Create an embed (child player) for a player. Note that the initial
+        creation of the embed is automatically published. Any changes to the
+        embed thereafter will need to be published. When creating the embed, the
+        body must be an object representing configuration settings for the new
+        embed. By default when you create an embed, data in the embed overrides
+        like data that would otherwise be inherited from the common player. This
+        situation is different for fields that contain arrays. When the data
+        type of the field is an array, you can choose the inheritance behavior
+        to be overwrite, prepend or append. The fields whose data type is an
+        array, and for which you can control inheritance behavior are: scripts,
+        stylesheets, plugins, sources. You can add special field names to the
+        configuration object to control array inheritance, and change the
+        default behavior of embeds overriding common player data. If a array
+        field in an embed's configuration has a child item called array_prepend
+        or array_append the data will be correspondingly prepended or appended
+        to the common player's data for the like field. ee the Array fields
+        section of the Embeds Guide for a complete discussion.
+      summary: Create an embed
+      operationId: CreateEmbed
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Create a player
+        content:
+          application/json:
+            schema:
+              type: object
+              description: A child player object
+              properties:
+                description:
+                  type: string
+                  description: A description of the player
+                name:
+                  type: string
+                  description: The name of the player
+                configuration:
+                  $ref: '#/components/schemas/configuration'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The player id
+                    readOnly: true
+                  url:
+                    type: string
+                    description: The player URL
+                    readOnly: true
+                  embed_code:
+                    type: string
+                    description: The published player iframe tag
+                    readOnly: true
+                  embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      published player
+                    readOnly: true
+                  preview_url:
+                    type: string
+                    description: URL to preview player
+                    readOnly: true
+                  preview_embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      preview player
+                    readOnly: true
+                  preview_embed_code:
+                    type: string
+                    description: Preview player iframe tag
+                    readOnly: true
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/embeds/{embed_id}':
+    get:
+      tags:
+        - Player Embeds
+      summary: Get a specific embed for a player.
+      description: Get a specific embed (child player) for a player.
+      operationId: GetSingleEmbeds
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/embed_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  account_id:
+                    type: string
+                    description: The account id
+                  created_at:
+                    type: string
+                    description: The player creation date-time
+                  embeds_count:
+                    type: integer
+                    description: >-
+                      The number of embeds (instances of this player), will
+                      always be at least 1
+                  id:
+                    type: string
+                    description: The player id
+                  name:
+                    type: string
+                    description: The player name
+                  description:
+                    type: string
+                    description: The player description
+                  url:
+                    type: string
+                    description: URL to player
+                  branches:
+                    type: object
+                    description: >-
+                      The branches of the player - contains objects for the
+                      preview and master (published) player
+                    properties:
+                      preview:
+                        type: object
+                        description: The preview player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+                      master:
+                        type: object
+                        description: The master (published) player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+        - Player Embeds
+      description: Delete a particular embed (child player) for a player.
+      summary: Delete an embed
+      operationId: DeleteEmbed
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/embed_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Message indicating player was deleted
+                    readOnly: true
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/embeds/{embed_id}/configuration/{branch}':
+    get:
+      tags:
+        - Embed Configurations
+      summary: Get player embed configuration
+      description: >-
+        Get the configuration for an embed. You must specify the branch, either
+        `master` or `preview`.
+      operationId: GetEmbedConfiguration
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/embed_id'
+        - $ref: '#/components/parameters/branch'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/configuration'
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/players/{player_id}/embeds/{embed_id}/configuration/':
+    patch:
+      tags:
+        - Embed Configurations
+      summary: Update embed configuration
+      description: >-
+        Update the configuration for an embed. Note that you will need to
+        publish the altered embed for optimization and production use. You can
+        also use a `PUT` HTTP method instead of the `PATCH` shown here. When
+        using `PUT` it replaces all embed configuration information, so you must
+        supply all embed configuration information when using `PUT`. In
+        contrast, `PATCH` appends or modifies existing configuration
+        information. Using `PUT` is such rare use case it is not detailed in
+        this reference.
+      operationId: UpdateEmbedConfiguration
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/all
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/embed_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  preview_url:
+                    type: string
+                    description: URL to preview player
+                    readOnly: true
+                  preview_embed_in_page:
+                    type: string
+                    description: >-
+                      URL to browse to retrieve the in-page embed code for
+                      preview player
+                    readOnly: true
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/:account_id/players/:player_id/embeds/:embedID/configuration/merged':
+    get:
+      tags:
+        - Embed Configurations
+      summary: Get Configuration Combinations
+      description: |-
+        Retrieve the configuration for a parent/child combination of master and preview branches. If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand. For example:
+
+        `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`.
+
+        Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
+      operationId: GetConfigurationCombinations
+      security:
+        - BC_OAuth2:
+          - video-cloud/player/read
+      parameters:
+        - name: playerBranch
+          in: query
+          description: The (master) player branch to use.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - master
+              - preview
+        - name: embedBranch
+          in: query
+          description: The embed (child player) branch to use.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - master
+              - preview
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/player_id'
+        - $ref: '#/components/parameters/embed_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                description: '200'
+                type: object
+                properties:
+                  account_id:
+                    type: string
+                    description: The account id
+                  created_at:
+                    type: string
+                    description: The player creation date-time
+                  embeds_count:
+                    type: integer
+                    description: >-
+                      The number of embeds (instances of this player), will
+                      always be at least 1
+                  id:
+                    type: string
+                    description: The player id
+                  name:
+                    type: string
+                    description: The player name
+                  description:
+                    type: string
+                    description: The player description
+                  url:
+                    type: string
+                    description: URL to player
+                  branches:
+                    type: object
+                    description: >-
+                      The branches of the player - contains objects for the
+                      preview and master (published) player
+                    properties:
+                      preview:
+                        type: object
+                        description: The preview player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+                      master:
+                        type: object
+                        description: The master (published) player branch
+                        properties:
+                          configuration:
+                            $ref: '#/components/schemas/configuration'
+                          updated_at:
+                            type: string
+                            description: date-time of last update to preview player
+                          template_updated_at:
+                            type: string
+                            description: >-
+                              date-time of last update to preview player
+                              template
+                          preview_url:
+                            type: string
+                            description: URL for the player
+        '400':
+          description: 'BAD_REQUEST: the syntax of the API call is likely incorrect'
+        '401':
+          description: >-
+            UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token
+        '404':
+          description: >-
+            RESOURCE_NOT_FOUND: The api could not find the resource you
+            requested
+        '429':
+          description: 'RATE_LIMIT_EXCEEDED: Too many requests per second'
+        '500':
+          description: >-
+            INTERNAL_SERVER_ERROR: there was an error trying to fulfill the
+            request
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+components:
+  schemas:
+    player_request_body:
+      title: Create Player Request Body
+      type: object
+      description: Player object
+      properties:
+        name:
+          type: string
+          description: >-
+            A name for the player - avoid confusion by giving the player a name that will help convey what it should be used for
+        description:
+          type: string
+          description: >-
+            A description of the player - avoid confusion by giving the player a description that will help convey what it should be used for
+        configururation:
+          $ref: '#/components/schemas/configuration'
+      example: {
+          "name": "Test_Player",
+          "description": "A test player for autoplay and video looping",
+          "configuration": {
+            "autoplay": "any",
+            "loop": true,
+             "video_cloud": {
+                "video": "4093372393001"
+             }
+          }
+        }
+    player_response:
+      title: Create Player Request Body
+      type: object
+      description: Player object
+      properties:
+        account_id:
+          type: string
+          description: The account id
+        created_at:
+          type: string
+          description: The player creation date-time
+        embeds_count:
+          type: integer
+          description: >-
+            The number of embeds (instances of this player),
+            will always be at least 1
+        id:
+          type: string
+          description: The player id
+        last_viewed:
+          type: array
+          description: >-
+            array of objects containing information about recent views of the player
+          items:
+            type: object
+            properties:
+              count:
+                type: integer
+                description: Number of the times the player was viewed
+              date:
+                type: string
+                description: Date-time string for the date of the views
+        name:
+          type: string
+          description: The player name
+        description:
+          type: string
+          description: The player description
+        url:
+          type: string
+          description: URL to player
+        branches:
+          type: object
+          description: >-
+            The branches of the player - contains objects for
+            the preview and master (published) player
+          properties:
+            preview:
+              type: object
+              description: The preview player branch
+              properties:
+                configuration:
+                  $ref: '#/components/schemas/configuration'
+                updated_at:
+                  type: string
+                  description: date-time of last update to preview player
+                template_updated_at:
+                  type: string
+                  description: >-
+                    date-time of last update to preview player
+                    template
+                preview_url:
+                  type: string
+                  description: URL for the player
+            master:
+              type: object
+              description: The master (published) player branch
+              properties:
+                configuration:
+                  $ref: '#/components/schemas/configuration'
+                updated_at:
+                  type: string
+                  description: date-time of last update to preview player
+                template_updated_at:
+                  type: string
+                  description: >-
+                    date-time of last update to preview player
+                    template
+                preview_url:
+                  type: string
+                  description: URL for the player
+      example: {
+          "account_id": "1752604059001",
+          "id": "default",
+          "name": "Brightcove Default Player",
+          "description": "This is an instance of the Brightcove Default Player.  You can modify this or choose to create your own.",
+          "branches": {
+            "preview": {
+              "configuration": {
+                "player": {
+                  "template": {
+                    "version": "6.24.1",
+                    "name": "single-video-template"
+                  }
+                },
+                "video_cloud": {
+                  "policy_key": "BCpkADawqM1TW0eSP6AUwWK5gRTb0ZL-Wb4SYZkb5unfFMVjCU4NYtePkcJaxArVJpQS1sd4PTJ2HP4TOzY1H3Z-zOM7w9_9y0XzoSI_Xg3F0FTNkcNLPJUVlo4cVnyyPK4qdx90f_xonqux"
+                },
+                "compatibility": true
+              },
+              "updated_at": "2018-07-26T19:34:35.454Z",
+              "template_updated_at": "2018-09-19T13:53:34.437Z",
+              "preview_url": "http://preview-players.brightcove.net/v2/accounts/1752604059001/players/default/preview/embeds/default/master/index.html"
+            },
+            "master": {
+              "configuration": {
+                "compatibility": true,
+                "video_cloud": {
+                  "policy_key": "BCpkADawqM1TW0eSP6AUwWK5gRTb0ZL-Wb4SYZkb5unfFMVjCU4NYtePkcJaxArVJpQS1sd4PTJ2HP4TOzY1H3Z-zOM7w9_9y0XzoSI_Xg3F0FTNkcNLPJUVlo4cVnyyPK4qdx90f_xonqux"
+                },
+                "player": {
+                  "template": {
+                    "name": "single-video-template",
+                    "version": "6.24.1"
+                  }
+                }
+              },
+              "updated_at": "2018-07-26T19:34:35.476Z",
+              "template_updated_at": "2018-09-19T13:53:39.568Z",
+              "preview_url": "http://preview-players.brightcove.net/v2/accounts/1752604059001/players/default/master/embeds/default/master/index.html"
+            }
+          },
+          "created_at": "2018-07-26T19:34:35.456Z",
+          "embed_count": 1,
+          "url": "http://players.brightcove.net/1752604059001/default_default/index.html"
+        }
+    configuration:
+      title: Player Configuration
+      type: object
+      description: Configuration for a player
+      properties:
+        ad_config_id:
+          type: string
+          description: >-
+            A Dynamic Delivery SSAI ad configuration ID. In addition to being
+            set on the player configuration, it can be set at runtime via the
+            adConfigId query string parameter for iframe players or the
+            data-ad-config-id attribute for in-page players. Either of these
+            will override any value in the player configuration.
+          default: undefined
+        ad_failover:
+          type: boolean
+          description: >-
+            Set to true to enable ad failover behavior. This is a multi-part
+            configuration that depends on: <br> - Both IMA3 and SSAI plugins
+            must be configured on the player. <br> - An ad_config_id should be
+            available, otherwise SSAI ads are not available.
+          default: undefined
+        application_id:
+          type: string
+          description: >-
+            The application ID is used to differentiate multiple uses of a
+            single player in metrics. It is invisible to the user.
+          default: undefined
+        autoadvance:
+          type: integer
+          description: >-
+            Autoadvance setting if using playlists: 0 for no wait; a number for
+            seconds between advance; null to cancel autoadvance
+          default: not enabled
+        autoplay:
+          oneOf:
+            - type: boolean
+              description: >-
+                If `autoplay` is set to a Boolean value the browser's native
+                autoplay behavior is used.
+            - type: string
+              description: >-
+                If `autoplay` is set to one of the following three valid string
+                values, the following occurs:<br> - `play`: The player will
+                manually try to call play.<br> - `muted`: The player will
+                manually mute the player and call play.<br> - `any`: The player
+                will first try to call play. If that fails, mute the player and
+                call play.<br> If any of the above fail, the player will display
+                the "Big Play Button" as if autoplay was set to false.
+              enum:
+                - play
+                - auto
+                - any
+          description: >-
+            Indicates player should play video immediately, on platforms that
+            allow this
+          default: false
+        compatibility:
+          type: boolean
+          description: Provides compatibility with the Player 1.x.x API
+          readOnly: true
+        crossorigin:
+          type: boolean
+          description: >-
+            If true, the underlying <video> element will have
+            crossorigin="anonymous". This means that any videos or text tracks
+            pulled into the player must have CORS headers. *This feature should
+            only be used if you know that all your content (video and text
+            tracks) have CORS headers applied to them.*
+          readOnly: true
+        css:
+          type: object
+          description: Object containing CSS color overrides
+          properties:
+            controlBarColor:
+              type: string
+              description: Background color of control bar
+              default: '{set by player template}'
+            controlColor:
+              type: string
+              description: Color of buttons and text in control bar
+              default: '{set by player template}'
+            progressColor:
+              type: string
+              description: Color of progress bar
+              default: '{set by player template}'
+        debugger:
+          type: boolean
+          description: >-
+            If true, debugger shows player information in a modal window. See
+            the [Player Information Modal
+            document](https://player.support.brightcove.com/troubleshooting/brightcove-player-information-modal.html)
+            for full information.
+        errors:
+          type: boolean
+          description: Indicates if the error messages plugin should be excluded
+        flash:
+          type: object
+          description: Can be used to provide custom Flash options to **Video.js**.
+        fullscreenControl:
+          type: boolean
+          description: >-
+            Indicates whether the fullscreen control should be shown in the
+            control bar
+        hls:
+          oneOf:
+            - type: boolean
+              description: 'If `false`,  the player will not include **videojs-contrib-hls**'
+            - type: object
+              description: >-
+                If an object is passed, it will be used as options for
+                **videojs-contrib-hls**
+          description: Handling of **videojs-contrib-hls**
+          default: {}
+        language:
+          type: string
+          description: >-
+            Can be provided to set the lang attribute of the
+            <code>&lt;html&gt;</code> element.
+          default: undefined
+        languages:
+          type: array
+          description: >-
+            Languages (2 letter abbreviations) you wish your player to support,
+            from the video.js supported list
+          items:
+            type: string
+            enum:
+              - ar
+              - ba
+              - bg
+              - ca
+              - cs
+              - da
+              - de
+              - el
+              - en
+              - es
+              - fa
+              - fi
+              - fr
+              - gl
+              - he
+              - hr
+              - hu
+              - it
+              - ja
+              - ko
+              - nb
+              - nl
+              - nn
+              - pl
+              - pt-BR
+              - pt-PT
+              - ru
+              - sk
+              - sr
+              - sv
+              - tr
+              - uk
+              - vi
+              - zh-CN
+              - zh-TW
+        loop:
+          type: boolean
+          description: Indicates if the video should play over as soon as it ends
+          default: false
+        media:
+          type: object
+          description: Media information for non-Video Cloud media
+          properties:
+            sources:
+              type: array
+              description: Array of non-Video Cloud media sources
+              items:
+                type: object
+                properties:
+                  height:
+                    type: integer
+                    description: Video frame height in pixels
+                  width:
+                    type: integer
+                    description: Video frame width in pixels
+                  poster:
+                    type: object
+                    description: Information for the poster image
+                    properties:
+                      highres:
+                        type: string
+                        description: >-
+                          The file path to the poster image, relative to the
+                          root directory of the skin
+                  src:
+                    type: string
+                    description: The URL of the video file to load into the player
+                  title:
+                    type: string
+                    description: Content of the `&lt;title&gt;` element of the page
+                  type:
+                    type: string
+                    description: >-
+                      MIME type of the video, as specified in the HTML5
+                      standard, for instance `video/mp4` form MP4 or
+                      `application/x-mpegURL` for HLS
+                    enum:
+                      - video/mp4
+                      - application/x-mpegURL
+            src:
+              type: string
+              description: The URL of the video file to load into the player
+            tracks:
+              type: array
+              description: Array of text track objects for non-Video Cloud media
+              items:
+                type: object
+                properties:
+                  label:
+                    type: string
+                    description: >-
+                      Text label for the track, for instance `English` for an
+                      English language text track
+                  src:
+                    type: string
+                    description: 'URL to source of track, required in a track object'
+                  srclang:
+                    type: string
+                    description: >-
+                      2 letter code (valid BCP 47 language tag) for the language
+                      of the text track
+        muted:
+          type: boolean
+          description: >-
+            If `true`, the player will be muted when it loads
+          default: false
+        play_button:
+          type: object
+          description: >-
+            Properties are available for modification of the play button via
+            player configuration
+          properties:
+            hover:
+              type: string
+              description: '`glow` or `darken`; default is pink / progress color'
+              enum:
+                - glow
+                - darken
+            shape:
+              type: string
+              description: '`square` or `rectangle`; default is a circle'
+              enum:
+                - square
+                - rectangle
+            position:
+              type: string
+              description: '`topLeft` or `topRight`; default is center'
+              enum:
+                - topLeft
+                - topRight
+        player:
+          type: object
+          description: General settings for the player
+          properties:
+            inactive:
+              type: boolean
+              description: Whether the player is active (usable) or not
+              default: true
+            template:
+              type: object
+              description: Object containing details of the template the player is based on
+              properties:
+                name:
+                  type: string
+                  description: The template name
+                  readOnly: true
+                version:
+                  type: string
+                  description: >-
+                    The player template version - note that you only need to be
+                    concerned about this if you have opted out of auto-updates
+                    for players. See [Opting Out of Automatic Player
+                    Updates](/player-management/guides/opting-out-automatic-player-updates.html)
+                    for more information.
+                  example: 6.22.7
+                locked:
+                  type: boolean
+                  description: >-
+                    Whether the player is locked to prevent auto-updates to new
+                    template versions
+                  default: false
+        player_id:
+          type: string
+          description: >-
+            Same as the `id` - the <code>id</code> for the player is returned as
+            <code>player_id</code> when you get the configuration by putting
+            <code>config.json</code> on the end of the player preview URL (it is
+            not returned at all when you get the configuration via the Player
+            Management API, but it returned as `id` in some responses, such as
+            the response to updating or publishing a player)..
+          readOnly: true
+        player_name:
+          type: string
+          description: >-
+            Same as the `name` - the <code>name</code> you enter for the player
+            is returned as <code>player_name</code> when you get the
+            configuration by putting <code>config.json</code> on the end of the
+            player preview URL (it is returned as <code>name</code> when you get
+            the configuration via the Player Management API. But you must use
+            <code>name</code> when you create or update the player.
+          readOnly: true
+        playsinline:
+          type: boolean
+          description: >-
+            Allows inline playback (necessary for playback on some devices)
+          default: false
+        plugins:
+          type: array
+          description: >-
+            The `plugins` property specifies the order to initialize video.js
+            plugins and any customized settings to apply to them. <br> **For
+            plugins in the [plugin
+            registry](https://player.support.brightcove.com/plugins/plugin-registry.html)**: include
+            the `registry_id`and a `version` (and `options`, if any) <br> **For
+            plugins not in the plugin registry**: include the `name` (and
+            `options`, if any). The plugin must be supported by a corresponding
+            `scripts` property URL entry, and if needed a supporting
+            `stylesheets` URL.
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the plugin (for plugins not in the plugin registry
+              options:
+                type: object
+                description: An optional object containing the options for the plugin
+              registry_id:
+                type: string
+                description: The registry id for the plugin
+                example: '@brightcove/videojs-custom-endscreen'
+              version:
+                type: string
+                description: >-
+                  The version of the plugin. You can specify a major version in
+                  the form `2.x` and the plugin will automatically update when a
+                  new version is released. If you specify a minor version in the
+                  form `2.7.1`, the plugin will **not** be automatically
+                  updated.
+                example: '@brightcove/videojs-custom-endscreen'
+        preload:
+          type: string
+          description: >-
+            What data should be preloaded immediately - note that `preload` is
+            just a suggestion in the HTML5 spec, so **there may be different
+            behavior across browsers**. <br> `auto` indicates that the whole
+            video may be downloaded if possible (which improves performance for
+            viewers, but also consumes unnecessary bandwidth if the user does
+            not watch the video). <br> `metadata` indicates that video metadata
+            should be preloaded; at least a few seconds of the video itself will
+            also be preloaded. <br> `none` tells the player not to load any
+            video data or metadata until the user clicks play.
+          enum:
+            - auto
+            - metadata
+            - none
+          default: none
+        query_string_to_window:
+          type: object
+          description: >-
+            Used to control the population of the global namespace (window) from
+            query string parameters. This is useful particularly in cases of
+            embedded players, such as Google's AMP components or Facebook
+            Instant Articles. The parsing of query strings is done using the
+            Node.js querystring module. Use of this configuration object
+            requires at least one of the following sub-properties. Both can be
+            used simultaneously. **Supported for Standard (iframe) player
+            implementations only.**
+          properties:
+            target:
+              type: string
+              description: >-
+                A destination object to create on the window, which will be
+                populated with the entire parsed query string. For example, a
+                use of <code>query_string_to_window.target</code> given the
+                following in a player configuration: <br> { <br>
+                <code>"query_string_to_window": {"target":
+                "queryStringParams"}</code> <br> } <br>  and given the following
+                query string: <br>  <code>?foo=bar&nums=1&nums=2</code> <br>
+                would yield the following <code>window.queryStringParams</code>
+                global object would be available to the player and plugins: <br>
+                foo: 'bar', <br> nums: ['1', '2'] <br> }
+            globals:
+              type: array
+              description: >-
+                Description: An array of property names of the window object,
+                which will be populated from values found in the query string.
+                Any matching properties that already exist on the window object
+                or its prototype chain will not be set. For example, a use of
+                <code>query_string_to_window.globals</code> given the following
+                in a player configuration: <br> <code>{ <br>
+                "query_string_to_window": { <br> "globals": [ <br> "foo", <br>
+                "nums", <br> "self" <br> ]}}</code> <br> and give the following
+                query string: <br>
+                <code>?foo=bar&nums=1&nums=2&self=not-allowed</code> <br> would
+                yield the following window global object with the following
+                properties added: <br> <code>window.foo; // 'bar' <br>
+                window.nums; // ['1', '2'] <br> // Because `self` already exists
+                on the `window` object, it will not be set <br> // and a warning
+                will be logged to the browser console. <br> window.self; //
+                window</code>
+              items:
+                type: string
+        repeat:
+          type: boolean
+          description: >-
+            Will cause a playlist to repeat playing **IF** the player is a
+            playlist player. Set at the top level of the player configuration.
+          default: false
+        scripts:
+          type: array
+          description: >-
+            The data type is an array of strings (URLs) referencing JavaScript
+            files that are included with the player. At the time the player is
+            built, these files will be downloaded and inlined into the resulting
+            output so that they do not need to be subsequently fetched at
+            runtime. Note: unless the script is for a registered plugin, you can
+            **not** use it to interact with the player.
+          default: none
+          items:
+            type: string
+        skin:
+          type: string
+          description: >-
+            Select the Brightcove Player 1.x skin instead of the Brightcove
+            Player 5.x look. If you enable this option, you will also need to
+            make sure Brightcove Player 1.x `compatibility` property is also set
+            to `true`.
+          enum:
+            - graphite
+        stylesheets:
+          type: array
+          description: >-
+            The data type is an array of strings (URLs) referencing CSS files
+            that are included with the player. At the time the player is built,
+            these files will be downloaded and inlined into the resulting output
+            so that they do not need to be subsequently fetched at runtime.
+            Note: the stylesheets are included in the order you specify them.
+          default: none
+          items:
+            type: string
+        techOrder:
+          type: array
+          description: >-
+            By default Brightcove Player performs tech-first ordering when it
+            searches for a source/tech combination to play videos. This means
+            that if you have two sources and two techs, the player will try to
+            play each video with the first tech in the `techOrder` option
+            property before moving on to try the next playback technology. See
+            the [Guide: Playback
+            Technology](https://player.support.brightcove.com/playback/guide-playback-technology.html)
+            document for more information.
+          default:
+            - html5
+            - flash
+          items:
+            type: string
+            enum:
+              - html5
+              - flash
+        video_cloud:
+          type: object
+          description: >-
+            With this property you can create a player using a video from your
+            Video Cloud library and add a few more settings specific to Video
+            Cloud.
+          properties:
+            aspect_ratio_width:
+              type: string
+              description: >-
+                Set the width of the player for aspect ratio calculations -
+                typically used only for non-standard aspect ratios
+              default: '{automatically assigned}'
+              example: '630'
+            aspect_ratio_height:
+              type: string
+              description: >-
+                Set the height of the player for aspect ratio calculations -
+                typically used only for non-standard aspect ratios.
+              default: '{automatically assigned}'
+              example: '300'
+            base_url:
+              type: string
+              description: >-
+                Set the base URL for the player - this setting should be used
+                **only** to overcome IP restriction issues - see the [Player
+                Configuration
+                Guide](/player-management/guides/player-configuration-guide.html#iprestrictions)
+                for more information.
+              enum:
+                - 'https://edge.api.brightcove.com/playback/v1/'
+                - 'https://edge-elb.api.brightcove.com/playback/v1/'
+              default: 'https://edge.api.brightcove.com/playback/v1/'
+              example: 'https://edge-elb.api.brightcove.com/playback/v1/'
+            policy_key:
+              type: string
+              description: >-
+                A policy key for the player. Policy keys are created
+                automatically for the player, so there is no need to set it
+                yourself unless you want to provide a key that is enabled for
+                video search. You can use the Policy API or [this sample
+                app](/policy/getting-started/quick-start-policy-api.html) to
+                create a search-enabled policy key if you need one.
+              default: '{the key automatically assigned}'
+            poster_image_url:
+              type: string
+              description: Public URL for a custom poster image to be used by the player.
+              default: '{the key automatically assigned}'
+            thumbnail_image_url:
+              type: string
+              description: >-
+                Public URL for a custom thumbnail image to be used by the
+                player.
+              default: '{the key automatically assigned}'
+            video:
+              type: string
+              description: >-
+                A Video Cloud video id (you can also use the reference id with
+                the syntax `ref:reference_id`)
+              default: undefined
+    plugin:
+      title: Plugin
+      type: object
+      description: A player plugin object
+      readOnly: true
+      properties:
+        versions:
+          type: array
+          description: Array of objects describing the versions of the plugin
+          items:
+            type: object
+            properties:
+              version_number:
+                type: string
+                description: The version number
+              minimum_template_version:
+                type: string
+                description: The minimum player version required to use this plugin
+              stylesheets:
+                type: array
+                description: Array of URLs for the plugin stylesheets
+                items:
+                  type: string
+                  description: URL for a stylesheet
+              scripts:
+                type: array
+                description: Array of URLs for the plugin scripts
+                items:
+                  type: string
+                  description: URL for a script
+        documentation:
+          type: string
+          description: URL for the plugin documentation
+        description:
+          type: string
+          description: Description of the plugin
+        id:
+          type: string
+          description: The plugin id
+        name:
+          type: string
+          description: The plugin name
+        current_version:
+          type: string
+          description: The current version of the plugin
+  parameters:
+    account_id:
+      name: account_id
+      in: path
+      description: Video Cloud account ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    player_id:
+      name: player_id
+      in: path
+      description: Brightcove Player ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    branch:
+      name: branch
+      in: path
+      description: A plugin id
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        enum:
+          - master
+          - preview
+    plugin_id:
+      name: plugin_id
+      in: path
+      description: The plugin ID in the Plugin Registry.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    embed_id:
+      name: embed_id
+      in: path
+      description: The embed id.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    ContentType:
+      name: Content-Type
+      in: header
+      description: 'Content-Type: application/json'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: application/json
+    Authorization:
+      name: Authorization
+      in: header
+      description: |-
+        There are two ways to authenticate requests to the Player Management API. The first is more secure and recommended. The second (Basic) authorization method should only be used for testing, and never in a production app.
+
+        1. `Authorization: Bearer {access_token}` - (see [Getting Access
+        Tokens](/oauth/code-samples/oauth-api-sample-get-access-token.html))
+
+        2. `Authorization: Basic {username:password}` - the username and password here are those used for Video Cloud. the whole `username:password` string must be Base64 encoded (CURL does this automatically; for other languages you must encode the string manually)
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: |-
+        Brightcove OAuth API. See the [support documentation](/oauth/index.html) or [Getting Access Tokens](/oauth/code-samples/oauth-api-sample-get-access-token.html) to learn more.
+
+        For development, the Player Management API also supports the `Basic` authorization header in the form `Authorization: Basic {username:password}` - the username and password here are those used for Video Cloud. the whole `username:password` string must be Base64 encoded (CURL does this automatically; for other languages you must encode the string manually)
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/player/read: Read player data
+            video-cloud/player/all: Read/write player data

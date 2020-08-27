@@ -1,0 +1,1276 @@
+openapi: 3.0.0
+x-bc-implicit-head: true
+x-bc-implicit-options: true
+x-bc-upstream: 'http://backend_server'
+info:
+  title: Brightcove Ingest Profiles API Reference
+  description: |-
+    Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters.
+
+    For additional in-depth guides to features of the API, see the **[general documentation](/ingest-profiles/guides/index.html)**.
+
+    **Base URL**: https://ingestion.api.brightcove.com/v1
+  version: 1.0.0
+  x-bc-access: public
+servers:
+  - url: 'https://ingestion.api.brightcove.com/v1'
+    variables: {}
+tags:
+  - name: Account Configuration
+    description: Operations for managing default profiles for the account.
+  - name: Profiles
+    description: Operations creating and managing ingest profiles.
+paths:
+  '/accounts/{account_id}/configuration':
+    get:
+      tags:
+        - Account Configuration
+      summary: Get Default Profile
+      description: 'Get the default ingest profile for the account. '
+      operationId: GetDefaultProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/account/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefaultProfileResponse'
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource '
+        '404':
+          description: 'NOT_FOUND: The api could not find the resource you requested '
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      tags:
+        - Account Configuration
+      summary: Update Default Profile
+      description: 'Updates the default ingest profile for the account. '
+      operationId: UpdateDefaultProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/account/write
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Updates the default ingest profile for the account.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDefaultProfilebody'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefaultProfileResponse'
+        '400':
+          description: 'BAD_REQUEST: The JSON was not valid '
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: 'NOT_FOUND: The api could not find the resource you requested '
+        '409':
+          description: >-
+            CONFLICT: Account configuration already exists for 57838016001;
+            please delete the configuration first, or update it instead.
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      tags:
+        - Account Configuration
+      summary: Set Default Profile
+      description: 'Sets an ingest profile as the default for the account. '
+      operationId: SetDefaultProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/account/write
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: Sets an ingest profile as the default for the account.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetDefaultProfilebody'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefaultProfileResponse'
+        '400':
+          description: 'BAD_REQUEST: The JSON was not valid '
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: 'NOT_FOUND: The api could not find the resource you requested '
+        '409':
+          description: >-
+            CONFLICT: Account configuration already exists for 57838016001;
+            please delete the configuration first, or update it instead.
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/profiles':
+    get:
+      tags:
+        - Profiles
+      summary: Get All Ingest Profiles
+      description: 'Get an array of all the profiles valid for the account '
+      operationId: GetAllIngestProfiles
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/profile/read
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileList'
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: >-
+            NOT_FOUND:    Error 404 NOT_FOUND  HTTP ERROR 404 Problem accessing
+            /v1/accounts/578380001/profiles. Reason
+        '409':
+          description: >-
+            PROFILE_ERROR: profile rendition count exceeds configured rendition
+            limit
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    post:
+      tags:
+        - Profiles
+      summary: Create Ingest Profile
+      description: >-
+        Create a custom ingest profile for the account. Note that you can also
+        do this through Video Cloud Studio
+      operationId: CreateIngestProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/profile/write
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: >-
+          Create a custom ingest profile for the account. Note that you can also
+          do this through Video Cloud Studio
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestProfile'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestProfileResponse'
+        '400':
+          description: >-
+            BAD_REQUEST: Invalid JSON - message varies according to the
+            problem
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: 'NOT_FOUND:  Resource not found '
+        '409':
+          description: >-
+            CONFLICT: Could not create profile with this name and id (profile
+            name or id already exists)
+        '422':
+          description: >-
+            UNPROCESSABLE_ENTITY: required field missing - message varies
+            according to the issue
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/accounts/{account_id}/profiles/{profile_id}':
+    get:
+      tags:
+        - Profiles
+      summary: Get Ingest Profile
+      description: Get an ingest profile by its id
+      operationId: GetIngestProfile
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/profile_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestProfileResponse'
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: >-
+            NOT_FOUND:    Error 404 NOT_FOUND  HTTP ERROR 404 Problem accessing
+            /v1/accounts/578380001/profiles. Reason
+        '409':
+          description: >-
+            PROFILE_ERROR: profile rendition count exceeds configured rendition
+            limit
+      deprecated: false
+      security: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    put:
+      tags:
+        - Profiles
+      summary: Update Ingest Profile
+      description: >-
+        Update a custom ingest profile for the account. Note that you can also
+        do this through Video Cloud Studio
+      operationId: UpdateIngestProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/profile/write
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/profile_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      requestBody:
+        description: >-
+          Update a custom ingest profile for the account. Note that you can also
+          do this through Video Cloud Studio
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestProfile'
+        required: true
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestProfileResponse'
+        '400':
+          description: >-
+            BAD_REQUEST: Invalid JSON - message varies according to the
+            problem
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: 'NOT_FOUND:  Resource not found '
+        '409':
+          description: >-
+            CONFLICT: Could not create profile with this name and id (profile
+            name or id already exists)
+        '422':
+          description: >-
+            UNPROCESSABLE_ENTITY: required field missing - message varies
+            according to the issue
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+    delete:
+      tags:
+        - Profiles
+      summary: Delete Ingest Profile
+      description: >-
+        Delete a custom ingest profile for the account. Note that you can also
+        do this through Video Cloud Studio
+      operationId: DeleteIngestProfile
+      security:
+        - BC_OAuth2:
+          - video-cloud/ingest-profiles/profile/write
+      parameters:
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/profile_id'
+        - $ref: '#/components/parameters/ContentType'
+        - $ref: '#/components/parameters/Authorization'
+      responses:
+        '204':
+          description: NO CONTENT (success)
+        '400':
+          description: >-
+            BAD_REQUEST: Invalid JSON - message varies according to the
+            problem
+        '401':
+          description: 'NOT_AUTHORIZED: Credentials are required to access this resource. '
+        '404':
+          description: 'NOT_FOUND:  Resource not found '
+        '409':
+          description: >-
+            CONFLICT: Could not create profile with this name and id (profile
+            name or id already exists)
+        '422':
+          description: >-
+            UNPROCESSABLE_ENTITY: required field missing - message varies
+            according to the issue
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+components:
+  parameters:
+    ContentType:
+      name: Content-Type
+      in: header
+      description: 'Content-Type: application/json'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: application/json
+    Authorization:
+      name: Authorization
+      in: header
+      description: >-
+        Authorization: Bearer access_token (see [Getting Access
+        Tokens](/oauth/code-samples/oauth-api-sample-get-access-token.html))
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    account_id:
+      name: account_id
+      in: path
+      description: Video Cloud account ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    profile_id:
+      name: profile_id
+      in: path
+      description: The ingest profile ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  schemas:
+    DefaultProfileResponse:
+      title: Default Profile responses
+      type: object
+      properties:
+        account_id:
+          type: number
+          description: Video Cloud account id
+        id:
+          type: string
+          description: configuration id
+        default_profile_id:
+          type: string
+          description: profile name for video-on-demand
+        default_live_profile_id:
+          type: string
+          description: default profile name for live streams
+        date_created:
+          type: number
+          description: 'when the profile was created (epoch time in milliseconds)'
+        date_last_modified:
+          type: number
+          description: 'when the profile was last modified (epoch time in milliseconds)'
+        version:
+          type: number
+          description: system-managed version number
+      example: {
+          "version": 1526447969284,
+          "account_id": 57838016001,
+          "default_profile_id": "videocloud-default-v1",
+          "default_live_profile_id": "Live - Standard",
+          "date_created": 1526447969283,
+          "date_last_modified": 1526447969283,
+          "id": "55525f84e4b08e946aa03281"
+        }
+    SetDefaultProfilebody:
+      title: Set_Default_ProfileBody
+      required:
+        - account_id
+        - default_profile_id
+      type: object
+      properties:
+        account_id:
+          type: number
+          description: Video Cloud account ID
+        default_profile_id:
+          type: string
+          description: The id or name of the profile you want to set as the default
+          example: multi-platform-standard-static
+        default_live_profile_id:
+          type: string
+          description: The id or name of the live profile you want to set as the default
+        default_social_clipping_profile_id:
+          type: string
+          description: >-
+            The id or name of the profile you want to set as the default for
+            creating social clips
+    UpdateDefaultProfilebody:
+      title: Update_Default_ProfileBody
+      required:
+        - account_id
+        - id
+        - default_profile_id
+      type: object
+      properties:
+        account_id:
+          type: number
+          description: Video Cloud account ID
+        id:
+          type: string
+          description: >-
+            the configuration id (if you do not have it, make a GET request
+            to get it)
+        default_profile_id:
+          type: string
+          description: The id or name of the profile you want to set as the default
+          example: multi-platform-standard-static
+        default_live_profile_id:
+          type: string
+          description: The id or name of the live profile you want to set as the default
+        default_social_clipping_profile_id:
+          type: string
+          description: >-
+            The id or name of the profile you want to set as the default for
+            creating social clips
+    IngestProfile.digitalMaster:
+      title: IngestProfile.digital_master
+      type: object
+      properties:
+        rendition:
+          type: string
+          description: >-
+            rendition to use as master - either `passthrough` (the source
+            optimized for online delivery) or `none` if you do not want to
+            archive a master
+          default: none
+          enum:
+            - passthrough
+            - none
+        distribute:
+          type: boolean
+          description: |-
+            whether to make the master playable as a rendition by pushing it to the CDN(s)
+
+            **Note that this option applies only to legacy ingest profiles, and will be ignored for Dynamic Delivery profiles**
+          default: false
+    IngestProfile.dynamicOrigin:
+      title: IngestProfile.dynamic_origin
+      required:
+        - renditions
+      type: object
+      properties:
+        renditions:
+          type: object
+          description: >-
+            names of audio and video renditions to include (audio only for CAE
+            profiles) - see [Standard Ingest Profiles -
+            renditions](/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html#Renditions)
+            for available renditions you can choose from
+        temporary_renditions:
+          type: object
+          description: >-
+            names of video renditions for Fast Publish (only for CAE profiles) -
+            see [Standard Ingest Profiles -
+            renditions](/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html#Renditions)
+            for available renditions you can choose from
+        dynamic_profile_options:
+          $ref: '#/components/schemas/IngestProfile.dynamicOrigin.dynamicProfileOptions'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.dynamicOrigin.images'
+          description: >-
+            array of image specifications for poster and thumbnail (if omitted,
+            no images will be captured during ingestion)
+    IngestProfile.dynamicOrigin.images:
+      title: IngestProfile.dynamic_origin.images
+      type: object
+      properties:
+        label:
+          type: string
+          description: the kind of image this will be
+          enum:
+            - poster
+            - thumbnail
+        height:
+          type: integer
+          description: the height of the image in pixels
+          format: int32
+        width:
+          type: integer
+          description: the width of the image in pixels
+          format: int32
+    IngestProfile.dynamicOrigin.dynamicProfileOptions:
+      title: IngestProfile.dynamic_origin.dynamic_profile_options
+      required:
+        - min_renditions
+        - max_renditions
+      type: object
+      properties:
+        min_renditions:
+          type: integer
+          description: Minimum number of renditions to create for **CAE profiles only**
+          format: int32
+        max_renditions:
+          type: integer
+          description: Maximum number of renditions to create for **CAE profiles only**
+          format: int32
+        min_resolution:
+          $ref: '#/components/schemas/IngestProfile.dynamicOrigin.dynamicProfileOptions.minResolution'
+        max_resolution:
+          $ref: '#/components/schemas/IngestProfile.dynamicOrigin.dynamicProfileOptions.maxResolution'
+        max_bitrate:
+          type: integer
+          description: Maximum bitrate for renditions in kbps for **CAE profiles only**
+          format: int32
+        max_first_rendition_bitrate:
+          type: integer
+          description: >-
+            Maximum bitrate for lowest bitrate rendition in kbps for **CAE
+            profiles only**
+          format: int32
+        max_frame_rate:
+          type: integer
+          description: Maximum framerate for renditions in fps for **CAE profiles only**
+          format: int32
+          default: 30
+        keyframe_rate:
+          type: number
+          description: >-
+            The number of keyframes per second for renditions (So a value of 0.5
+            would result in one keyframe every two seconds; a value of 3 would
+            result in three keyframes per second) for **CAE profiles only**
+          default: 0.5
+        select_baseline_profile_configuration:
+          type: boolean
+          description: >-
+            At least one rendition used in the profile will be baseline profile
+            for **CAE profiles only**
+          default: false
+        video_codecs:
+          type: array
+          description: |-
+            An array of codecs to create renditions for. This field is **used only in multi-codec CAE profiles.**
+          items:
+            type: string
+            enum:
+              - h264
+              - hevc
+          example: [
+              "h264",
+              "hevc"
+            ]
+        video_codec_options:
+          type: object
+          description: |- 
+            Options for outputs for each of the codecs specified in `video_codecs`. The properties of `video_codec_options` are object with name of an included codec (currently `h264` or `hevc`). The allowed properties for each of these objects are
+
+            - `min_renditions` **required**
+            - `min_bitrate`
+            - `max_bitrate`
+            - `max_first_rendition_bitrate`
+            - `min_resolution`
+            - `max_resolution`
+            - `max_first_rendition_resolution`
+
+            **Note:** these settings are also used at the global level. When you are using settings both at the global and per-codec levels, the values must be compatible. For example, `max_renditions` set at the global level must be greater than or equal to the sum of `min_rendition` values set at the per-codec level
+          example: {
+              "dynamic_profile_options": {
+                "max_renditions": 6,
+                "video_codecs" : ["h264", "hevc"],
+                "video_codec_options": {
+                  "h264": {
+                    "min_renditions": 2,
+                    "max_resolution": { "width": 1280, "height": 720 }
+                  },
+                  "hevc": {
+                    "min_renditions": 2,
+                    "max_resolution": { "width": 1920, "height": 1080 }
+                  }
+                }
+              }
+            }
+        video_configurations:
+          type: array
+          description: |-
+            Array of specific rendition configurations that  is prioritized or mandated.
+
+            **Note: use of required video configurations is *not* recommended unless you must have renditions that must have specific resolutions. Use of video configurations decreases the efficiency of Context Aware Encoding.**
+          items:
+            $ref: '#/components/schemas/IngestProfile.dynamicOrigin.dynamicProfileOptions.video_configuration'
+        watermarks:
+          type: array
+          description: >-
+            Array of watermark objects specifying one or more watermarks to be added to renditions
+          items:
+            $ref: '#/components/schemas/IngestProfile.dynamicOrigin.dynamicProfileOptions.watermarks'
+    IngestProfile.dynamicOrigin.dynamicProfileOptions.video_configuration:
+      title: IngestProfile.dynamicOrigin.dynamicProfileOptions.video_configuration
+      description: |-
+        A specific rendition resolution that is prioritized or mandated.
+
+        **Note: use of required video configurations is *not* recommended unless you must have renditions that must have specific resolutions. Use of video configurations decreases the efficiency of Context Aware Encoding**
+      type: object
+      required:
+        - width
+        - height
+      properties:
+        width:
+          type: integer
+          description: Video frame width [pixels]
+        height:
+          type: integer
+          description: Video frame height [pixels]
+        required:
+          type: boolean
+          description: >-
+            Setting this to true will guarantee that a rendition will be created with these specifications
+          default: false
+      example: {
+          "width": 428,
+          "height": 240,
+          "required": true
+        }
+    IngestProfile.dynamicOrigin.dynamicProfileOptions.minResolution:
+      title: IngestProfile.dynamic_origin.dynamic_profile_options.min_resolution
+      description: Defines the minimum resolution for for **CAE profiles only** renditions
+      type: object
+      required: 
+        - height
+        - width
+      properties:
+        height:
+          type: integer
+          description: Minimum height for renditions for **CAE profiles only**
+          format: int32
+        width:
+          type: integer
+          description: Minimum width for renditions for **CAE profiles only**
+          format: int32
+    IngestProfile.dynamicOrigin.dynamicProfileOptions.maxResolution:
+      title: IngestProfile.dynamic_origin.dynamic_profile_options.max_resolution
+      type: object
+      description: Defines the maximum resolution for renditions for **CAE profiles only**
+      required:
+        - height
+        - width
+      properties:
+        height:
+          type: integer
+          description: >-
+            Maximum height for renditions for **CAE profiles only** - defaults to the source height
+          format: int32
+        width:
+          type: integer
+          description: >-
+            Maximum width for renditions for **CAE profiles only** - defaults to the source width
+          format: int32
+    IngestProfile.renditions:
+      title: IngestProfile.renditions
+      description: >-
+        Rendition definitions **Legacy Ingest Only**  - should be an empty array for Dynamic Delivery
+      required:
+        - audio_bitrate
+        - audio_codec
+        - max_aac_profile
+        - format
+        - video_bitrate
+        - video_codec
+        - height
+        - width
+      type: object
+      properties:
+        audio_bitrate:
+          type: integer
+          description: audio bitrate in kbps **Legacy Ingest only**
+          format: int32
+        audio_codec:
+          type: string
+          description: 'audio codec, e.g. `aac` **Legacy Ingest only**'
+        max_aac_profile:
+          type: string
+          description: >-
+            max aaic profile - `aac-lc` is the recommended value **Legacy Ingest only**
+          default: aac-lc
+          enum:
+            - aac-lc
+            - he-aac
+            - he-aac-v2
+        format:
+          type: string
+          description: >-
+            video format, e.g. `mp4`, `ts` (for HLS), `m4f` for video, `png` or `jpg` for images **Legacy Ingest only**
+        video_bitrate:
+          type: integer
+          description: target video bitrate in kbps **Legacy Ingest only**
+          format: int32
+        video_codec:
+          type: string
+          description: target video codec **Legacy Ingest only**
+        height:
+          type: integer
+          description: target frame height in pixels **Legacy Ingest only**
+          format: int32
+        width:
+          type: integer
+          description: target frame width in pixels **Legacy Ingest only**
+          format: int32
+        watermarks:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.renditions.watermarks'
+          description: array of watermark maps **Legacy Ingest only**
+        aspect_mode:
+          type: string
+          description: >-
+            how to handle mismatch between source and rendition aspect ratio
+            **Legacy Ingest only**
+          default: preserve
+          enum:
+            - preserve
+            - stretch
+            - crop
+            - pad
+        audio_channels:
+          type: integer
+          description: number of audio channels **Legacy Ingest only**
+          enum:
+            - 1
+            - 2
+        constant_bitrate:
+          type: boolean
+          description: whether to use constant bitrate for encoding **Legacy Ingest only**
+          default: false
+        crf:
+          type: integer
+          description: '1-51, not used by default. **Legacy Ingest only**'
+          format: int32
+          minimum: 1
+          maximum: 51
+        decoder_bitrate_cap:
+          type: integer
+          description: 'In kbps, the max bitrate fed to the decoder **Legacy Ingest only**'
+          format: int32
+        encryption_method:
+          type: string
+          description: 'encryption_method to use, e.g. `aes-128` **Legacy Ingest only**'
+        encryption_key_rotation_period:
+          type: integer
+          description: >-
+            use a different key for each set of segments, rotating to a new key
+            after this many segments **Legacy Ingest only**
+          format: int32
+          default: 10
+        fixed_keyframe_interval:
+          type: integer
+          description: >-
+            Forces a keyframe every X frames, but still allows additional
+            keyframes - NOTE overrides `keyframe_interval` **Legacy Ingest
+            only**
+          format: int32
+        forced_keyframe_rate:
+          type: number
+          description: >-
+            Force the keyframe rate, h264 only, ignored if
+            `forced_keyframe_interval` is used **Legacy Ingest only**
+        frame_rate:
+          type: integer
+          description: >-
+            frame rate in frames per second **Legacy Ingest only** - default is
+            the source framerate
+          format: int32
+        h264_bframes:
+          type: integer
+          description: number of bframes for h.264 **Legacy Ingest only**
+          format: int32
+          default: 0
+        h264_level:
+          type: integer
+          description: h.264 profile level **Legacy Ingest only**
+        h264_profile:
+          type: string
+          description: h.264 profile **Legacy Ingest only**
+          default: baseline
+          enum:
+            - baseline
+            - main
+            - high
+        h264_reference_frames:
+          type: integer
+          description: number of h.264 reference frames to use **Legacy Ingest only**
+          format: int32
+          default: 3
+        hls_optimized_ts:
+          type: boolean
+          description: Time segments optimized for HLS **Legacy Ingest only**
+        keyframe_interval:
+          type: integer
+          description: >-
+            Maximum number of frames between keyframes (default is 250, and
+            overrides keyframe_rate) **Legacy Ingest only**
+          format: int32
+        keyframe_rate:
+          type: integer
+          description: Maximum number of keyframes per second **Legacy Ingest only**
+          format: int32
+        label:
+          type: string
+          description: >-
+            Image type for image renditions; required for image renditions
+            **Legacy Ingest only**
+          enum:
+            - poster
+            - thumbnail
+        live_stream:
+          type: boolean
+          description: Whether this will be for live streaming video **Legacy Ingest only**
+          default: false
+        live_sliding_window_duration:
+          type: integer
+          description: >-
+            Duration of stream to keep available for LiveDVR delivery (in
+            seconds) **Legacy Ingest only**
+          default: 300
+          minimum: 300
+          maximum: 1800
+        max_video_bitrate:
+          type: integer
+          description: Maximum video bitrate (h.264 only) **Legacy Ingest only**
+          format: int32
+        max_frame_rate:
+          type: integer
+          description: >-
+            Limits the frame rate rather than sets it, use as an alternative to
+            frame rate **Legacy Ingest only**
+          format: int32
+        media_type:
+          type: string
+          description: the media type of the rendition **Legacy Ingest only**
+          enum:
+            - video
+            - audio
+            - image
+        one_pass:
+          type: boolean
+          description: force one-pass encoding **Legacy Ingest only**
+          default: false
+        reference_id:
+          type: string
+          description: >-
+            A reference id for the rendition that is unique within the account -
+            required for DRM packaging **Legacy Ingest only**
+        segment_seconds:
+          type: number
+          description: >-
+            number of seconds of content to include in segments (the default for
+            HLS is 10; for DASH: 2) **Legacy Ingest only**
+        skip:
+          $ref: '#/components/schemas/IngestProfile.renditions.skip'
+        skip_video:
+          type: boolean
+          description: >-
+            Set to true to skip video encoding for audio-only renditions
+            **Legacy Ingest only**
+          default: false
+        speed:
+          type: integer
+          description: >-
+            a target transcoding speed. Slower transcoding allows for more
+            advanced file compression, while faster transcoding is possible by
+            skipping some advanced compression features **Legacy Ingest only**
+          format: int32
+          default: 3
+          minimum: 1
+          maximum: 5
+        streaming_delivery_format:
+          type: string
+          description: >-
+            Sets the format/protocol for an output that will be delivered using
+            a specific streaming configuration, including necessary manifests,
+            directory **Legacy Ingest only**
+        streaming_delivery_profile:
+          type: string
+          description: >-
+            Sets the profile of the streaming delivery format, ensuring options
+            are selected for compatibility with the profile **Legacy Ingest
+            only**
+          default: live
+        type:
+          type: string
+          description: >-
+            transmuxing type for HLS; typical value is `segmented` **Legacy
+            Ingest only**
+        upscale:
+          type: boolean
+          description: >-
+            whether to upsize the frames if the source frame size is smaller
+            than the target **Legacy Ingest only**
+    IngestProfile.renditions.skip:
+      title: IngestProfiles.renditions.skip
+      description: >-
+        A set of conditions for skipping creation of this rendition see
+        Conditional Output **Legacy Ingest only**
+      type: object
+      properties:
+        min_audio_bitrate:
+          type: integer
+          description: >-
+            the minimum audio bitrate that the source must have (kbps) **Legacy
+            Ingest only**
+          format: int32
+        max_audio_bitrate:
+          type: integer
+          description: >-
+            the maximum audio bitrate that the source must have (kbps) **Legacy
+            Ingest only**
+          format: int32
+        min_video_bitrate:
+          type: integer
+          description: >-
+            the minimum video bitrate that the source must have (kbps) **Legacy
+            Ingest only**
+          format: int32
+        max_video_bitrate:
+          type: integer
+          description: >-
+            the maximum video bitrate that the source must have (kbps) **Legacy
+            Ingest only**
+          format: int32
+        require_audio:
+          type: boolean
+          description: >-
+            if true the source must include an audio track **Legacy Ingest
+            only**
+        require_video:
+          type: boolean
+          description: if true the source must include a video track **Legacy Ingest only**
+        min_size:
+          type: string
+          description: >-
+            the source must be at least this resolution - string of the form
+            &quot;widthxheight&quot; (e.g. &quot;400x225&quot;) **Legacy Ingest
+            only**
+        max_size:
+          type: string
+          description: >-
+            the source must be at most this resolution - string of the form
+            &quot;widthxheight&quot; (e.g. &quot;1920x1080&quot;) **Legacy
+            Ingest only**
+    IngestProfile.renditions.watermarks:
+      title: IngestProfile.renditions.watermarks
+      required:
+        - url
+        - width
+        - height
+        - x
+        - 'y'
+      type: object
+      properties:
+        url:
+          type: string
+          description: URL for the watermark image **Legacy Ingest only**
+        width:
+          type: string
+          description: >-
+            width in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted **Legacy Ingest only**
+        height:
+          type: string
+          description: >-
+            height in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted **Legacy Ingest only**
+        x:
+          type: string
+          description: >-
+            distance from left edge to center of image as pixels or percent of frame width; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the right edge) - decimal values like 10.5% are not permitted **Legacy Ingest only**
+        'y':
+          type: string
+          description: >-
+            distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge) - decimal values like 10.5% are not permitted **Legacy Ingest only**
+    IngestProfile.dynamicOrigin.dynamicProfileOptions.watermarks:
+      title: IngestProfile.renditions.watermarks
+      description: >-
+        One or more watermark images for Context Aware Encoding profiles
+      required:
+        - url
+        - width
+        - x
+        - 'y'
+      type: object
+      properties:
+        url:
+          type: string
+          description: URL for the watermark image
+        width:
+          type: string
+          description: >-
+            width in pixels or percent of frame width; e.g. 20 or 10%
+        height:
+          type: string
+          description: >-
+            height in pixels or percent of frame width; e.g. 20 or 10%
+        x:
+          type: string
+          description: >-
+            distance from left edge to center of image as pixels or percent of frame width; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the right edge)
+        'y':
+          type: string
+          description: >-
+            distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge)
+    IngestProfile.packages:
+      title: IngestProfile.packages
+      required:
+        - drm
+        - package_type
+        - renditions
+      type: object
+      properties:
+        drm:
+          type: array
+          items:
+            type: string
+          description: >-
+            for MPEG-DASH, array of DRM types to apply, e.g. [&quot;widevine&quot;, &quot;playready&quot;] **Legacy Ingest only**
+        package_type:
+          type: string
+          description: >-
+            for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine` **Legacy Ingest only**
+        renditions:
+          type: object
+          description: >-
+            for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, renditions is set equal to an array of rendition `reference_id`&#39;s **Legacy Ingest only**
+    ProfileList:
+      title: Profile List
+      description: Array of ingest profiles
+      type: array
+      items:
+        $ref: '#/components/schemas/IngestProfileResponse'
+    IngestProfile:
+      title: Ingest Profile
+      required:
+        - name
+        - account_id
+      type: object
+      properties:
+        id:
+          description: System id for the profile
+          type: string
+          readOnly: true
+        version:
+          type: number
+          description: system-managed version number
+          readOnly: true
+        name:
+          type: string
+          description: profile name (must be unique within the account)
+        account_id:
+          type: string
+          description: Video Cloud account ID.
+          readOnly: true
+        dynamic_origin:
+          $ref: '#/components/schemas/IngestProfile.dynamicOrigin'
+        renditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.renditions'
+          description: >-
+            array of rendition maps **Legacy Ingest only** - should be an empty array for Dynamic Delivery
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.packages'
+          description: >-
+            array of package maps for DRM (see Content Security) **Legacy Ingest
+            only** - should be an empty array for Dynamic Delivery
+        description:
+          type: string
+          description: description of the profile
+        digital_master:
+          $ref: '#/components/schemas/IngestProfile.digitalMaster'
+      example: {
+          "name": "multi-platform-standard-static",
+          "display_name": "Multiplatform Standard",
+          "description": "Deliver a wide range of content types across a variety of platforms on mobile and desktop.",
+          "brightcove_standard": false,
+          "digital_master": {
+            "rendition": "passthrough",
+            "distribute": false
+          },
+          "renditions": [
+          ],
+          "packages": [
+          ],
+          "dynamic_origin": {
+            "renditions": [
+              "default/audio64",
+              "default/audio128",
+              "default/video700",
+              "default/video2000",
+              "default/video1700",
+              "default/video1200",
+              "default/audio96",
+              "default/video450",
+              "default/video900"
+            ],
+            "images": [
+              {
+                "label": "poster",
+                "height": 720,
+                "width": 1280
+              },
+              {
+                "label": "thumbnail",
+                "height": 90,
+                "width": 160
+              }
+            ]
+          }
+        }
+    IngestProfileResponse:
+      title: Ingest Profile
+      required:
+        - name
+        - account_id
+      type: object
+      properties:
+        id:
+          description: System id for the profile
+          type: string
+          readOnly: true
+        version:
+          type: number
+          description: system-managed version number
+          readOnly: true
+        name:
+          type: string
+          description: profile name (must be unique within the account)
+        account_id:
+          type: string
+          description: Video Cloud account ID.
+          readOnly: true
+        dynamic_origin:
+          $ref: '#/components/schemas/IngestProfile.dynamicOrigin'
+        renditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.renditions'
+          description: >-
+            array of rendition maps **Legacy Ingest only** - should be an empty array for Dynamic Delivery
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestProfile.packages'
+          description: >-
+            array of package maps for DRM (see Content Security) **Legacy Ingest
+            only** - should be an empty array for Dynamic Delivery
+        description:
+          type: string
+          description: description of the profile
+        digital_master:
+          $ref: '#/components/schemas/IngestProfile.digitalMaster'
+      example: {
+          "version": 2,
+          "name": "multi-platform-standard-static",
+          "display_name": "Multiplatform Standard",
+          "description": "Deliver a wide range of content types across a variety of platforms on mobile and desktop.",
+          "account_id": -1,
+          "brightcove_standard": true,
+          "date_created": 1495114240899,
+          "date_last_modified": 1503002227773,
+          "digital_master": {
+            "rendition": "passthrough",
+            "distribute": false
+          },
+          "renditions": [],
+          "packages": [],
+          "dynamic_origin": {
+            "renditions": [
+              "default/audio64",
+              "default/audio128",
+              "default/video700",
+              "default/video2000",
+              "default/video1700",
+              "default/video1200",
+              "default/audio96",
+              "default/video450",
+              "default/video900"
+            ],
+            "images": [
+              {
+                "label": "poster",
+                "height": 720,
+                "width": 1280
+              },
+              {
+                "label": "thumbnail",
+                "height": 90,
+                "width": 160
+              }
+            ]
+          },
+          "id": "6198c17bbbdc42a4bb60a41f"
+        }
+  securitySchemes:
+    BC_OAuth2:
+      type: oauth2
+      description: >-
+        Brightcove OAuth API. See the [support documentation](/oauth/index.html) or [Getting Access Tokens](/oauth/code-samples/oauth-api-sample-get-access-token.html) to learn more
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://oauth.brightcove.com/v4/access_token'
+          scopes:
+            video-cloud/ingest-profiles/profile/read: Read profiles
+            video-cloud/ingest-profiles/profile/write: Write profiles
+            video-cloud/ingest-profiles/account/read: Read account settings
+            video-cloud/ingest-profiles/account/write: Write account settings
