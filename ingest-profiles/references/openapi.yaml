@@ -600,6 +600,48 @@ components:
             At least one rendition used in the profile will be baseline profile
             for **CAE profiles only**
           default: false
+        video_codecs:
+          type: array
+          description: |-
+            An array of codecs to create renditions for. This field is **used only in multi-codec CAE profiles.**
+          items:
+            type: string
+            enum:
+              - h264
+              - hevc
+          example: [
+              "h264",
+              "hevc"
+            ]
+        video_codec_options:
+          type: object
+          description: |- 
+            Options for outputs for each of the codecs specified in `video_codecs`. The properties of `video_codec_options` are object with name of an included codec (currently `h264` or `hevc`). The allowed properties for each of these objects are
+
+            - `min_renditions` **required**
+            - `max_bitrate`
+            - `max_first_rendition_bitrate`
+            - `min_resolution`
+            - `max_resolution`
+            - `max_first_rendition_resolution`
+
+            **Note:** these settings are also used at the global level. When you are using settings both at the global and per-codec levels, the values must be compatible. For example, `max_renditions` set at the global level must be greater than or equal to the sum of `min_rendition` values set at the per-codec level
+          example: {
+              "dynamic_profile_options": {
+                "max_renditions": 6,
+                "video_codecs" : ["h264", "hevc"],
+                "video_codec_options": {
+                  "h264": {
+                    "min_renditions": 2,
+                    "max_resolution": { "width": 1280, "height": 720 }
+                  },
+                  "hevc": {
+                    "min_renditions": 2,
+                    "max_resolution": { "width": 1920, "height": 1080 }
+                  }
+                }
+              }
+            }
         video_configurations:
           type: array
           description: |-

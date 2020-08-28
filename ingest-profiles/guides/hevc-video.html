@@ -1312,8 +1312,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
     <h3>Advantages of HEVC</h3>
-    <p>High Efficiency Video Coding (HEVC), also known as H.265, is a video compression standard, designed as a successor to the widely used Advanced Video Coding (AVC/H.264). In comparison to AVC, HEVC offers from 25% to 50% better data compression at the same level of video quality, or substantially improved video quality at the same bit rate.</p>
-    <p>The benefits of this improved compression include bandwidth usage, enabling higher video quality at a lower bitrate, and reduced time to first frame (TTFF), all leading to increased end viewer satisfaction.</p>
+    <p>High Efficiency Video Coding (<a href="https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding">HEVC</a>), also known as H.265, is a video compression standard, designed as a successor to the widely used <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding">Advanced Video Coding (AVC/H.264)</a>. In comparison to AVC, HEVC offers from 25% to 50% better data compression at the same level of video quality, or substantially improved video quality at the same bit rate.</p>
+    <p>The benefits of this improved compression include reduced bandwidth usage, enabling higher video quality at a lower bitrate, and reduced time to first frame (TTFF), all leading to increased end viewer satisfaction.</p>
     <h3>Disadvantages</h3>
     <p>There is only one disadvantage: because it is a new technology, HEVC video is not yet widely supported by clients (meaning device + OS + browser/app). In addition, some clients are capable of switching between HEVC and AVC segments during playback, while others are not.</p>
     <h3>Availability</h3>
@@ -1321,22 +1321,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="Brightcove_HEVC_solution">Brightcove's HEVC solution</h2>
-    <p>To provide you with benefits of HEVC while still allowing viewers using technology that does not support it, Brightcove has developed a hybrid solution that both supports older, non-HEVC clients, and also optimizes bandwidth use. There are multiple parts to this solution:</p>
+    <p>To provide you with benefits of HEVC while still allowing viewers using technology that does not support it, Brightcove has developed a comprehensive solution that both supports older, non-HEVC clients, and also optimizes bandwidth use. There are multiple parts to this solution:</p>
     <ul>
-      <li>Creation of both HEVC and AVC encoded segments during transcoding (with optional creation of MP4 for progressive download in addition)</li>
-      <li>Generation of manifests that contain both HEVC and AVC links for all renditions:
+      <li>Creation of both HEVC and AVC encoded renditions during transcoding (with optional creation of MP4 for progressive download in addition)</li>
+      <li>Generation of manifests that contain references to both HEVC and AVC renditions:
         <ul>
           <li>HLS: mixed variant streams (ordered by bitrate)</li>
           <li>DASH: separate adaptation sets for HEVC and H.264, along with supplemental properties declaring them as switchable</li>
         </ul>
       </li>
       <li>Filtering logic based on the viewer client type:
-        <aside class="bcls-aside bcls-aside--information language-editable">Note that filtering requires Dynamic Delivery Rules (details will be announced in a later release).</aside>
         <ul>
           <li>removes HEVC streams from manifests if requesting device is a legacy, non-HEVC capable device</li>
           <li>removes H.264 streams from manifests heading to HEVC capable non-switchable devices</li>
-          <li>leaves both HEVC and H.264 streams if devices are capable of decoding both codecs and switching between them</li>
+          <li>leaves optimal subset of both HEVC and H.264 streams if devices are capable of decoding both codecs and switching between them</li>
         </ul>
+        <aside class="bcls-aside bcls-aside--information language-editable">Note that filtering requires a Dynamic Delivery Rule - if you would like to have this rule enabled for your account, contact your Account Manager.</aside>
       </li>
     </ul>
   </section>
@@ -1416,11 +1416,100 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Note that if, for the fast publish option or some other reason, you need to create a custom HEVC profile, you will have to use either the <a href="https://studio.support.brightcove.com/admin/creating-ingest-profiles-context-aware-encoding.html#using_the_advanced_editor">Advanced Editor</a> in the Studio Admin pages, or the <a href="https://apis.support.brightcove.com/ingest-profiles/">Ingest Profiles API</a>. HEVC renditions will not show up in the Simple Editor in Studio. You will find the available Dynamic Delivery renditions <a href="#appendix_renditions">below</a>.</p>
   </section>
   <section class="bcls-section">
+    <h2 id="custom_cae_profiles">Custom CAE profiles</h2>
+    <p>The standard CAE ingest profiles do no include mixed HEVC/H.264 renditions. However, you can create a custom theme that does so. Currently, you must use the Ingest Profiles API to create these custom CAE profiles for HEVC.</p>
+    <p>The fields (under <code>dynamic_origin</code> &gt; <code>dynamic_profile_options</code>) that are essential are:</p>
+    <dl>
+      <dt><code>video_codecs</code></dt>
+      <dd>An array of codecs to create renditions for. The only codec values currently supported are <code>h264</code> and <code>hevc</code></dd>
+      <dt><code>video_codec_options</code></dt>
+      <dd>
+        Options for outputs for each of the codecs specified in video_codecs. The properties of <code>video_codec_options</code> are objects with name of an included codec (currently h264 or hevc). The allowed properties for each of these objects are
+        <ul>
+          <li><code>min_renditions</code> <em>required</em></li>
+          <li><code>max_bitrate</code></li>
+          <li><code>max_first_rendition_bitrate</code></li>
+          <li><code>min_resolution</code></li>
+          <li><code>max_resolution</code></li>
+          <li><code>max_first_rendition_resolution</code></li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--information language-editable">Notes: 
+          <ol>
+            <li>These settings may also be specified at the global level. When you are using settings both at the global and per-codec levels, the values must be compatible. For example, <code>max_renditions</code> set at the global level must be greater than or equal to the sum of <code>min_renditions</code> values set at the per-codec level.</li>
+            <li>Both <code>max_renditions</code> and <code>min_renditions</code> are required in the global settings.</li>
+            <li>When using multiple codecs, certain additional rules should also apply to <code>video_configurations</code> array, if such array is explicitly defined. Specifically, each entry in this array should also include video_codec element, describing which codec is intended to be used. Additionally, resolutions specified by such configurations should be consistent with resolution limits specified globally and for each specific codec. The number of video configurations marked as “required” should also be consistent limits for the number of renditions specified globally and for each specific codec.</li>
+          </ol>
+        </aside>
+      </dd>
+    </dl>
+    <h3>Sample</h3>
+    <p>Below is a sample CAE profile with mixed renditions:</p>
+<pre class="line-numbers"><code class="language-json">{
+  "name": "multi-platform-extended-dynamic-hevc-mixed-codec",
+  "display_name": "Multiplatform Extended HEVC (CAE) mixed-codec",
+  "description": "Deliver high quality content for a wide range content types and screen sizes including mobile, desktop and large screens.",
+  "account_id": 1486906377,
+  "digital_master": {
+    "rendition": "passthrough",
+    "distribute": false
+  },
+  "renditions": [],
+  "packages": [],
+  "dynamic_origin": {
+    "renditions": [
+      "default/audio64",
+      "default/audio128",
+    ],
+    "images": [
+      {
+        "label": "thumbnail",
+        "height": 90,
+        "width": 160
+      },
+      {
+        "label": "poster",
+        "height": 720,
+        "width": 1280
+      }
+    ],
+    "dynamic_profile_options": {
+      "max_renditions": 10,
+      "min_renditions": 2,
+      "max_bitrate": 12000,
+      "max_first_rendition_bitrate": 1000,
+      "max_first_rendition_resolution": {
+        "width": 1280,
+        "height": 720
+      },
+      "video_codecs": [
+        "h264",
+        "hevc"
+      ],
+      "video_codec_options": {
+        "h264": {
+          "min_renditions": 2,
+          "max_resolution": {
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "hevc": {
+          "min_renditions": 2,
+          "max_resolution": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
+  </section>
+  <section class="bcls-section">
       <h2 id="limitations">Limitations</h2>
         <p>Below are current limitations on HEVC support - note that these will change as we make enhancements.</p>
-        <ul>
-          <li>CAE ingest profiles currently include HEVC renditions - these should only be used in cases where you know that you will be delivering videos only to HEVC-capable devices. Future releases will add profiles that include both HEVC and AVC renditions.</li>
-          <li>No support for apps built using the Android SDK in the initial release. This will be added in a future release.</li>
+        <ol>
+          <li>Standard CAE ingest profiles currently include HEVC renditions - these should only be used in cases where you know that you will be delivering videos only to HEVC-capable devices. Custom profiles can be created to include both HEVC and H.264 renditions. See the <a href="#custom_cae_profiles">Custom CAE profiles</a> section above.</li>
           <li>
             Only AAC audio is supported, no support for EAC3 or AC3 audio codec with HEVC.
           </li>
@@ -1430,8 +1519,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <li>
             Media UI currently displays all the renditions and does not display the codec info next to each rendition.
           </li>
-          <li>The billing UI in Studio will not show HEVC transcoding usage. However, the backend system is tracking HEVC GB separately and will be sending the invoice as part of the normal process. The billing UI will be updated in a later release.</li>
-        </ul>
+          <!-- <li>The billing UI in Studio will not show HEVC transcoding usage. However, the backend system is tracking HEVC GB separately and will be sending the invoice as part of the normal process. The billing UI will be updated in a later release.</li> -->
+        </ol>
         </section>
   <section class="bcls-section">
     <h2 id="appendix_profiles">Appendix 1: HEVC ingest profiles</h2>
@@ -1467,9 +1556,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       "dynamic_origin": {
         "renditions": [
           "default/audio64",
-          "default/audio128",
-          "default/audio96",
-          "default/audio192"
+          "default/audio128"
         ],
         "images": [
           {
@@ -1533,9 +1620,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         "renditions": [
           "default/audio64",
           "default/audio128",
-          "default/progressive2000",
-          "default/audio96",
-          "default/audio192"
+          "default/progressive2000"
         ],
         "images": [
           {
@@ -1561,8 +1646,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             "height": 1080
           },
           "max_frame_rate": 30,
-          "max_bitrate": 4200,
-          "max_first_rendition_bitrate": 250,
+          "max_bitrate": 3200,
+          "max_first_rendition_bitrate": 200,
           "video_codec": "hevc",
           "fixed_frame_rate": true,
           "bitrate_cap_to_bitrate_ratio": 1.5,
@@ -1598,24 +1683,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       ],
       "dynamic_origin": {
         "renditions": [
-          "default/video1600hevc",
-          "default/audio128",
-          "default/video550hevc",
-          "default/video1000hevc",
-          "default/video300hevc",
+          "default/video450",
           "default/video700",
-          "default/video3500",
+          "default/video900",
+          "default/video1200",
           "default/video2000",
           "default/video2500",
-          "default/video2850hevc",
-          "default/video450",
-          "default/video900",
-          "default/audio64",
+          "default/video3500",
           "default/video3800",
-          "default/audio96",
-          "default/video1200",
+          "default/video300hevc",
+          "default/video550hevc",
+          "default/video1000hevc",
           "default/video1300hevc",
-          "default/audio192"
+          "default/video1600hevc",
+          "default/video2850hevc",
+          "default/audio64",
+          "default/audio128"
         ],
         "images": [
           {
@@ -1655,25 +1738,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       ],
       "dynamic_origin": {
         "renditions": [
-          "default/video1600hevc",
-          "default/audio128",
-          "default/video550hevc",
-          "default/video1000hevc",
-          "default/video300hevc",
+          "default/video450",
           "default/video700",
-          "default/progressive2000",
-          "default/video3500",
+          "default/video900",
+          "default/video1200",
           "default/video2000",
           "default/video2500",
-          "default/video2850hevc",
-          "default/video450",
-          "default/video900",
-          "default/audio64",
+          "default/video3500",
           "default/video3800",
-          "default/audio96",
-          "default/video1200",
+          "default/video300hevc",
+          "default/video550hevc",
+          "default/video1000hevc",
           "default/video1300hevc",
-          "default/audio192"
+          "default/video1600hevc",
+          "default/video2850hevc",
+          "default/progressive2000",
+          "default/audio64",
+          "default/audio128"
         ],
         "images": [
           {
@@ -1713,17 +1794,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       ],
       "dynamic_origin": {
         "renditions": [
-          "default/audio64",
-          "default/video1600hevc",
-          "default/audio128",
+          "default/video300hevc",
           "default/video550hevc",
           "default/video1000hevc",
-          "default/video300hevc",
-          "default/progressive2000",
-          "default/video2850hevc",
-          "default/audio96",
           "default/video1300hevc",
-          "default/audio192"
+          "default/video1600hevc",
+          "default/video2850hevc",
+          "default/progressive2000",
+          "default/audio64",
+          "default/audio128"
         ],
         "images": [
           {
@@ -1919,6 +1998,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }</code></pre>
   </section>
 </article>
+
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1934,7 +2014,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 12 Jun 2020
+  Page last updated on 26 Aug 2020
 </div>
 
 <footer class="bcls-footer" role="contentinfo">
