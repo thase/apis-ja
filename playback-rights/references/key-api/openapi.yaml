@@ -5,7 +5,7 @@ x-bc-upstream: 'http://backend_server'
 info:
   title: Key API Reference
   description: >-
-    Reference for the Brightcove Key API, used to manage your public keys when using Brightcove's [Playback Authorization Service](https://docs.brightcove.com/en/staging/pas/overview-playback-authorization-service.html). This API allows you to register, list and delete public keys.
+    Reference for the Brightcove Key API, used to manage your public keys when using Brightcove's [Playback Authorization Service](/playback-authorization/getting-started/overview-playback-authorization-service.html). This API allows you to register, list and delete public keys.
 
      **Base URL**: https://playback-auth.api.brightcove.com
   version: 1.0.0

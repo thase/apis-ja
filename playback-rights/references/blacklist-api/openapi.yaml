@@ -5,7 +5,7 @@ x-bc-upstream: 'http://backend_server'
 info:
   title: Blacklist API Reference
   description: >-
-    Reference for the Brightcove Blacklist API. This API allows you to blacklist tokens so that they will not be considered valid for license requests when using Brightcove's [Playback Authorization Service](https://docs.brightcove.com/en/staging/pas/overview-playback-authorization-service.html).
+    Reference for the Brightcove Blacklist API. This API allows you to blacklist tokens so that they will not be considered valid for license requests when using Brightcove's [Playback Authorization Service](/playback-authorization/getting-started/overview-playback-authorization-service.html).
 
      **Base URL**: https://playback-auth.api.brightcove.com
   version: 1.0.0

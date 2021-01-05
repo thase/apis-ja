@@ -5,7 +5,7 @@ x-bc-upstream: 'http://backend_server'
 info:
   title: Delivery Rules API Reference
   description: >-
-    Reference for the Brightcove Delivery Rules API. This API allows you to fetch Delivery Rules and manage Conditions and Actions. These rules are outlined in the [Dynamic Delivery Rules](https://docs.brightcove.com/en/staging/rules/overview-delivery-rules.html) document.
+    Reference for the Brightcove Delivery Rules API. This API allows you to fetch Delivery Rules and manage Conditions and Actions. These rules are outlined in the [Dynamic Delivery Rules](/delivery-rules/overview-delivery-rules.html) document.
 
      **Base URL**: https://delivery-rules.api.brightcove.com
   version: 1.0.0

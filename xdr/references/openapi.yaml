@@ -171,7 +171,7 @@ components:
     BC_OAuth2:
       type: oauth2
       description: >-
-        Brightcove OAuth API. To learn more, see the [OAuth Overview](https://apis.support.brightcove.com/oauth/) or the [Getting Access Tokens](https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html) document.
+        Brightcove OAuth API. To learn more, see the [OAuth Overview](https://apis.support.brightcove.com/oauth/) or the [Getting Access Tokens](https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html) document. **Note that permissions for the XDR API are not yet available in the Studio Admin page for API Authentication. Until they are you can use [this Brightcove Learning Services app](/oauth/code-samples/oauth-api-sample-create-client-credentials.html) to generate client credentials.**
       flows:
         clientCredentials:
           tokenUrl: 'https://oauth.brightcove.com/v4/access_token'

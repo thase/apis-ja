@@ -5,7 +5,7 @@ x-bc-upstream: 'http://backend_server'
 info:
   title: Audit API Reference
   description: >-
-    Reference for the Brightcove Audit API. This API allows you to generate a daily access report for your account's [Playback Authorization Service](https://docs.brightcove.com/en/staging/pas/overview-playback-authorization-service.html) usage with session details.
+    Reference for the Brightcove Audit API. This API allows you to generate a daily access report for your account's [Playback Authorization Service](/playback-authorization/getting-started/overview-playback-authorization-service.html) usage with session details.
 
      **Base URL**: https://playback-auth.api.brightcove.com
   version: 1.0.0

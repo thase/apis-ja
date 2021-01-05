@@ -674,7 +674,7 @@ components:
         oneOf:
           - type: string
           - type: integer
-        default: '(30 days before now)'
+        default: '32 days from `to` value'
         example: 2018-01-01
     to:
       name: to
@@ -953,7 +953,7 @@ components:
           type: array
           description: >-
             An array of objects containing metrics for the points in the time-series
-          items: 
+          items:
             type: object
             description: >-
               An object containing the `timestamp` value (in the units specified in the `bucket_duration` parameter) and values of the metrics (specified in the `metrics` parameter) at the timestamp
@@ -979,7 +979,7 @@ components:
                       "video_seconds_viewed": 136005,
                       "alive_ss_ad_start": 1024
                     }
-                  }      
+                  }
                 ]
       }
       properties:

@@ -104,6 +104,12 @@ paths:
           explode: true
           schema:
             type: string
+            enum:
+              - mobile
+              - tablet
+              - tv
+              - desktop
+              - other
         - name: catalog_url
           in: query
           description: >-
@@ -420,6 +426,12 @@ components:
             in cases where the User Agent is unreliable (ignored unless both
             device os and device type are included or if the value submitted is
             not in the list of values shown here. Not typically included)
+          enum:
+            - mobile
+            - tablet
+            - tv
+            - desktop
+            - other
         destination:
           type: string
           description: URI that originated the event

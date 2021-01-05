@@ -15,6 +15,13 @@ servers:
 tags:
   - name: Videos
     description: Operations for retrieving videos.
+  - name: Static URLs
+    description: |-
+      Operations for retrieving static URLs for video manifests. This gives you the flexibility to manage your content in your own CMS, and deliver it using a custom security schema.
+
+      This is important for customers who have existing architecture that does not allow a Playback API call before needing the manifest url(s). The player can also use this feature, reducing playback start time by eliminating one call.
+
+      See [Static URL Delivery](/playback/guides/static-url-delivery.html) for more information.
   - name: Playlists
     description: Operations for retrieving playlists.
 paths:
@@ -52,27 +59,33 @@ paths:
                   #/components/schemas/Get_Videos_Response
         '400':
           description: >-
-             BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
 
-             INVALID_SEARCH - The search parameters are not valid
+            INVALID_SEARCH - The search parameters are not valid
 
-             ILLEGAL_QUERY - The search string syntax was invalid - example
+            ILLEGAL_QUERY - The search string syntax was invalid - example
 
-             ACCESS_DENIED:
+            ACCESS_DENIED:
 
-              ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
 
-              CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
 
-              CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
 
-              POLICY_ERROR - Error when evaluating the policy key
+              - POLICY_ERROR - Error when evaluating the policy key
 
-              VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
         '401':
           description: 'INVALID_POLICY_KEY:undefined'
         '403':
-          description: "ACCESS_DENIED:  \n \t ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  \n \t DOMAIN - The video is restricted from playing on the current domain  \n \t CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference \n \t CLIENT_IP - The video is restricted at the current IP address \n \t POLICY_ERROR - Error when evaluating the policy key"
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
         '405':
           description: >-
             METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
@@ -108,17 +121,33 @@ paths:
                 $ref: '#/components/schemas/Get_Videos_Response'
         '400':
           description: >-
-            BAD_REQUEST:    DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request <br>INVALID_SEARCH - The search parameters are not valid <br>ILLEGAL_QUERY - The search string syntax was invalid - example <br>ACCESS_DENIED:    ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>API  - The policy key is not search-enabled when attempting to perform a search <br>CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference <br>CLIENT_IP - The video is restricted at the current IP address <br>DOMAIN - The video is restricted from playing on the current domain <br>POLICY_ERROR - Error when evaluating the policy key <br>FORBIDDEN: <br>VIDEO_NOT_PLAYABLE - For a single video request, the
-            video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable <br>NOT_FOUND:    VIDEO_NOT_FOUND - The requested resource is not available.
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
         '401':
           description: 'INVALID_POLICY_KEY:undefined'
         '403':
           description: |-
-            ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
-            <br>DOMAIN - The video is
-            restricted from playing on the current domain  <br>CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
-            <br>CLIENT_IP - The video is restricted at the current IP address
-            <br>POLICY_ERROR - Error when evaluating the policy key
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
         '405':
           description: >-
             METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
@@ -129,7 +158,8 @@ paths:
           description: 'SERVER_ERROR:Got a bad response from a backend server'
         '504':
           description: >-
-            SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out.
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
       operationId: Get_Video_by_ID_or_Reference_ID
   '/accounts/{account_id}/videos':
     get:
@@ -166,30 +196,33 @@ paths:
                 $ref: '#/components/schemas/Get_Videos_Response'
         '400':
           description: >-
-            BAD_REQUEST:    DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
-            <br>INVALID_SEARCH - The
-            search parameters are not valid
-            <br>ILLEGAL_QUERY - The search string
-            syntax was invalid - example
-            <br>ACCESS_DENIED:    ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
-            <br>API  - The policy
-            key is not search-enabled when attempting to perform a search
-            <br>CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
-            <br>CLIENT_IP - The video is restricted at the current IP address
-            <br>DOMAIN - The video is restricted from playing on the
-            current domain
-            <br>POLICY_ERROR - Error when evaluating the policy key
-            <br>FORBIDDEN:    VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable
-            <br>NOT_FOUND:    VIDEO_NOT_FOUND - The requested resource is not available.
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
         '401':
           description: 'INVALID_POLICY_KEY:undefined'
         '403':
-          description: >-
-            ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
-            <br>DOMAIN - The video is
-            restricted from playing on the current domain  <br>CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
-            <br>CLIENT_IP - The video is restricted at the current IP address
-            <br>POLICY_ERROR - Error when evaluating the policy key
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
         '405':
           description: >-
             METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
@@ -200,8 +233,363 @@ paths:
           description: 'SERVER_ERROR:Got a bad response from a backend server'
         '504':
           description: >-
-            SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out.
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
       operationId: Get_Videos
+  '/accounts/{account_id}/videos/{video_id}/master.m3u8':
+    get:
+      tags:
+        - Static URLs
+      summary: Get an HLS Manifest with static URLs
+      description: >-
+        Gets an HLS manifest with static URLs for the renditions and other assets. Note that the URLs carry a token, and are good for the TTL of the token.
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the M3U8 manifest'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: 'SERVER_ERROR:internal server error'
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_HLS
+  '/accounts/{account_id}/videos/{video_id}/manifest.mpd':
+    get:
+      tags:
+        - Static URLs
+      summary: Get a DASH Manifest with static URLs
+      description: >-
+        Gets a DASH manifest with static URLs for the renditions and other assets. Note that the URLs carry a token, and are good for the TTL of the token.
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the MPD manifest'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: "'SERVER_ERROR:internal server error' (one cause of the error is requesting a VMAP with a JWT that does not include the `ssai` claim see [Static URL Delivery](/playback/guides/static-url-delivery.html))"
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_DASH
+  '/accounts/{account_id}/videos/{video_id}/hls.vmap':
+    get:
+      tags:
+        - Static URLs
+      summary: Get an HLS VMAP with static URLs
+      description: >-
+        Gets an HLS VMAP with static URLs for the renditions and other assets. Note that the URLs carry a token, and are good for the TTL of the token. Also, VMAPS can only be retrieved if the JWT includes an `ssai` claim - see [Creating a JSON Web Token](/playback/guides/static-url-delivery.html).
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the HLS VMAP'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: "'SERVER_ERROR:internal server error' (one cause of the error is requesting a VMAP with a JWT that does not include the `ssai` claim see [Static URL Delivery](/playback/guides/static-url-delivery.html))"
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_HLS_VMAP
+  '/accounts/{account_id}/videos/{video_id}/dash.vmap':
+    get:
+      tags:
+        - Static URLs
+      summary: Get an DASH VMAP with static URLs
+      description: >-
+        Gets an DASH VMAP with static URLs for the renditions and other assets. Note that the URLs carry a token, and are good for the TTL of the token. Also, VMAPS can only be retrieved if the JWT includes an `ssai` claim - see [Creating a JSON Web Token](/playback/guides/static-url-delivery.html).
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the DASH VMAP'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: 'SERVER_ERROR:internal server error'
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_DASH_VMAP
+  '/accounts/{account_id}/videos/{video_id}/high.mp4':
+    get:
+      tags:
+        - Static URLs
+      summary: Get the highest bitrate MP4 rendition
+      description: >-
+        Gets the MP4 rendition of the video that has the highest bitrate
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the MP4 file'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: 'SERVER_ERROR:internal server error'
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_Highest_MP4
+  '/accounts/{account_id}/videos/{video_id}/low.mp4':
+    get:
+      tags:
+        - Static URLs
+      summary: Get the lowest bitrate MP4 rendition
+      description: >-
+        Gets the MP4 rendition of the video that has the lowest bitrate
+      parameters:
+        - $ref: '#/components/parameters/bcov_auth'
+        - $ref: '#/components/parameters/account_id'
+        - $ref: '#/components/parameters/video_id'
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/BCOV-Policy'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: '200 - returns the MP4 file'
+        '400':
+          description: >-
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
+        '401':
+          description: "Unauthorized - 'INVALID_POLICY_KEY:{bad policy key or undefined}' or `INVALID_JWT`(meaning that the JWT has expired)"
+        '403':
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
+        '405':
+          description: >-
+            METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
+            api.
+        '500':
+          description: 'SERVER_ERROR:internal server error'
+        '502':
+          description: 'SERVER_ERROR:Got a bad response from a backend server'
+        '504':
+          description: >-
+            SERVER_TIMEOUT:Either a backend server or one of the servers they
+            rely on timed out.
+      operationId: Get_Static_URLs_Lowest_MP4
   '/accounts/{account_id}/playlists/{playlist_id}':
     get:
       tags:
@@ -227,18 +615,33 @@ paths:
                 $ref: '#/components/schemas/Playlist_Response'
         '400':
           description: >-
-            BAD_REQUEST:  DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
+            BAD_REQUEST: DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request
 
-            NOT_FOUND:  PLAYLIST_NOT_FOUND - The requested resource is not available.
+            INVALID_SEARCH - The search parameters are not valid
+
+            ILLEGAL_QUERY - The search string syntax was invalid - example
+
+            ACCESS_DENIED:
+
+              - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request <br>  API  - The policy key is not search-enabled when attempting to perform a search
+
+              - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+
+              - CLIENT_IP - The video is restricted at the current IP address <br>  DOMAIN - The video is restricted from playing on the current domain
+
+              - POLICY_ERROR - Error when evaluating the policy key
+
+              - VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now.
         '401':
           description: 'INVALID_POLICY_KEY:undefined'
         '403':
-          description: >-
-            ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
-            <br>DOMAIN - The video is
-            restricted from playing on the current domain  <br>CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
-            <br>CLIENT_IP - The video is restricted at the current IP address
-            <br>POLICY_ERROR - Error when evaluating the policy key
+          description: |-
+            ACCESS_DENIED:
+            - ACCOUNT_ID  - The account id in the policy key does not match the account in the api request
+            - DOMAIN - The video is restricted from playing on the current domain
+            - CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference
+            - CLIENT_IP - The video is restricted at the current IP address
+            - POLICY_ERROR - Error when evaluating the policy key
         '405':
           description: >-
             METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this
@@ -481,51 +884,161 @@ components:
           description: 'map of key/value pairs for ad requests '
           readOnly: true
       example: {
-          "description": "sample video",
-          "poster_sources":
-          [
-            {
-              "src": "https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/d0d84bc8-3056-419e-b179-6fb3c07228d5/main/1280x720/10s500ms/match/image.jpg"
-            }
-          ],
-          "tags":
-          [],
-          "cue_points":
-          [],
-          "custom_fields":
-          {},
-          "account_id": "1752604059001",
-          "sources":
-          [
-            {
-              "ext_x_version": "4",
-              "type": "application/x-mpegURL",
-              "src": "http://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/1752604059001/d0d84bc8-3056-419e-b179-6fb3c07228d5/10s/master.m3u8?fastly_token=NWJiMjZlNDJfZTFkOWQzN2RjNjBhYmVjNTFiODI4N2IyZTQ0Y2NjMzkxY2E0M2E5MGM1MjM5M2NmZjMzZjQxNzA5YzM1MzM3Mw%3D%3D"
-            }
-          ],
-          "name": "Bass Chime",
-          "reference_id": null,
-          "long_description": null,
-          "duration": 21000,
-          "economics": "AD_SUPPORTED",
-          "published_at": "2018-07-20T20:09:59.754Z",
-          "text_tracks":
-          [],
-          "updated_at": "2018-07-20T20:14:00.549Z",
-          "thumbnail": "https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/d0d84bc8-3056-419e-b179-6fb3c07228d5/main/160x90/10s500ms/match/image.jpg",
-          "poster": "https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/d0d84bc8-3056-419e-b179-6fb3c07228d5/main/1280x720/10s500ms/match/image.jpg",
-          "offline_enabled": false,
-          "link": null,
-          "id": "5811862231001",
-          "ad_keys": null,
-          "thumbnail_sources":
-          [
-            {
-              "src": "https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/d0d84bc8-3056-419e-b179-6fb3c07228d5/main/160x90/10s500ms/match/image.jpg"
-            }
-          ],
-          "created_at": "2018-07-20T20:09:59.754Z"
-        }
+        "poster": "https://httpsak-a.akamaihd.net/1752604059001/1752604059001_4883205209001_4883184247001-vs.jpg?pubId=1752604059001&videoId=4883184247001",
+        "thumbnail": "https://httpsak-a.akamaihd.net/1752604059001/1752604059001_4883205207001_4883184247001-th.jpg?pubId=1752604059001&videoId=4883184247001",
+        "poster_sources": [
+          {
+            "src": "https://httpsak-a.akamaihd.net/1752604059001/1752604059001_4883205209001_4883184247001-vs.jpg?pubId=1752604059001&videoId=4883184247001"
+          }
+        ],
+        "thumbnail_sources": [
+          {
+            "src": "https://httpsak-a.akamaihd.net/1752604059001/1752604059001_4883205207001_4883184247001-th.jpg?pubId=1752604059001&videoId=4883184247001"
+          }
+        ],
+        "description": null,
+        "tags": [
+          "public",
+          "sample",
+          "water"
+        ],
+        "cue_points": [],
+        "custom_fields": {
+          "customfield1": "foo",
+          "customfield2": "bar"
+        },
+        "account_id": "1752604059001",
+        "sources": [
+          {
+            "ext_x_version": "4",
+            "src": "http://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/10s/master.m3u8?fastly_token=NWZiNDMxZWFfZGZkYjE0MTc1MmQyYTQ5YmMzMTY3MzM0OGZlMzVjNjYwOTNjYzY1MDUxNDA4YjJhYjU1MjU2YjFiMWZkZWI0MQ%3D%3D",
+            "type": "application/x-mpegURL"
+          },
+          {
+            "ext_x_version": "4",
+            "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/10s/master.m3u8?fastly_token=NWZiNDMxZWFfZGZkYjE0MTc1MmQyYTQ5YmMzMTY3MzM0OGZlMzVjNjYwOTNjYzY1MDUxNDA4YjJhYjU1MjU2YjFiMWZkZWI0MQ%3D%3D",
+            "type": "application/x-mpegURL"
+          },
+          {
+            "codecs": "avc1,mp4a",
+            "ext_x_version": "7",
+            "src": "http://manifest.prod.boltdns.net/manifest/v2/hls/v7/clear/avc1_mp4a/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/10s/master.m3u8?fastly_token=NWZiNDMxZWFfYTcwYTY3ZmZjN2I1NTFlYWFhNmI2M2ZlNGE2MDE2ZjNjYmJkZDE0YzBiZjc0MzNmMWYxZmQ0OTQ4MWVmMmVmNQ%3D%3D",
+            "type": "application/x-mpegURL"
+          },
+          {
+            "codecs": "avc1,mp4a",
+            "ext_x_version": "7",
+            "src": "https://manifest.prod.boltdns.net/manifest/v2/hls/v7/clear/avc1_mp4a/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/10s/master.m3u8?fastly_token=NWZiNDMxZWFfYTcwYTY3ZmZjN2I1NTFlYWFhNmI2M2ZlNGE2MDE2ZjNjYmJkZDE0YzBiZjc0MzNmMWYxZmQ0OTQ4MWVmMmVmNQ%3D%3D",
+            "type": "application/x-mpegURL"
+          },
+          {
+            "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+            "src": "http://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2s/manifest.mpd?fastly_token=NWZiNDMxZWFfZWZmYTk5MjkxZmU1MzI2OTk4ZWRjNmZlNzU2ZDRiZmYxMTU5YmFkZTE4ZDJhN2E1YTVjYTY1NTBlNjdiMDdiNg%3D%3D",
+            "type": "application/dash+xml"
+          },
+          {
+            "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+            "src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2s/manifest.mpd?fastly_token=NWZiNDMxZWFfZWZmYTk5MjkxZmU1MzI2OTk4ZWRjNmZlNzU2ZDRiZmYxMTU5YmFkZTE4ZDJhN2E1YTVjYTY1NTBlNjdiMDdiNg%3D%3D",
+            "type": "application/dash+xml"
+          },
+          {
+            "codecs": "avc1,mp4a",
+            "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+            "src": "http://manifest.prod.boltdns.net/manifest/v2/dash/live-baseurl/clear/avc1_mp4a/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2s/manifest.mpd?fastly_token=NWZiNDMxZWFfOTRmMjg4MDdjNDYxNzhiNDBkMWU3ZWU4M2ZiMjc5MzFmODBiMDYwMGUyYjk2YWU1NDFhZmNiYzgzNWY2MTIwMw%3D%3D",
+            "type": "application/dash+xml"
+          },
+          {
+            "codecs": "avc1,mp4a",
+            "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+            "src": "https://manifest.prod.boltdns.net/manifest/v2/dash/live-baseurl/clear/avc1_mp4a/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2s/manifest.mpd?fastly_token=NWZiNDMxZWFfOTRmMjg4MDdjNDYxNzhiNDBkMWU3ZWU4M2ZiMjc5MzFmODBiMDYwMGUyYjk2YWU1NDFhZmNiYzgzNWY2MTIwMw%3D%3D",
+            "type": "application/dash+xml"
+          },
+          {
+            "avg_bitrate": 2213000,
+            "codec": "H264",
+            "container": "MP4",
+            "duration": 49690,
+            "height": 1080,
+            "size": 13753809,
+            "src": "http://bcboltbde696aa-a.akamaihd.net/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/high.mp4?akamai_token=exp=1605644778~acl=/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/high.mp4*~hmac=962808a9a0bb0d1bba5d67a0dc24a9cf078f589545c50f777a2e637ad25e9e08",
+            "width": 1920
+          },
+          {
+            "avg_bitrate": 2213000,
+            "codec": "H264",
+            "container": "MP4",
+            "duration": 49690,
+            "height": 1080,
+            "size": 13753809,
+            "src": "https://bcboltbde696aa-a.akamaihd.net/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/high.mp4?akamai_token=exp=1605644778~acl=/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/high.mp4*~hmac=962808a9a0bb0d1bba5d67a0dc24a9cf078f589545c50f777a2e637ad25e9e08",
+            "width": 1920
+          },
+          {
+            "avg_bitrate": 613000,
+            "codec": "H264",
+            "container": "MP4",
+            "duration": 49690,
+            "height": 1080,
+            "size": 3826436,
+            "src": "http://bcboltbde696aa-a.akamaihd.net/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/mid.mp4?akamai_token=exp=1605644778~acl=/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/mid.mp4*~hmac=71eb21be1beb5712512991f18a1f94d62e00fafbe46697024b0022099c737aad",
+            "width": 1920
+          },
+          {
+            "avg_bitrate": 613000,
+            "codec": "H264",
+            "container": "MP4",
+            "duration": 49690,
+            "height": 1080,
+            "size": 3826436,
+            "src": "https://bcboltbde696aa-a.akamaihd.net/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/mid.mp4?akamai_token=exp=1605644778~acl=/media/v1/pmp4/static/clear/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/mid.mp4*~hmac=71eb21be1beb5712512991f18a1f94d62e00fafbe46697024b0022099c737aad",
+            "width": 1920
+          }
+        ],
+        "name": "Canada Geese and Goslings",
+        "reference_id": null,
+        "long_description": null,
+        "duration": 49633,
+        "economics": "AD_SUPPORTED",
+        "text_tracks": [
+          {
+            "id": null,
+            "account_id": "1752604059001",
+            "src": "http://manifest.prod.boltdns.net/thumbnail/v1/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2160be82-a59b-4382-a0a7-244b6de2e0fc/thumbnail.webvtt?fastly_token=NWZiNDMxZWFfNDA2Yzg0NDAyNjg4N2MzMmUyNjBiNmY2NWY5YzExN2RhNzdmNDAyNzZjYzA1ODk0MjI5OTRmMzcxNjcxMjhhOQ%3D%3D",
+            "srclang": null,
+            "label": "thumbnails",
+            "kind": "metadata",
+            "mime_type": "text/webvtt",
+            "asset_id": null,
+            "sources": null,
+            "default": false,
+            "width": 192,
+            "height": 108,
+            "bandwidth": 360
+          },
+          {
+            "id": null,
+            "account_id": "1752604059001",
+            "src": "https://manifest.prod.boltdns.net/thumbnail/v1/1752604059001/59b8dae1-5de8-4f8c-8f67-52a4eac73b70/2160be82-a59b-4382-a0a7-244b6de2e0fc/thumbnail.webvtt?fastly_token=NWZiNDMxZWFfNDA2Yzg0NDAyNjg4N2MzMmUyNjBiNmY2NWY5YzExN2RhNzdmNDAyNzZjYzA1ODk0MjI5OTRmMzcxNjcxMjhhOQ%3D%3D",
+            "srclang": null,
+            "label": "thumbnails",
+            "kind": "metadata",
+            "mime_type": "text/webvtt",
+            "asset_id": null,
+            "sources": null,
+            "default": false,
+            "width": 192,
+            "height": 108,
+            "bandwidth": 360
+          }
+        ],
+        "published_at": "2016-05-07T18:33:28.665Z",
+        "created_at": "2016-05-07T18:33:28.665Z",
+        "updated_at": "2020-04-25T19:50:54.934Z",
+        "offline_enabled": false,
+        "link": null,
+        "id": "4883184247001",
+        "ad_keys": null
+      }
     video.cue_points:
       properties:
         name:
@@ -695,6 +1208,16 @@ components:
       explode: true
       schema:
         type: string
+    bcov_auth:
+      name: bcov_auth
+      in: query
+      required: true
+      description: >-
+        The value is a JWT (JSON Web Token) - see [Static URL Delivery](/playback/guides/static-url-delivery.html) and [Creating a JSON Web Token](https://general.support.brightcove.com/developer/create-jwt.html)
+      style: form
+      explode: true
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -712,14 +1235,13 @@ components:
       in: query
       required: false
       description: >-
-        The number of videos to skip - note that the maximum number of videos
-        that can be returned by the Playback API is 1000. To return more than
-        1000 videos, you must use the CMS API.
+        The number of videos to skip - used to page multiple sets of videos. Note that the maximum number of videos that can be returned by the Playback API is 1000. To return more than 1000 videos, you must use the CMS API.
       style: form
       explode: true
       schema:
         type: integer
         default: 0
+        minimum:
     sort:
       name: sort
       in: query

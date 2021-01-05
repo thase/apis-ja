@@ -215,6 +215,11 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-legacy-video-report.html",
+      "oldURL": "/cms-api-sample-legacy-video-report"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-media-sharing-report.html",
       "oldURL": "/cms-api-sample-media-sharing-report"
   },
@@ -675,6 +680,11 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api-stage.html",
+      "oldURL": "/images-and-dynamic-ingest-api-stage"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html",
       "oldURL": "/images-and-dynamic-ingest-api"
   },
@@ -700,7 +710,7 @@
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/epg/getting-started/",
+      "newURL": "https://apis.support.brightcove.com/player-management/guides/",
       "oldURL": "/index"
   },
 
@@ -741,6 +751,16 @@
 
   {
       "newURL": "https://apis.support.brightcove.com/general/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/",
       "oldURL": "/index"
   },
 
@@ -790,6 +810,16 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/mrss-ingestion/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/mrss-ingestion/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/social-syndication/references/",
       "oldURL": "/index"
   },
@@ -806,6 +836,11 @@
 
   {
       "newURL": "https://apis.support.brightcove.com/training/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/",
       "oldURL": "/index"
   },
 
@@ -860,6 +895,11 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/cms/searching/",
       "oldURL": "/index"
   },
@@ -905,6 +945,11 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/playback/",
       "oldURL": "/index"
   },
@@ -931,6 +976,16 @@
 
   {
       "newURL": "https://apis.support.brightcove.com/epg/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/analytics/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/getting-started/",
       "oldURL": "/index"
   },
 
@@ -975,17 +1030,37 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/analytics/general/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/player-management/getting-started/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/player-management/guides/",
+      "newURL": "https://apis.support.brightcove.com/player-management/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/player-management/",
+      "newURL": "https://apis.support.brightcove.com/xdr/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/policy/",
       "oldURL": "/index"
   },
 
@@ -1036,61 +1111,6 @@
 
   {
       "newURL": "https://apis.support.brightcove.com/policy/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/policy/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/xdr/references/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/xdr/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/xdr/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/general/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/references/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/code-samples/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/dimension-guides/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/analytics/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/",
       "oldURL": "/index"
   },
 
@@ -1150,12 +1170,17 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/mrss-ingestion/getting-started/ingesting_from_a_remotely_hosted_mrss_feed.html",
+      "oldURL": "/ingesting_from_a_remotely_hosted_mrss_feed"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/general/integrating-your-cms-video-cloud.html",
       "oldURL": "/integrating-your-cms-video-cloud"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/cms/references/known-issues.html",
+      "newURL": "https://apis.support.brightcove.com/analytics/references/known-issues.html",
       "oldURL": "/known-issues"
   },
 
@@ -1165,12 +1190,12 @@
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/analytics/references/known-issues.html",
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/known-issues.html",
       "oldURL": "/known-issues"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/known-issues.html",
+      "newURL": "https://apis.support.brightcove.com/cms/references/known-issues.html",
       "oldURL": "/known-issues"
   },
 
@@ -1500,6 +1525,16 @@
   },
 
   {
+      "newURL": "https://apis.support.brightcove.com/epg/references/reference-channels.html",
+      "oldURL": "/reference-channels"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/epg/references/reference-epg.html",
+      "oldURL": "/reference-epg"
+  },
+
+  {
       "newURL": "https://apis.support.brightcove.com/cms/references/reference-stage.html",
       "oldURL": "/reference-stage"
   },
@@ -1510,17 +1545,42 @@
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/data-collection/references/reference.html",
+      "newURL": "https://apis.support.brightcove.com/delivery-system/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/epg/references/reference.html",
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/xdr/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/oauth/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/cms/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
       "newURL": "https://apis.support.brightcove.com/playback-rights/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/player-management/references/reference.html",
       "oldURL": "/reference"
   },
 
@@ -1535,52 +1595,7 @@
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/playback-rights/references/devices-api/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/playback-rights/references/key-api/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/player-management/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/dynamic-ingest/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/delivery-rules/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/delivery-system/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
       "newURL": "https://apis.support.brightcove.com/policy/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/oauth/references/reference.html",
-      "oldURL": "/reference"
-  },
-
-  {
-      "newURL": "https://apis.support.brightcove.com/xdr/references/reference.html",
       "oldURL": "/reference"
   },
 
@@ -1590,12 +1605,27 @@
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/cms/references/reference.html",
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/devices-api/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://apis.support.brightcove.com/ingest-profiles/references/reference.html",
+      "newURL": "https://apis.support.brightcove.com/data-collection/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/dynamic-ingest-legacy/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/delivery-rules/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/playback-rights/references/key-api/reference.html",
       "oldURL": "/reference"
   },
 
@@ -1792,6 +1822,11 @@
   {
       "newURL": "https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html",
       "oldURL": "/xdr-overview"
+  },
+
+  {
+      "newURL": "https://apis.support.brightcove.com/mrss-ingestion/getting-started/xml-manifest-for-ingestion-via-mrss.html",
+      "oldURL": "/xml-manifest-for-ingestion-via-mrss"
   },
 ]
 

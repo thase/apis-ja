@@ -558,8 +558,8 @@ paths:
         - $ref: '#/components/parameters/Language'
         - $ref: '#/components/parameters/ContentType'
         - $ref: '#/components/parameters/Authorization'
-      requestBody:  
-        description: 
+      requestBody:
+        description:
           Request body for a video variant
         content:
           application/json:
@@ -816,6 +816,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DigitalMaster'
+        '204':
+          description: >-
+            The video does not have a digital master
         '401':
           description: >-
             UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token
@@ -1756,7 +1759,10 @@ paths:
       tags:
         - Playlists
       summary: Create Playlist
-      description: 'Creates a new playlist '
+      description: |-
+        Creates a new playlist.
+
+        **A maximum of 100 videos can be added to a playlist** (both Manual and Smart). There is no limit to the number of playlists that can be created. The videos that are initially loaded into a playlist in the player is determined by the type of playlist.
       operationId: CreatePlaylist
       parameters:
         - $ref: '#/components/parameters/AccountId'
@@ -2100,8 +2106,6 @@ paths:
         - $ref: '#/components/parameters/AccountId'
         - $ref: '#/components/parameters/ContentType'
         - $ref: '#/components/parameters/Authorization'
-        - $ref: '#/components/parameters/Limit'
-        - $ref: '#/components/parameters/Offset'
       responses:
         '200':
           description: '200'
@@ -6470,7 +6474,7 @@ components:
               "/nature/birds/forentbirds",
               "/nature/mammals/seamammals"
             ]
-        version: 
+        version:
           type: integer
           description: An internal version tracker
     LabelPath:
@@ -6478,7 +6482,7 @@ components:
       title: label
       type: object
       properties:
-        path: 
+        path:
           type: string
       example: {
           "path": "/nature/mammals/seamammals"
@@ -6488,7 +6492,7 @@ components:
       title: label
       type: object
       properties:
-        path: 
+        path:
           type: string
           description: The new path
         labels_updated:
@@ -7107,6 +7111,10 @@ components:
           example: gull-boston.mov
           readOnly: true
           type: string
+        playback_rights_id:
+          type: string
+          description: >-
+            Associates specified EPA playback rights with video. **Note that EPA is in Limited Availability Release. Contact your account manager for more information.**
         projection:
           description: used for 360 videos
           enum:

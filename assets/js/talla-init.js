@@ -1,11 +1,11 @@
-var appID = "00c26be3-4421-41e6-bb00-1dee68740f67"; 
+var appID = "00c26be3-4421-41e6-bb00-1dee68740f67";
 // token for anonymous profile
 var token =
 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODI4MDQzNDF9.RYf2x65FXvdDURzM h00i76KfUrYlsDLsw6mVuEv6zmE';
 // -----
   Talla.config = Talla.init(
     appID,
-    Talla.OptionJWTCredentials(token), 
+    Talla.OptionJWTCredentials(token),
     Talla.OptionBotName("Video Cloud Platform APIs Doc Search"),
     Talla.OptionAnonymous(true),
     Talla.OptionThemeColor('rgb(239, 108, 42)'),
@@ -13,8 +13,8 @@ var token =
     Talla.OptionKnowledgeGroups(['cf40cebb-c635-486d-84ba-8c3e752bc29b']),
     Talla.OptionWideBeacon(true),
     Talla.OptionBeaconCTA("Have a question?"),
-    Talla.OptionOpenIcon('https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/search.png'),
-    Talla.OptionBotIcon('https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/search.png'),
+    Talla.OptionOpenIcon('https://support.brightcove.com/site-assets/images/site/search.png'),
+    Talla.OptionBotIcon('https://support.brightcove.com/site-assets/images/site/search.png'),
     Talla.OptionAutodetectSession,
     //---- NEW-----Redirects to portal
     Talla.OptionRequestSubmittedCallback( function(widget, data) {

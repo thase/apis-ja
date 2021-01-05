@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="https://learning-services-media.brightcove.com/doc-assets/site-assets/css/site/sitemap.css"?>
+<?xml-stylesheet href="https://support.brightcove.com/site-assets/css/site/sitemap.css"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
       <url>
         <loc>https://apis.support.brightcove.com/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -14,7 +14,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/getting-started/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -23,7 +23,7 @@
           
             <loc>https://apis.support.brightcove.com/getting-started/getting-started-brightcove-apis.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -33,7 +33,7 @@
           
             <loc>https://apis.support.brightcove.com/getting-started/authentication-brightcove-api-requests.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -43,7 +43,7 @@
           
             <loc>https://apis.support.brightcove.com/getting-started/concepts-testing-tools-brightcove-apis.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -53,7 +53,7 @@
           
             <loc>https://apis.support.brightcove.com/getting-started/learning-guide-using-rest-apis.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -62,7 +62,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/general/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -71,7 +71,7 @@
           
             <loc>https://apis.support.brightcove.com/general/all-api-references.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -81,7 +81,7 @@
           
             <loc>https://apis.support.brightcove.com/general/overview-context-aware-encoding.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -91,7 +91,7 @@
           
             <loc>https://apis.support.brightcove.com/general/managing-api-authentication-credentials.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -101,7 +101,7 @@
           
             <loc>https://apis.support.brightcove.com/general/integrating-your-cms-video-cloud.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -111,7 +111,7 @@
           
             <loc>https://apis.support.brightcove.com/general/platform-api-code-samples.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -121,7 +121,7 @@
           
             <loc>https://apis.support.brightcove.com/general/video-cloud-api-training-videos.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -131,7 +131,7 @@
           
             <loc>https://apis.support.brightcove.com/general/concepts-api-tester.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -141,7 +141,7 @@
           
             <loc>https://apis.support.brightcove.com/general/use-insomnia-api-requests.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -151,7 +151,7 @@
           
             <loc>https://apis.support.brightcove.com/general/use-postman-api-requests.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -161,7 +161,7 @@
           
             <loc>https://apis.support.brightcove.com/general/audio-content.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -171,7 +171,7 @@
           
             <loc>https://apis.support.brightcove.com/general/known-issues.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -180,7 +180,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/analytics/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -189,7 +189,7 @@
           
             <loc>https://apis.support.brightcove.com/analytics/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -198,7 +198,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/getting-started/overview-analytics-api-v1.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -207,7 +207,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/getting-started/analytics-api-explorer.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -216,7 +216,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/getting-started/overview-video-data-endpoint.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -225,7 +225,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -235,7 +235,7 @@
           
             <loc>https://apis.support.brightcove.com/analytics/general/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -244,7 +244,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/general/faq-analytics-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -253,7 +253,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/general/analytics-api-glossary.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -262,7 +262,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/general/analytics-api-unique-users.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -271,7 +271,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/general/live-metrics.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -281,7 +281,7 @@
           
             <loc>https://apis.support.brightcove.com/analytics/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -290,7 +290,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -299,7 +299,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/references/analytics-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -308,7 +308,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/references/known-issues.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -317,7 +317,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/references/analytics-api-error-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -327,7 +327,7 @@
           
             <loc>https://apis.support.brightcove.com/analytics/dimension-guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -336,7 +336,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-account.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -345,7 +345,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-browsertype.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -354,7 +354,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-date.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -363,7 +363,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-datehour.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -372,7 +372,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-destinationdomain.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -381,7 +381,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-destinationpath.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -390,7 +390,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-devicemanufacturer.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -399,7 +399,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-devicetype.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -408,7 +408,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-deviceos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -417,7 +417,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-city.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -426,7 +426,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-country.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -435,7 +435,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-region.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -444,7 +444,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-livestream.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -453,7 +453,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-referrerdomain.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -462,7 +462,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-sourcetype.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -471,7 +471,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-searchterms.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -480,7 +480,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-socialplatform.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -489,7 +489,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-player.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -498,7 +498,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/dimension-guides/dimension-video.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -508,7 +508,7 @@
           
             <loc>https://apis.support.brightcove.com/analytics/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -517,7 +517,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-concurrent-viewers-live-events.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -526,7 +526,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-daily-analytics-report-generator.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -535,7 +535,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-destinations-report.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -544,7 +544,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-geographical-analytics-report.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -553,7 +553,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-unique-users-day.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -562,7 +562,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-engagement-graph.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -571,7 +571,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-player-and-day.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -580,7 +580,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-reference-id.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -589,7 +589,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analytics-api-sample-video-report-tags.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -598,7 +598,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analyticscms-apis-sample-analytics-playlists.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -607,7 +607,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/analyticscms-apis-sample-recently-added-videos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -616,7 +616,7 @@
             
               <loc>https://apis.support.brightcove.com/analytics/code-samples/code-sample-video-analytics-report-country-and-day.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -625,7 +625,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/cms/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -634,7 +634,7 @@
           
             <loc>https://apis.support.brightcove.com/cms/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -643,7 +643,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -652,7 +652,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/practice-area-cms-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -661,7 +661,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/best-practices-cms-and-playback-apis.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -670,7 +670,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/cms-api-notifications.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -680,7 +680,7 @@
           
             <loc>https://apis.support.brightcove.com/cms/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -689,7 +689,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -698,7 +698,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/catalog-apis-cms-api-and-playback-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -707,7 +707,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/known-issues.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -716,7 +716,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -725,7 +725,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/cms-api-playlist-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -734,7 +734,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/cms-api-custom-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -743,7 +743,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/cms-api-folder-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -752,7 +752,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/cms-api-error-message-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -762,7 +762,7 @@
           
             <loc>https://apis.support.brightcove.com/cms/searching/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -771,7 +771,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -780,7 +780,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/cms-api-playlists-search.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -789,7 +789,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/using-cms-api-page-search-results.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -798,7 +798,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/cmsplayback-api-videos-search.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -807,7 +807,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/guides/catalog-search-architecture.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -817,7 +817,7 @@
           
             <loc>https://apis.support.brightcove.com/cms/managing-videos/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -826,7 +826,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-geo-filtering.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -835,7 +835,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/digital-master-delete-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -844,7 +844,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/deleting-videos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -853,7 +853,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/getting-counts-videos-and-playlists.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -862,7 +862,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/managing-playlists-using-cms-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -871,7 +871,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-managing-clips.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -880,7 +880,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -889,7 +889,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -898,7 +898,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-retrieve-video-data.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -907,7 +907,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/setting-360-degree-video-properties-cms-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -916,7 +916,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-remote-assets.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -925,7 +925,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-add-webvtt-captions-text-tracks.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -934,7 +934,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/generate-video-sitemaps.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -943,7 +943,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/identifying-low-performing-content.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -952,7 +952,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/cms-api-working-folders.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -961,7 +961,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/working-with-labels.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -970,7 +970,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/managing-videos/linking-zencoder-and-video-cloud-video-demand.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -980,7 +980,7 @@
           
             <loc>https://apis.support.brightcove.com/cms/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -989,7 +989,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-multiple-affiliate-accounts-media-sharing.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -998,7 +998,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-share-multiple-videos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1007,7 +1007,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-media-sharing-report.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1016,7 +1016,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-shared-media-report.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1025,7 +1025,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-update-videos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1034,7 +1034,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-custom-field-multiple-videos.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1043,7 +1043,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-update-geo-properties.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1052,7 +1052,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-add-cue-points.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1061,7 +1061,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-report-generator.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1070,7 +1070,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-videos-delivery-type.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1079,7 +1079,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-download-links.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1088,7 +1088,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-sitemap-generator.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1097,7 +1097,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-mrss-generator.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1106,7 +1106,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-mrss-feed-playlist.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1115,7 +1115,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-generate-rss-podcast-feed-itunes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1124,7 +1124,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-renditions-inspector.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1133,7 +1133,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-report-audio-only-content.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1142,7 +1142,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-schema-builder.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1151,7 +1151,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-python-code-get-request.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1160,7 +1160,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-search-app.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1169,7 +1169,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/xdr/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1178,7 +1178,7 @@
           
             <loc>https://apis.support.brightcove.com/xdr/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1187,7 +1187,7 @@
             
               <loc>https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1196,7 +1196,7 @@
             
               <loc>https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1206,7 +1206,7 @@
           
             <loc>https://apis.support.brightcove.com/xdr/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1215,7 +1215,7 @@
             
               <loc>https://player.support.brightcove.com/playback/xdr-with-bcplayer.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1224,7 +1224,7 @@
             
               <loc>https://sdks.support.brightcove.com/features/cross-device-resume-sdks.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1234,7 +1234,7 @@
           
             <loc>https://apis.support.brightcove.com/xdr/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1243,7 +1243,7 @@
             
               <loc>https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1252,7 +1252,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/data-collection/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1261,7 +1261,7 @@
           
             <loc>https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1271,7 +1271,7 @@
           
             <loc>https://apis.support.brightcove.com/data-collection/data-collection-api-sample.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1281,7 +1281,7 @@
           
             <loc>https://apis.support.brightcove.com/data-collection/references/reference.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1290,7 +1290,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/delivery-system/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1299,7 +1299,7 @@
           
             <loc>https://apis.support.brightcove.com/delivery-system/overview-delivery-system-api.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1309,7 +1309,7 @@
           
             <loc>https://apis.support.brightcove.com/delivery-system/step-step-delivery-system-api.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1319,7 +1319,7 @@
           
             <loc>https://apis.support.brightcove.com/delivery-system/delivery-system-api-git-overview.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1329,7 +1329,7 @@
           
             <loc>https://apis.support.brightcove.com/delivery-system/references/reference.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1338,7 +1338,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/dynamic-ingest/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1347,7 +1347,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1356,7 +1356,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1365,7 +1365,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/quick-start-dynamic-ingest-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1374,7 +1374,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1383,7 +1383,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1393,7 +1393,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest/general/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1402,7 +1402,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1411,7 +1411,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/notifications-dynamic-delivery-video-cloud.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1420,7 +1420,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/get-status-dynamic-ingest-requests-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1429,7 +1429,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/fallback-retry-strategy.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1438,7 +1438,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/using-dynamic-ingest-s3.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1447,7 +1447,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/ugc-strategies.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1457,7 +1457,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1466,7 +1466,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1475,7 +1475,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1484,7 +1484,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/known-issues.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1493,7 +1493,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1502,7 +1502,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-error-message-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1512,7 +1512,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1521,7 +1521,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/context-aware-encoding.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1530,7 +1530,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/dynamic-delivery-ingest-priority-queueing.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1539,7 +1539,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1548,7 +1548,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/implementing-multiple-audio-tracks-using-apis.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1557,7 +1557,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1566,7 +1566,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/dynamic-ingest-media-sharing.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1575,7 +1575,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1584,7 +1584,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1594,7 +1594,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1603,7 +1603,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-tester-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1612,7 +1612,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-videos-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1621,7 +1621,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1630,7 +1630,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-replacing-videos-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1639,7 +1639,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1648,7 +1648,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-adding-text-tracks.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1657,7 +1657,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-ingesting-low-priority-videos-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1666,7 +1666,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-python-code.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1675,7 +1675,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/ingest-profiles/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1684,7 +1684,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1693,7 +1693,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/getting-started/overview-ingest-profiles-api-dynamic-delivery-context-aware-encoding.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1702,7 +1702,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/getting-started/practice-area-ingest-profiles-api-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1712,7 +1712,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles/guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1721,7 +1721,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1730,7 +1730,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1739,7 +1739,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/cae-fast-publish.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1748,7 +1748,7 @@
             
               <loc>https://apis.support.brightcove.com/general/audio-content.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1757,7 +1757,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/mp4s-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1766,7 +1766,7 @@
             
               <loc>https://studio.support.brightcove.com/admin/ingest-profiles-best-practices.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1776,7 +1776,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1785,7 +1785,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1794,7 +1794,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1803,7 +1803,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1812,7 +1812,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/standard-live-ingest-profiles.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1821,7 +1821,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/fields-custom-live-ingest-profiles.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1831,7 +1831,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1840,7 +1840,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-dynamic-delivery-profile.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1849,7 +1849,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-create-custom-context-aware-encoding-profile.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1858,7 +1858,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-add-profile-multiple-accounts.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1867,7 +1867,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-get-all-profiles-account.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1876,7 +1876,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-set-default-profile-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1885,7 +1885,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/oauth/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -1894,7 +1894,7 @@
           
             <loc>https://apis.support.brightcove.com/oauth/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1903,7 +1903,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1912,7 +1912,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/getting-started/quick-start-oauth.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1922,7 +1922,7 @@
           
             <loc>https://apis.support.brightcove.com/oauth/guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1931,7 +1931,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/guides/oauth-create-client-credentials-using-curl.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1940,7 +1940,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/guides/oauth-create-client-credentials-using-postman.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1949,7 +1949,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1958,7 +1958,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/guides/api-operations-client-credentials-requests.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1967,7 +1967,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/guides/get-your-bc-token.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1977,7 +1977,7 @@
           
             <loc>https://apis.support.brightcove.com/oauth/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -1986,7 +1986,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -1995,7 +1995,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/references/oauth-api-error-message-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2005,7 +2005,7 @@
           
             <loc>https://apis.support.brightcove.com/oauth/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2014,7 +2014,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-create-client-credentials.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2023,7 +2023,7 @@
             
               <loc>https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-get-access-token.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2032,7 +2032,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/playback/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2041,7 +2041,7 @@
           
             <loc>https://apis.support.brightcove.com/playback/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2050,7 +2050,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2059,7 +2059,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/getting-started/quick-start-playback-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2068,7 +2068,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/best-practices-cms-and-playback-apis.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2078,7 +2078,7 @@
           
             <loc>https://apis.support.brightcove.com/playback/guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2087,7 +2087,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/cmsplayback-api-videos-search.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2096,7 +2096,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/getting-started/best-practices-cms-and-playback-apis.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2105,7 +2105,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/guides/static-url-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2115,7 +2115,7 @@
           
             <loc>https://apis.support.brightcove.com/playback/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2124,7 +2124,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/references/reference_v1.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2133,7 +2133,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/references/playback-api-video-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2142,7 +2142,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/references/playback-api-playlist-fields-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2151,7 +2151,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/references/playback-api-error-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2160,7 +2160,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/references/catalog-apis-cms-api-and-playback-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2170,7 +2170,7 @@
           
             <loc>https://apis.support.brightcove.com/playback/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2179,7 +2179,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/code-samples/thumbnail-grid.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2188,7 +2188,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/code-samples/playback-api-sample-mrss-generator.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2197,7 +2197,7 @@
             
               <loc>https://apis.support.brightcove.com/playback/code-samples/playback-api-sample-jsonmrss-feed-playlist.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2206,7 +2206,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/player-management/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2215,7 +2215,7 @@
           
             <loc>https://apis.support.brightcove.com/player-management/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2224,7 +2224,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/getting-started/overview-player-management-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2233,7 +2233,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2242,7 +2242,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2251,7 +2251,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/getting-started/oauth-guide.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2261,7 +2261,7 @@
           
             <loc>https://apis.support.brightcove.com/player-management/guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2270,7 +2270,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2279,7 +2279,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/plugin-registry.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2288,7 +2288,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/pre-release-player.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2297,7 +2297,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/player-repositories.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2306,7 +2306,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/guide-embed-apis.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2315,7 +2315,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/opting-out-automatic-player-updates.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2324,7 +2324,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/guides/embedding-brightcove-players-cms.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2334,7 +2334,7 @@
           
             <loc>https://apis.support.brightcove.com/player-management/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2343,7 +2343,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2352,7 +2352,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/references/player-management-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2362,7 +2362,7 @@
           
             <loc>https://apis.support.brightcove.com/player-management/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2371,7 +2371,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/setup-player-management-samples.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2380,7 +2380,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/bulk-updating-brightcove-default-player.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2389,7 +2389,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-create-player.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2398,7 +2398,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-display-players.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2407,7 +2407,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-delete-players.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2416,7 +2416,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-using-lastviewed-data.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2425,7 +2425,7 @@
             
               <loc>https://apis.support.brightcove.com/player-management/code-samples/player-management-api-sample-programmatically-update-players.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2434,7 +2434,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/policy/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2443,7 +2443,7 @@
           
             <loc>https://apis.support.brightcove.com/policy/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2452,7 +2452,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/getting-started/overview-policy-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2461,7 +2461,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/getting-started/quick-start-policy-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2470,7 +2470,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/getting-started/policy-keys.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2480,7 +2480,7 @@
           
             <loc>https://apis.support.brightcove.com/policy/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2489,7 +2489,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2498,7 +2498,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/references/policy-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2507,7 +2507,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/social-syndication/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2516,7 +2516,7 @@
           
             <loc>https://apis.support.brightcove.com/social-syndication/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2525,7 +2525,7 @@
             
               <loc>https://apis.support.brightcove.com/social-syndication/getting-started/public-syndication-api-overview.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2534,7 +2534,7 @@
             
               <loc>https://apis.support.brightcove.com/social-syndication/getting-started/feed-syndication-api-overview.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2543,7 +2543,7 @@
             
               <loc>https://apis.support.brightcove.com/social-syndication/getting-started/sample-templates-universal-syndication.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2552,7 +2552,7 @@
             
               <loc>https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2562,7 +2562,7 @@
           
             <loc>https://apis.support.brightcove.com/social-syndication/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2571,7 +2571,7 @@
             
               <loc>https://apis.support.brightcove.com/social-syndication/references/configuration-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2580,7 +2580,7 @@
             
               <loc>https://apis.support.brightcove.com/social-syndication/references/feed-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2589,7 +2589,7 @@
             
               <loc>https://apis.support.brightcove.com/policy/references/policy-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2598,7 +2598,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2607,7 +2607,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2616,7 +2616,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/overview-dynamic-ingest-api-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2625,7 +2625,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/quick-start-dynamic-ingest-api-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2634,7 +2634,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/getting-started/migrating-legacy-ingest-system-dynamic-delivery.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2643,7 +2643,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/getting-started/source-file-upload-api-dynamic-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2653,7 +2653,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/general/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2662,7 +2662,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2671,7 +2671,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/general/dynamic-ingest-notifications-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2680,7 +2680,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/general/get-status-dynamic-ingest-requests-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2689,7 +2689,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/fallback-retry-strategy.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2698,7 +2698,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/using-dynamic-ingest-s3.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2707,7 +2707,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/general/ugc-strategies.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2717,7 +2717,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2726,7 +2726,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2735,7 +2735,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-api-release-notes.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2744,7 +2744,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2753,7 +2753,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-error-message-reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2763,7 +2763,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/ingest-guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2772,7 +2772,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2781,7 +2781,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/dynamic-ingest-media-sharing.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2790,7 +2790,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2800,7 +2800,7 @@
           
             <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2809,7 +2809,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-ingesting-videos-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2818,7 +2818,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-re-transcoding-videos-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2827,7 +2827,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-replacing-videos-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2836,7 +2836,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest-legacy/code-samples/dynamic-ingest-api-sample-add-scheduled-videos-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2845,7 +2845,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-adding-text-tracks.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2854,7 +2854,7 @@
             
               <loc>https://apis.support.brightcove.com/dynamic-ingest/code-samples/dynamic-ingest-api-sample-python-code.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2863,7 +2863,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -2872,7 +2872,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2881,7 +2881,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/overview-ingest-profiles-api-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2890,7 +2890,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/getting-started/quick-start-ingest-profiles-api.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2900,7 +2900,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/guides/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2909,7 +2909,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2918,7 +2918,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/guides/rendition-settings-and-video-quality.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2927,7 +2927,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/guides/conditional-output.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2936,7 +2936,7 @@
             
               <loc>https://apis.support.brightcove.com/general/audio-content.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2945,7 +2945,7 @@
             
               <loc>https://studio.support.brightcove.com/admin/ingest-profiles-best-practices.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2955,7 +2955,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/references/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -2964,7 +2964,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/reference.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2973,7 +2973,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/references/ingest-profiles-api-fields-reference-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2982,7 +2982,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/references/standard-ingest-profiles-legacy-transcoding.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -2991,7 +2991,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/references/standard-live-ingest-profiles.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -3001,7 +3001,7 @@
           
             <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/code-samples/index.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3010,7 +3010,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-add-profile-multiple-accounts.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -3019,7 +3019,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles/code-samples/ingest-profiles-api-sample-get-all-profiles-account.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -3028,7 +3028,7 @@
             
               <loc>https://apis.support.brightcove.com/ingest-profiles-legacy/code-samples/ingest-profiles-api-sample-set-default-profile-multiple-accounts-legacy-ingest.html</loc>
             
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
@@ -3037,7 +3037,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/training/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -3046,7 +3046,7 @@
           
             <loc>https://apis.support.brightcove.com/training/online-training-courses.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3056,7 +3056,7 @@
           
             <loc>https://apis.support.brightcove.com/training/register-training.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3066,7 +3066,7 @@
           
             <loc>https://apis.support.brightcove.com/training/brightcove-university.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3075,7 +3075,7 @@
     
       <url>
         <loc>https://apis.support.brightcove.com/support/index.html</loc>
-        <lastmod>2020-08-28</lastmod>
+        <lastmod>2020-12-02</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -3084,7 +3084,7 @@
           
             <loc>https://apis.support.brightcove.com/support/brightcove-answer.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3094,7 +3094,7 @@
           
             <loc>https://apis.support.brightcove.com/support/viewing-brightcove-system-status-page.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3104,7 +3104,7 @@
           
             <loc>https://apis.support.brightcove.com/support/contact-sales.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -3114,7 +3114,7 @@
           
             <loc>https://apis.support.brightcove.com/support/opening-case-with-brightcove-support.html</loc>
           
-            <lastmod>2020-08-28</lastmod>
+            <lastmod>2020-12-02</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
